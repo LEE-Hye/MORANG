@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.diaryMapper">
+      <!-- 게시글 가져오기 -->
+      <select id="diaryList" resultType="com.smhrd.domain.diary">
+          select * from diary3
+      </select>
+      <insert id="diarywrite" parameterType="com.smhrd.domain.diary">
+          insert into diary3(diary_title, diary_content, u_id, weather)
+          values(#{diary_title}, #{diary_content},#{u_id},#{weather})
+      </insert>
+      
+</mapper>

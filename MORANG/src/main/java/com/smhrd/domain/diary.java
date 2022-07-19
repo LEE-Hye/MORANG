@@ -1,5 +1,7 @@
 package com.smhrd.domain;
 
+import com.sun.istack.internal.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,7 @@ public class diary {
 	@NonNull
 	private String diary_content;
 	
-	@NonNull
+	@Nullable
 	private String u_id;
 	
 	private String diary_date;

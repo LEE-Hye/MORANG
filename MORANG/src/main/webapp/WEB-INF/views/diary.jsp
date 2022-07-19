@@ -15,6 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/3e55fa4950.js"
 	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="resources/css/calendar.css">
 </head>
 <body>
 	<div class="container">

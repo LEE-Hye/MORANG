@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
 /* Fontawesome 4.7 */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +97,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: 0.25s;
-  background: linear-gradient(-45deg, #33ccff 0%, #ff99cc 100%);
+  background: linear-gradient(-45deg, #dbafb8 0%, #db9d9d 100%);
   color: white;
   text-align: center;
   border: none;
@@ -160,6 +164,7 @@
   color: grey;
   font-size: 28px;
   font-weight: bold;
+  margin: 0;
 }
 
 .close:hover,
@@ -190,8 +195,23 @@ textarea{
 .sub_btn{
   display: flex;
   margin: auto;
+  border-radius: 5px 5px 5px 5px;
 }
 
+#btn_group button{
+  border: 1px solid rgb(212, 166, 189);
+  background-color: rgba(0,0,0,0);
+  color: rgba(216, 65, 166, 0.658);
+  padding: 5px;
+}
+#btn_group button:hover{
+  color:white;
+  background-color: #e4beb3;
+}
+
+.weather_text{
+  margin-top: 20px;
+}
 
 
 /*--------------탭 메뉴-------------*/
@@ -238,3 +258,38 @@ ul.tabs li.current{
 .i_wheather{
   cursor: pointer;
 }
+
+
+/* 라디오 버튼 */
+.test_obj input[type="radio"] {
+  display: none;
+}
+
+.test_obj input[type="radio"] + label {
+  display: inline-block;
+  padding: 15px 10px;
+  border: 1px solid #dfdfdf;
+  background-color: #e4dede;
+  text-align: center;
+  cursor: pointer;
+}
+
+.test_obj input[type="radio"]:checked + label.fa-sun {
+  background-color: #e4dede;
+  color: #ff140b;
+}
+
+.test_obj input[type="radio"]:checked + label.fa-cloud {
+  background-color: #e4dede;
+  color: #86d4d6;
+}
+
+.test_obj input[type="radio"]:checked + label.fa-cloud-showers-heavy {
+  background-color: #e4dede;
+  color: #5788f0;
+}
+
+.test_obj input[type="radio"]:checked + label.fa-snowflake {
+  background-color: #e4dede;
+  color: #ffffff;
+}}

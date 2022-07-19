@@ -11,5 +11,14 @@
           insert into diary3(diary_title, diary_content, u_id, weather)
           values(#{diary_title}, #{diary_content},#{u_id},#{weather})
       </insert>
+      <select id="diaryContent" resultType="com.smhrd.domain.diary">
+          select * from diary3
+          where diary_seq = #{diary_seq}
+      </select>
       
+      <update id="diaryUpdate" parameterType="com.smhrd.domain.diary">
+          update diary3
+          set diary_title = #{diary_title}, diary_content = #{diary_content}
+          where diary_seq = #{diary_seq}
+      </update>
 </mapper>

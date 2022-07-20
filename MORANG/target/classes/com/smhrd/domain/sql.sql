@@ -14,3 +14,7 @@ insert into board(diary_title, diary_content, u_id)
 values('스프링 게시판', '방가방가','아이디는 뭐냐');
 
 select * from diary;
+
+use morang;
+select * from mr_user;
+

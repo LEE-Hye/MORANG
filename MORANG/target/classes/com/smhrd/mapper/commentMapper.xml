@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.commentMapper">
+      <!-- 게시글 가져오기 -->
+      <select id="commentList" resultType="com.smhrd.domain.comment">
+          select * from mr_comment
+      </select>
+      
+      <insert id="commentInsert" parameterType="com.smhrd.domain.comment">
+          insert into mr_comment(comment_content, u_id, cmt_date)
+          values(#{comment_content}, #{u_id},#{cmt_date})
+      </insert>
+      
+      <select id="commentContent" resultType="com.smhrd.domain.comment">
+          select * from mr_comment
+          where cmt_seq = #{cmt_seq}
+      </select>
+      
+      <update id="commentUpdate" parameterType="com.smhrd.domain.comment">
+          update mr_comment
+          set comment_content = #{comment_content}
+          where comment_seq = #{comment_seq}
+      </update>
+</mapper>

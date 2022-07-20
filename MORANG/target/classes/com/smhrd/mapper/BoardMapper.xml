@@ -7,32 +7,30 @@
  	<!-- SQL 작성 -->
  	<!-- 모든 게시글 가져오기 -->
  	<select id ="boardList"   resultType="com.smhrd.domain.Board">
- 	    select * from board
+ 	    select * from mr_community
  	</select> 
   
 	<!-- 게시글 작성 -->
 	<insert id="boardInsert"  parameterType="com.smhrd.domain.Board">
-		insert into board( title, writer, content )
-		values( #{title}, #{writer}, #{content} )
+		insert into mr_community( c_title, u_id, c_content, c_file )
+		values( #{c_title}, #{u_id}, #{c_content}, #{c_file}, )
  	</insert>
   
  	<select 
    	 	id="boardContent" resultType="com.smhrd.domain.Board">
-  		select * from board
-		where idx = #{idx}
+  		select * from mr_community
+		where c_seq = #{c_seq}
  	</select>
  	
- 	
- 	
  	<update id="boardUpdate" parameterType="com.smhrd.domain.Board">
- 	    update board
+ 	    update mr_community
  	    set title = #{title}, content = #{content}
- 	    where idx = #{idx}
+ 	    where c_seq = #{c_seq}
  	</update>
  	
  	
  	<update id="viewUpdate" parameterType="com.smhrd.domain.Board">
- 	    update board set count= #{count} where idx=#{idx}
+ 	    update mr_community set c_likes= #{c_likes} where c_seq=#{c_seq}
  	    
  	</update>
  	

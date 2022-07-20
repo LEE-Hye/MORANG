@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.JoinMapper">
+      
+      <select id="joinList" resultType="com.smhrd.domain.Join">
+          select * from mr_user
+      </select>
+      
+      <insert id="joinInsert" parameterType="com.smhrd.domain.Join">
+          insert into mr_user(u_id, u_pw, u_name, u_nick, u_phone,u_birthdate)
+          values(#{u_id}, #{u_pw},#{u_name},#{u_nick},#{u_phone},#{u_birthdate})
+      </insert>
+      
+      <select id="joinSelect"
+		parameterType="com.smhrd.domain.Join"
+		resultType="com.smhrd.domain.Join">
+		select * from mr_user 
+		where u_id=#{u_id} and u_pw=#{u_pw}
+	</select>
+      
+      <update id="joinUpdate" parameterType="com.smhrd.domain.Join">
+          update mr_user
+          set u_pw = #{u_pw}, u_name = #{u_name}, u_nick = #{u_nick},
+          u_phone = #{u_phone}, u_birthdate = #{u_birthdate}, u_joindate = #{u_joindate},
+          u_type = #{u_type}
+          where u_id = #{u_id}
+      </update>
+</mapper>

@@ -1,3 +1,4 @@
+
 package com.smhrd.domain;
 
 import lombok.AllArgsConstructor;
@@ -26,4 +27,5 @@ public class diary {
 	private String diary_date;
 	
 	private String weather;
+
 }

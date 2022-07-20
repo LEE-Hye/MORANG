@@ -15,6 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/3e55fa4950.js"
 	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="resources/css/calendar.css">
 </head>
 <body>
 	<div class="container">
@@ -33,6 +34,7 @@
 						<td>아이디</td>
 						<td>날씨</td>
 						<td>날짜</td>
+						<td>딥러닝 결과</td>
 
 					</tr>
 					<%
@@ -56,6 +58,7 @@
 						</td>
 
 						<td><%=diary.getDiary_date()%></td>
+						<td><%=diary.getDiary_deep()%></td>
 					</tr>
 					<%} %>
 				</table>
@@ -66,4 +69,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

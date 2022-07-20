@@ -31,11 +31,11 @@ public class noteController {
 	
 	@GetMapping("/noteInsert.do")
 	public String noteInsert() {
-		return "notewrite";
+		return "noteInsert";
 	}
 	
 	@PostMapping("/noteInsert.do")
-	public String diarywrite(note vo) {
+	public String noteInsert(note vo) {
 		
 		mapper.noteInsert(vo);
 		
@@ -43,3 +43,4 @@ public class noteController {
 	}
 	
 }
+

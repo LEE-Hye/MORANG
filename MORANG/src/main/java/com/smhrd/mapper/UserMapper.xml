@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.UserMapper">
-    <insert id = "userInsert" parameterType="com.smhrd.domain.user">
+    <insert id = "userInsert" parameterType="com.smhrd.domain.User">
         insert into mr_user(u_id, u_pw, u_name, u_nick, u_phone, u_brithdate)
         values(#{u_id},#{u_pw},#{u_name},#{u_nick},#{u_phone},#{u_brithdate})
     </insert>

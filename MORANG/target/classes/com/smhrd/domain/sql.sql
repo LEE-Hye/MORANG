@@ -1,6 +1,4 @@
 
-
-
 create table board
 (
    idx int not null auto_increment,
@@ -20,7 +18,7 @@ values('스프링 게시판', '방제엽', '즐거운 게시판 만들기!');
 delete from board;
 
 update board set count= #{count} where idx=#{idx}
-=======
+
 select * from mr_diary
 
 CREATE TABLE diary
@@ -37,4 +35,4 @@ insert into board(diary_title, diary_content, u_id)
 values('스프링 게시판', '방가방가','아이디는 뭐냐');
 
 select * from diary;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/MORANG.git
+

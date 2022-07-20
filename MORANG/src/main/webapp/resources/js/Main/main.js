@@ -1,4 +1,12 @@
 let username=null;
+let fear=0;
+let surprise=0;
+let angry=0;
+let sadness=0;
+let neutral=0;
+let happiness=0;
+let disgust=0;
+
 (function () {
     var Message;
     Message = function (arg) {
@@ -126,6 +134,23 @@ let username=null;
                             success: function(data){
                             	console.log(data.result2['msg']);
                             	console.log(data.result2['emotion']);
+                            	if(emotion.equals("공포")){
+                            	}
+                            	else if(emotion.equals("공포")){
+                            		
+                            	}
+                            	else if(emotion.equals("놀람")){
+                            	}
+                            	else if(emotion.equals("분노")){
+                            	}
+                            	else if(emotion.equals("슬픔")){
+                            	}
+                            	else if(emotion.equals("중립")){
+                            	}
+                            	else if(emotion.equals("행복")){
+                            	}
+                            	else if(emotion.equals("혐오")){
+                            	}
                                 return sendMessage(data.result2['msg'],'left');
                             },
                             

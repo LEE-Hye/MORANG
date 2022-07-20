@@ -13,21 +13,25 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @RequiredArgsConstructor
 
-public class diary {
-	private int diary_seq;
-	
+public class User {
+
 	@NonNull
-	private String diary_title;
-	
-	@NonNull
-	private String diary_content;
-	
-	@Nullable
 	private String u_id;
 	
-	private String diary_date;
+	@NonNull
+	private String u_pw;
 	
-	private String weather;
+	@NonNull
+	private String u_name;
 	
-	private String diary_deep;
+	@NonNull
+	private String u_nick;
+	
+	@NonNull
+	private String u_phone;
+	
+	private String u_brithdate;
+	
+	private int u_joindate;
+	
 }

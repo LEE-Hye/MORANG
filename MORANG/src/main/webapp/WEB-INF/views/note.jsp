@@ -48,7 +48,7 @@
 					</tr>
 					<%} %>
 				</table>
-				<button onclick="location.href='diarywrite.do'"
+				<button onclick="location.href='noteInsert.do'"
 					class="btn btn-sm btn-success">작성</button>
 			</div>
 			<div class="panel-footer">빅데이터 12차 이혜빈</div>

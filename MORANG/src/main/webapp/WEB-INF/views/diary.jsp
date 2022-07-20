@@ -34,6 +34,7 @@
 						<td>아이디</td>
 						<td>날씨</td>
 						<td>날짜</td>
+						<td>딥러닝 결과</td>
 
 					</tr>
 					<%
@@ -57,6 +58,7 @@
 						</td>
 
 						<td><%=diary.getDiary_date()%></td>
+						<td><%=diary.getDiary_deep()%></td>
 					</tr>
 					<%} %>
 				</table>

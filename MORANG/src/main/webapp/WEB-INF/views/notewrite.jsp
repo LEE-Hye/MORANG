@@ -35,6 +35,7 @@
 								class="form-control"></textarea>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="writer">작성자:</label>
 						<div class="col-sm-10">
@@ -42,20 +43,13 @@
 								placeholder="Enter writer" name="u_id">
 						</div>
 					</div>
-					<div class="form-group">
 					
-					<div class="weather">
-					<label class="control-label col-sm-2" for="content">날씨:</label>
-						<div>
-							<ul class="icon">
-								<li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
-								<li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
-								<li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
-								<li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
-								
-							</ul>
-						</div>
+					
+					<div class="form-group">
+
 					</div>
+					
+					
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
@@ -68,5 +62,6 @@
 		</div>
 	</div>
 </body>
+
 
 </html>

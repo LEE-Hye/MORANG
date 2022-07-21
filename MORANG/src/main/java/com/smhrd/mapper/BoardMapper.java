@@ -15,7 +15,7 @@ public interface BoardMapper {
 	
 	public int boardInsert(Board vo);
 	
-	public Board boardContent(int idx); // selectOne()
+	public Board boardContent(int c_seq); // selectOne()
 	
 	// insert/delete/update --> int 반환
 	// 어노테이션을 이용한 sql문 작성

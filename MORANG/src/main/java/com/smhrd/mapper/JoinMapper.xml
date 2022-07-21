@@ -27,4 +27,12 @@
           u_type = #{u_type}
           where u_id = #{u_id}
       </update>
+      
+      <!-- 로그인처리 -->
+      <select id="login" resultType="com.smhrd.domain.Join">
+          select u_id, u_pw
+          from mr_user
+          where u_id=#{u_id} and u_pw=#{u_pw}
+      </select>
+     
 </mapper>

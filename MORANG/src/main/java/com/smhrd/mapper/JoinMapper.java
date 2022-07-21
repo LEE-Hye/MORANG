@@ -16,4 +16,7 @@ public interface JoinMapper {
 	public int joinDelete(int u_id);
 	
 	public int joinUpdate(Join vo);
+	
+	// 로그인 처리
+	// public Join login(Join invo) throws Exception;
 }

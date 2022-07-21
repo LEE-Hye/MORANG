@@ -174,7 +174,15 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>  
+		
+		
+		  <!-- https://mvnrepository.com/artifact/com.jfinal/cos -->
+		<dependency>
+		    <groupId>com.jfinal</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>2020.4</version>
+		</dependency>      
 	</dependencies>
     <build>
         <plugins>

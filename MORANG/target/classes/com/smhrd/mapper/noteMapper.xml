@@ -9,8 +9,8 @@
      </select>
      
      <insert id="noteInsert" parameterType="com.smhrd.domain.note">
-         insert into note(title, content, id)
-         values(#{title}, #{content}, #{id})
+         insert into note(title, content, id,filename1)
+         values(#{title}, #{content}, #{id},#{filename1})
      </insert>
      
  </mapper>

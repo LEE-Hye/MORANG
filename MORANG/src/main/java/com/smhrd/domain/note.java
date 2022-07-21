@@ -26,8 +26,8 @@ public class note {
 	@NonNull
 	private String id;
 	
-    @Nullable
-	private String img1;
+    @NonNull
+	private String filename1;
 	
 	private String date;
 	

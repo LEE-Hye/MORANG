@@ -1,4 +1,7 @@
-
+<%@page import="java.util.concurrent.TimeUnit"%>
+<%@page import="java.util.Enumeration"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.smhrd.domain.note"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -24,7 +27,7 @@
 			<div class="panel-heading">뀨</div>
 			<div class="panel-body">
 				<%
-				List<note> list = (List<note>) request.getAttribute("list");
+					List<note> list = (List<note>) request.getAttribute("list");
 				%>
 				<table class="table table-bordered table-hover">
 					<tr>
@@ -44,16 +47,20 @@
 						<td><%=note.getTitle()%></td>
 						<td><%=note.getContent()%></td>
 						<td><%=note.getId()%></td>
-						<td><%=note.getImg1() %></td>
+						<td><%=note.getFilename1()%></td>
 						<td><%=note.getDate()%></td>
 					</tr>
-					<%} %>
+					<%
+						}
+					%>
 				</table>
 				<button onclick="location.href='noteInsert.do'"
 					class="btn btn-sm btn-success">작성</button>
+					
 			</div>
 			<div class="panel-footer">빅데이터 12차 이혜빈</div>
 		</div>
 	</div>
+	<img alt="" src="<%=list.get(13).getFilename1()%>">
 </body>
 </html>

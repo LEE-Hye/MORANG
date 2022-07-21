@@ -38,11 +38,11 @@ public class BoardRestController {
 	public @ResponseBody int viewUpdate(Board vo) {
 
 		// 조회수 수정
-		int cnt = mapper.viewUpdate(vo);
+		int c_likes = mapper.viewUpdate(vo);
 
 		// 성공 or 실패 리턴
 
-		return cnt;
+		return c_likes;
 	}
 
 	

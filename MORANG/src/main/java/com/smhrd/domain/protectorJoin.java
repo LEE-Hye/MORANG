@@ -12,21 +12,21 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor  // 모든 필드를 요소로 갖는 생성자 생성
 @NoArgsConstructor   // 기본생성자
 @RequiredArgsConstructor  // 필요한 필드만 요소로 갖는 생성자 생성
-public class Join {
+public class protectorJoin {
 	
+	@NonNull
+	private String p_id;
+	@NonNull
+	private String p_pw;
+	@NonNull
+	private String p_name;
+	@NonNull
+	private String p_phone;
+	@NonNull
+	private String p_birthdate;	
 	@NonNull
 	private String u_id;
-	@NonNull
-	private String u_pw;
-	@NonNull
-	private String u_name;
-	@NonNull
-	private String u_nick;
-	@NonNull
-	private String u_phone;
-	@NonNull
-	private String u_birthdate;	
 	
-	private String u_joindate;
+	private String u_joindate;	
 		
 }

@@ -29,5 +29,5 @@
           from mr_user
           where u_id=#{u_id} and u_pw=#{u_pw}
       </select>
-     
+   
 </mapper>

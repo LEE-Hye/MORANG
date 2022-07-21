@@ -28,7 +28,8 @@ public class JoinController {
       System.out.println("회원가입 페이지 이동 성공");
       return "join";
    }
-
+   
+   
    // 이거 회원 가입
    @GetMapping("/joinInsert.do")
    public String joinInsert() {
@@ -56,8 +57,11 @@ public class JoinController {
    }
 ///////////////////////////////////로그인 /////////////////
    @PostMapping("/login.do")
-   public String login(Join invo, HttpSession session) throws Exception{
-      
+   public String login(HttpServletResponse response,Join invo, HttpSession session) throws Exception{
+	   response.setContentType("text/html; charset=euc-kr");
+	   PrintWriter out = response.getWriter();
+
+	   
 	  Join loginMember = null;
 	  loginMember=mapper.login(invo);
 	  if(loginMember!=null) {
@@ -66,6 +70,8 @@ public class JoinController {
 		  return "redirect:/Main.do";
 	  }
 	  else {
+		  out.println("<script>alert('아이디와 비밀번호를 다시 확인해주세요');location.href='join.do'</script>");
+		  out.flush();
 		  return "redirect:/join.do";
 	  }
       

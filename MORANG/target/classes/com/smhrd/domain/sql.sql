@@ -7,7 +7,7 @@ select * from diary;
 
 use morang;
 select * from mr_user;
-
+select * from 
 select * from note;
 
 use morang;

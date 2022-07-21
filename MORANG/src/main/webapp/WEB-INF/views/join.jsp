@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton'>
 
     <link rel="stylesheet" href="resources/css/join.css">
@@ -105,10 +105,12 @@
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <form action="joinInsert.do" method="post">
+                                <br>
                                     <div class="name" style="margin-left: 110px;">
-                                        ID : <br> <input id="id" type="text" name="u_id" placeholder="이름을 입력해 주세요." class="inputList" size="30"
+                                        ID : <br> <input id="u_id" type="text" name="u_id" placeholder="이름을 입력해 주세요." class="inputList" size="30"
                                             >
-                                        <div id="nameError" class="error"></div>
+                                            <a id="repeatcheck1" onclick="u_idcheck()">중복확인</a>
+                                        <div id="nameError1" class="error"></div>
                                         <br>
                                     </div>
                                     <div class="nick" style="margin-left: 110px;">
@@ -158,13 +160,15 @@
                             <!-- 여기까지가 임산부 모달 -->
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <form action="protectorJoinInsert.do" method="post">
+                            <br>
                                 <div class="name" style="margin-left: 110px;">
-                                    ID : <br> <input id="id" type="text" name="p_id" placeholder="이름을 입력해 주세요." size="30"
-                                    class="inputList">
-                                    <div id="nameError" class="error"></div>
+                                    ID : <br> <input id="p_id" type="text" name="p_id" placeholder="이름을 입력해 주세요." size="30"
+                                    class="inputList"><a id="repeatcheck2" onclick="p_idcheck()">중복확인</a>
+                                    <div id="nameError2" class="error"></div>
                                     <br>
                                 </div>
                                 <div class="nick" style="margin-left: 110px;">
+                                
                                     이름 : <br> <input id="name" type="text" name="p_name" placeholder="이름을 입력해 주세요."
                                         size="30" class="inputList">
                                     <div id="nameError" class="error"></div>
@@ -781,6 +785,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+        
+     <script type="text/javascript">
+     function u_idcheck(){
+    		
+    		let u_id = $('#u_id').val()
+
+    		
+    			$.ajax({
+    				url :'joincheck1.do',
+    				type : 'post',
+    				data : {
+    					'u_id':u_id,
+    				},
+    				success:function(res){
+    					// 기존에 있던 조회수를 바꿔줘야함
+    					if(res==0){
+    						$('#nameError1').html("사용할 수 없는 아이디입니다");
+    					}
+    					else if(res==1){
+    						$('#nameError1').html("사용할 수 있는 아이디입니다");
+    					}
+    					
+    				},
+    				error:function(e){alert('error!')}
+    			});
+
+    	}
+     
+     function p_idcheck(){
+ 		
+ 		let p_id = $('#p_id').val()
+
+ 		
+ 			$.ajax({
+ 				url :'joincheck2.do',
+ 				type : 'post',
+ 				data : {
+ 					'p_id':p_id,
+ 				},
+ 				success:function(res){
+ 					// 기존에 있던 조회수를 바꿔줘야함
+ 					console.log(res);
+ 					if(res==0){
+ 						$('#nameError2').html("사용할 수 없는 아이디입니다");
+ 					}
+ 					else if(res==1){
+ 						$('#nameError2').html("사용할 수 있는 아이디입니다");
+ 					}
+ 					
+ 				},
+ 				error:function(e){alert('error!')}
+ 			});
+
+ 	}
+     </script>
 </body>
 
 </html>

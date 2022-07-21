@@ -58,11 +58,18 @@ public class JoinController {
    @PostMapping("/login.do")
    public String login(Join invo, HttpSession session) throws Exception{
       
-	  Join loginMember = mapper.login(invo);
-	  System.out.println(loginMember.getU_nick());
-      session.setAttribute("loginMember", loginMember);
+	  Join loginMember = null;
+	  loginMember=mapper.login(invo);
+	  if(loginMember!=null) {
+		  System.out.println(loginMember.getU_nick());
+		  session.setAttribute("loginMember", loginMember);
+		  return "redirect:/Main.do";
+	  }
+	  else {
+		  return "redirect:/join.do";
+	  }
       
-      return "redirect:/Main.do";
+      
    }
    
    

@@ -1,7 +1,5 @@
 package com.smhrd.domain;
 
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +16,7 @@ public class Join {
 	private String u_id;
 	@NonNull
 	private String u_pw;
+	
 	@NonNull
 	private String u_name;
 	@NonNull
@@ -28,5 +27,20 @@ public class Join {
 	private String u_birthdate;	
 	
 	private String u_joindate;
-		
+	
+	
+	
+
+	public Join(@NonNull String u_id, @NonNull String u_pw) {
+		super();
+		this.u_id = u_id;
+		this.u_pw = u_pw;
+	}
+
+
+
+
+	
+	
+	
 }

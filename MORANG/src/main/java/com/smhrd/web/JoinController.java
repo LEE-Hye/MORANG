@@ -83,8 +83,8 @@ public class JoinController {
    @GetMapping("/logout.do")
    public String logout(HttpSession session) throws Exception{
       // 로그 아웃 처리 - session의 정보를 지운다
-      session.removeAttribute("login");
-      return "/join.do";
+      session.removeAttribute("loginMember");
+      return "redirect:/join.do";
    }
    
 }

@@ -34,8 +34,9 @@
     </div>
 
     <ul class="navbar_menu">
+      <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
       <li><a href="">개인정보수정</a></li>
-      <li><a href="">로그아웃</a></li>
+      <li><a href="logout.do">로그아웃</a></li>
     </ul>
   </nav>
   <div class="app">

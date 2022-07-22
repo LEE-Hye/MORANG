@@ -54,11 +54,11 @@
 
       <h1>Menu</h1>
       <nav class="menu">
-        <a href="메인 페이지.html" class="menu-item">HOME</a>
-        <a href="산전 우울증.html" class="menu-item">우울증 자가진단</a>
-        <a href="감정일기장.html" class="menu-item">감정 일기장</a>
-        <a href="공유수첩.html" class="menu-item">공유수첩</a>
-        <a href="게시판.html" class="menu-item">게시판</a>
+        <a href="Main.do" class="menu-item">HOME</a>
+        <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
+        <a href="diary.do" class="menu-item">감정 일기장</a>
+        <a href="note.do" class="menu-item">공유수첩</a>
+        <a href="board.do" class="menu-item">게시판</a>
       </nav>
     </nav>
     <section id="soohyeonchatbotarea" style="display: none;">

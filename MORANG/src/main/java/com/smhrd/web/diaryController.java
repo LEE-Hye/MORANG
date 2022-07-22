@@ -53,14 +53,6 @@ public class diaryController {
 		return "redirect:/diary.do";
 	}
 	
-	@RequestMapping("/diarywriteCon.do/{pos}/{neg}")
-	public float test(@PathVariable("pos") float pos,@PathVariable("neg") float neg ) {
-	      
-	     float cnt = mapper.diarywriteCon(pos, neg);
-	      
-	      return cnt;
-	   }
-
 	
 	
 	
@@ -109,9 +101,14 @@ public class diaryController {
 	// form 태그로 접근 (title, idx, content)
 	
 	@RequestMapping("/diaryUpdate.do")
-	public String boardUpdate(diary vo) {
+	public String boardUpdate(diary vo,HttpServletRequest request) {
 		
+		float pos = Float.valueOf(request.getParameter("pos"));
+		float neg = Float.valueOf(request.getParameter("neg"));
 		// 사용자가 입력한 데이터로, update
+	
+		vo.setDiary_pos(pos);
+		vo.setDiary_neg(neg);
 		mapper.diaryUpdate(vo);
 		
 		// 상세보기 페이지 이동
@@ -120,6 +117,8 @@ public class diaryController {
 		// 목록 페이지 이동
 		 return "redirect:/diary.do";
 	}
+	
+	
 }
 	
 	

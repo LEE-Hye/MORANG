@@ -1,6 +1,11 @@
 package com.smhrd.web;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Enumeration;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.domain.Board;
+import com.smhrd.domain.note;
 import com.smhrd.mapper.BoardMapper;
 
 @Controller //어노테이션
@@ -75,7 +83,6 @@ public class BoardController {
 	}
 	
 	// Update페이지로 이동하는 Controller 필요
-	// /boardGoUpdate.do?idx=4
 	@RequestMapping("/boardGoUpdate.do")
 	public String boardGoUpdate(int c_seq, Model model) {
 		
@@ -111,4 +118,46 @@ public class BoardController {
 
 		return c_likes;
 	}
+//	@PostMapping("/boardInsert.do")
+//	public String boardInsert(Board vo,HttpServletRequest request,HttpServletResponse response) {
+//		
+//		String c_title="";
+//		String u_id="";
+//		String c_content="";
+//		 
+//		try {
+//			request.setCharacterEncoding("UTF-8");
+//			response.setCharacterEncoding("UTF-8");
+//		} catch (UnsupportedEncodingException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		String realFolder = "";
+//		String filename1 = "";
+//		int maxSize = 1024*1024*5;
+//		String encType = "euc-kr";
+//		String savefile = "img";
+//		
+//		realFolder="C:/Users/smhrd/git/MR/MORANG/src/main/webapp/resources/img";
+//		try{
+//			 MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+//			 Enumeration<?> files = multi.getFileNames();
+//		     String file1 = (String)files.nextElement();
+//		     filename1 = multi.getFilesystemName(file1);
+//		     c_title=multi.getParameter("c_title");
+//		     u_id=multi.getParameter("u_id");
+//		     c_content=multi.getParameter("c_content");
+//		}catch(Exception e){
+//			e.printStackTrace();
+//		}
+//		String fullpath = "resources/img/"+filename1;
+//		vo.setC_title(c_title);
+//		vo.setC_content(c_content);
+//		vo.setU_id(u_id);
+//		vo.setC_file(fullpath);
+//		mapper.boardInsert(vo);
+//		
+//		return "redirect:/boardList.do";
+//	}
+	
 }

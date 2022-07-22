@@ -36,9 +36,9 @@ font-family: 'BMJUA';
 
             <form class="form-horizontal" action="boardInsert.do" method="post">
                <div class="form-group">
-                  <label class="control-label col-sm-2" for="c_title">제목:</label>
+                  <label class="control-label col-sm-2" for="title">제목:</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="c_title"
+                     <input type="text" class="form-control" id="title"
                         placeholder="글 제목을 적어주세요" name="c_title">
                   </div>
                </div>
@@ -46,19 +46,19 @@ font-family: 'BMJUA';
                   <label class="control-label col-sm-2" for="u_id">작성자:</label>
                   <div class="col-sm-10">
                      <input type="text" class="form-control" id="u_id"
-                        readonly="readonly" value="${board.u_id}" name="u_id">
+                         readonly="readonly" value="${loginMember.u_id}" name="u_id">
                   </div>
                </div>
                <div class="form-group">
-                  <label class="control-label col-sm-2" for="c_content">내용:</label>
+                  <label class="control-label col-sm-2" for="content">내용:</label>
                   <div class="col-sm-10">
-                     <textarea name="c_content" id="c_content" rows="10" class="form-control"
+                     <textarea name="c_content" id="content" rows="10" class="form-control"
                      placeholder="내용을 적어주세요"></textarea>
                   </div>
                </div>
                <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                           <button type="file" class="btn btn-default">사진첨부</button>
+                           <input type="file" class="btn btn-default">사진첨부</button>
                         </div>
                      </div>
                <div class="form-group">

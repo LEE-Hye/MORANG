@@ -13,12 +13,7 @@
           values(#{u_id}, #{u_pw},#{u_name},#{u_nick},#{u_phone},#{u_birthdate})
       </insert>
       
-      <select id="joinSelect"
-		parameterType="com.smhrd.domain.Join"
-		resultType="com.smhrd.domain.Join">
-		select * from mr_user 
-		where u_id=#{u_id} and u_pw=#{u_pw}
-	</select>
+     
       
       <update id="joinUpdate" parameterType="com.smhrd.domain.Join">
           update mr_user
@@ -29,10 +24,10 @@
       </update>
       
       <!-- 로그인처리 -->
-      <select id="login" resultType="com.smhrd.domain.Join">
-          select u_id, u_pw
+      <select id="login" parameterType="com.smhrd.domain.Join" resultType="com.smhrd.domain.Join">
+          select *
           from mr_user
           where u_id=#{u_id} and u_pw=#{u_pw}
       </select>
-     
+   
 </mapper>

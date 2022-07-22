@@ -1,4 +1,12 @@
-
+@font-face {
+    font-family: 'Dongle-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family: 'Dongle-Bold';
+}
 .chat_window {
     position: absolute;
     width: calc(100% - 20px);

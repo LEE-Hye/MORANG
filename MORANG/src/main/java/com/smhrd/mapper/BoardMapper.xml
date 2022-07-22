@@ -12,7 +12,7 @@
   
 	<!-- 게시글 작성 -->
 	<insert id="boardInsert"  parameterType="com.smhrd.domain.Board">
-		insert into mr_community( c_title, u_id, c_content, c_file )
+		insert into mr_community(c_title, u_id, c_content, c_file )
 		values( #{c_title}, #{u_id}, #{c_content}, #{c_file}, )
  	</insert>
   
@@ -24,7 +24,7 @@
  	
  	<update id="boardUpdate" parameterType="com.smhrd.domain.Board">
  	    update mr_community
- 	    set title = #{title}, content = #{content}
+ 	    set c_title = #{c_title}, c_content = #{c_content}
  	    where c_seq = #{c_seq}
  	</update>
  	

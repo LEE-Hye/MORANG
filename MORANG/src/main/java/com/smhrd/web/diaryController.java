@@ -1,8 +1,11 @@
 package com.smhrd.web;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.domain.Board;
 import com.smhrd.domain.diary;
 import com.smhrd.mapper.diaryMapper;
@@ -40,15 +45,68 @@ public class diaryController {
 	}
 	
 	@PostMapping("/diarywrite.do")
-	public String diarywrite(diary vo,HttpServletRequest request) {
-		float pos = Float.valueOf(request.getParameter("pos"));
-		float neg = Float.valueOf(request.getParameter("neg"));
-		System.out.println(pos);
-		System.out.println(neg);
+	public String diarywrite(diary vo,HttpServletRequest request,HttpServletResponse response) {
+		
+		response.setCharacterEncoding("UTF-8");
+		float pos = 0;
+		float neg = 0;
+		
+		String diary_title="";
+		String u_id="";
+		String diary_content="";
+		String weather="";
+		try {
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		String realFolder = "";
+		String filename1 = "";
+		int maxSize = 1024*1024*5;
+		String encType = "UTF-8";
+		String savefile = "img";
+		
+		realFolder="C:/Users/smhrd/git/MR/MORANG/src/main/webapp/resources/img";
+		try{
+			 MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+			 Enumeration<?> files = multi.getFileNames();
+		     String file1 = (String)files.nextElement();
+		     filename1 = multi.getFilesystemName(file1);
+		     pos = Float.valueOf(multi.getParameter("pos"));
+		     neg = Float.valueOf(multi.getParameter("neg"));
+		     diary_title=multi.getParameter("diary_title");
+		     u_id=multi.getParameter("u_id");
+		     diary_content=multi.getParameter("diary_content");
+		     weather=multi.getParameter("weather");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	
+		String fullpath = "resources/img/"+filename1;
+		
+
 		vo.setDiary_pos(pos);
 		vo.setDiary_neg(neg);
+		vo.setDiary_title(diary_title);
+		vo.setU_id(u_id);
+		vo.setDiary_content(diary_content);
+		vo.setWeather(weather);
+		vo.setFilename1(fullpath);
+		System.out.println(pos);
+		System.out.println(neg);
+		System.out.println(vo.getDiary_pos());
+		System.out.println(vo.getDiary_title());
+		System.out.println(vo.getDiary_content());
+		System.out.println(vo.getWeather());
 		System.out.println(vo.getU_id());
 		mapper.diarywrite(vo);
+		
+		
+		
+		
+		
 		
 		return "redirect:/diary.do";
 	}

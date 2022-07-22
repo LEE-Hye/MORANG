@@ -35,4 +35,6 @@ public class diary {
 	private float diary_pos;
 	@NonNull
 	private float diary_neg;
+	
+	private String filename1;
 }

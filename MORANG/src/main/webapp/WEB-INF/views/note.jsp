@@ -61,6 +61,6 @@
 			<div class="panel-footer">빅데이터 12차 이혜빈</div>
 		</div>
 	</div>
-	<img alt="" src="<%=list.get(13).getFilename1()%>">
+	
 </body>
 </html>

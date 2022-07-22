@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.diary"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -53,6 +54,9 @@
 	PageContext < request < session < application
 	유지 시간이 짧은 scope의 것을 가져온다. 
 	 --%>
+	 <%
+					List<diary> list = (List<diary>) request.getAttribute("list");
+				%>
 
 	<div class="container">
 		<h2>SpringMVC01</h2>
@@ -110,10 +114,18 @@
 					</tr>
 					<tr>
 						<td>딥러닝결과 :</td>
-						<td>긍정 : ${diary.diary_pos}%    부정 : ${diary.diary_neg}%</td>
+						<td>긍정 : ${diary.diary_pos}%    부정 : ${diary.diary_neg}% </td>
 						
 					</tr>
 					
+					<tr>
+						<td>사진</td>
+						<td>
+						<img src="<%=list.get(43).getFilename1()%>"></td>
+					</tr>
+				
+
+
 
 					<tr>
 						<td colspan="2" align="center">

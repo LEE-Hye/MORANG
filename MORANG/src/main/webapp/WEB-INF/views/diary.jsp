@@ -35,6 +35,7 @@
 						<td>날씨</td>
 						<td>날짜</td>
 						<td>딥러닝 결과</td>
+						<td>사진</td>
 
 					</tr>
 					<%
@@ -58,7 +59,8 @@
 						</td>
 
 						<td><%=diary.getDiary_date()%></td>
-						<td><%=diary.getDiary_deep()%></td>
+						<td><%=diary.getDiary_pos()%> <%=diary.getDiary_neg()%></td>
+						<td><%=diary.getFilename1()%></td>
 					</tr>
 					<%} %>
 				</table>

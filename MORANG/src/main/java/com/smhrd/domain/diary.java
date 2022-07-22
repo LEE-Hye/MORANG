@@ -23,12 +23,16 @@ public class diary {
 	@NonNull
 	private String diary_content;
 	
-	@Nullable
+	@NonNull
 	private String u_id;
 	
 	private String diary_date;
-	
+	@NonNull
 	private String weather;
 	
 	private String diary_deep;
+	@NonNull
+	private float diary_pos;
+	@NonNull
+	private float diary_neg;
 }

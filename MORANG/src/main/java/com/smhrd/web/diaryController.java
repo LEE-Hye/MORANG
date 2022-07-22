@@ -2,6 +2,8 @@ package com.smhrd.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,12 +40,31 @@ public class diaryController {
 	}
 	
 	@PostMapping("/diarywrite.do")
-	public String diarywrite(diary vo) {
-		
+	public String diarywrite(diary vo,HttpServletRequest request) {
+		float pos = Float.valueOf(request.getParameter("pos"));
+		float neg = Float.valueOf(request.getParameter("neg"));
+		System.out.println(pos);
+		System.out.println(neg);
+		vo.setDiary_pos(pos);
+		vo.setDiary_neg(neg);
+		System.out.println(vo.getU_id());
 		mapper.diarywrite(vo);
 		
 		return "redirect:/diary.do";
 	}
+	
+	@RequestMapping("/diarywriteCon.do/{pos}/{neg}")
+	public float test(@PathVariable("pos") float pos,@PathVariable("neg") float neg ) {
+	      
+	     float cnt = mapper.diarywriteCon(pos, neg);
+	      
+	      return cnt;
+	   }
+
+	
+	
+	
+	
 	
 	// 이거 상세 페이지 보여주기
 	@RequestMapping("diaryContent.do/{diary_seq}")

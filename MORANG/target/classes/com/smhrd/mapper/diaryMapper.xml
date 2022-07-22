@@ -7,10 +7,18 @@
       <select id="diaryList" resultType="com.smhrd.domain.diary">
           select * from diary3
       </select>
+      
       <insert id="diarywrite" parameterType="com.smhrd.domain.diary">
-          insert into diary3(diary_title, diary_content, u_id, weather)
-          values(#{diary_title}, #{diary_content},#{u_id},#{weather})
+          insert into diary3(diary_title, diary_content, u_id, weather,diary_pos,diary_neg)
+          values(#{diary_title}, #{diary_content},#{u_id},#{weather},#{diary_pos},#{diary_neg})
       </insert>
+      
+      <insert id="diarywriteCon" >
+          insert into diary3(diary_pos, diary_neg)
+          values(#{diary_pos}, #{diary_neg})
+      </insert>
+      
+      
       <select id="diaryContent" resultType="com.smhrd.domain.diary">
           select * from diary3
           where diary_seq = #{diary_seq}

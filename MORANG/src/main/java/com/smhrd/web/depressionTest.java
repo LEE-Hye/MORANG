@@ -12,19 +12,13 @@ public class depressionTest {
 	
 	// 이거 글 목록
 	@RequestMapping("/depressionTest.do")
-	public String depressionTest() {
+	public String depressionT() {
 		
 		
 		return "depressionTest";
 	}
 	
 	
-		@RequestMapping("/depressionTestResult.do")
-		public String depressionTestResult() {
-			
-			
-			return "depressionTestResult";
-		}
 	
 }
 	

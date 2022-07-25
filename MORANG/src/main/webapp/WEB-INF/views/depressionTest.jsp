@@ -28,7 +28,7 @@
     <nav class="navbar">
         <div class="navbar_logo">
             <i class="fa-thin fa-hands-holding-child"></i>
-            <a href="메인 페이지.html">MoRang.</a>
+            <a href="Main.do">MoRang.</a>
         </div>
 
         <ul class="navbar_menu">
@@ -65,125 +65,102 @@
             <div class="channel-introduce">
                 <img src='resources/img/5301.jpg' width="700px" height="400px" />
                 <h1 class="test-title">
-                    정확도 100%의 검사
-                    <br>
                     산전 우울증 자가진단
                     <br>
                     <strong>함께 확인해볼까요?</strong>
                 </h1>
-                <form action='drepressionTestResult.do'>
+                <form action='depressionTestResult.do' method="post">
                     <h1 class="question-title">1. 어떤 것을 봐도 웃음이 잘 나지 않는다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav1" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav1" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav1" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav1" value="3">자주 그랬다.</label>
+                        <label><input type="radio" name="fav1" value="0">전혀 그렇지 않다.</label>
+                        <label><input required="required" type="radio" name="fav1" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav1" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav1" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">2. 예전에 비해 즐거운 일이 생긴다는 기대감이 줄었다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav2" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav2" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav2" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav2" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav2" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav2" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav2" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav2" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">3. 일이 잘못되면 필요 이상으로 자신을 탓하는 것 같다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav3" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav3" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav3" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav3" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav3" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav3" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav3" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav3" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">4. 별 이유 없이 불안해지거나 걱정이 된다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav4" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav4" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav4" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav4" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav4" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav4" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav4" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav4" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">5. 별 이유 없이 겁이 나거나 공포에 휩싸인다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav5" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav5" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav5" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav5" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav5" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav5" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav5" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav5" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">6. 처리할 일들이 쌓여만 있다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav6" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav6" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav6" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav6" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav6" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav6" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav6" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav6" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">7. 불안한 기분이 들어서 잠을 잘 못 잤다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav7" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav7" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav7" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav7" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav7" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav7" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav7" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav7" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">8. 슬프거나 비참한 느낌이 들었다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav8" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav8" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav8" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav8" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav8" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav8" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav8" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav8" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">9. 너무나 불행한 기분이 들어 울었다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav9" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav9" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav9" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav9" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav9" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav9" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav9" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav9" value="3">매우 그렇다.</label>
                     </ul>
                     <br><br>
                     <h1 class="question-title">10. 나 자신을 해치고 싶은 생각이 들었다.</h1>
                     <ul class="question-answer">
-                        <label><input type="radio" name="fav10" value="0">전혀 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav10" value="1">거의 그렇지 않았다.</label>
-                        <label><input type="radio" name="fav10" value="2">가끔 그랬다.</label>
-                        <label><input type="radio" name="fav10" value="3">자주 그랬다.</label>
+                        <label><input required="required" type="radio" name="fav10" value="0">전혀 그렇지 않다.</label>
+                        <label><input type="radio" name="fav10" value="1">거의 그렇지 않다.</label>
+                        <label><input type="radio" name="fav10" value="2">때때로 그렇다.</label>
+                        <label><input type="radio" name="fav10" value="3">매우 그렇다.</label>
                     </ul>
 
 
-                    <button type="submit" class="btn-3" onclick="itemSum"><span>결과확인</span></button>
+                    <button type="submit" class="btn-3"><span>결과확인</span></button>
                 </form>
             </div>
         </main>
 
+			
 
-        <script>
-            const menu_toggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
 
-            menu_toggle.addEventListener('click', () => {
-                menu_toggle.classList.toggle('is-active');
-                sidebar.classList.toggle('is-active');
-            })
-        </script>
-        <!-- 진단검사 결과 점수 합산 보여주는 js-->
-        <script>
-            function itemSum(frm) // 검사결과 알아보기 클릭 시
-            {
-                var get_input = $("#myform input[type=radio]"); // form ID 이하 radio 전체
 
-                var sum = 0;
-                var count = get_input.length; // radio 갯수
-                for (var i = 0; i < count; i++) {
-                    if (get_input[i].checked == true) { // 체크 된것만
-                        sum += parseInt(get_input[i].value); // radio value 값 합산
-                    }
-                }
-                $('.total_sum').val(sum); // 합산 보여줘야 할 곳 class
-            }
-        </script>
+       
 
 </body>
 

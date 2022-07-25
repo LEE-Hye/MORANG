@@ -121,7 +121,7 @@
 					<tr>
 						<td>사진</td>
 						<td>
-						<img src="<%=list.get(43).getFilename1()%>"></td>
+						<img src='resources/img/${diary.filename1}'></td>
 					</tr>
 				
 

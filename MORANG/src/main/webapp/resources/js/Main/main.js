@@ -134,23 +134,7 @@ let disgust=0;
                             success: function(data){
                             	console.log(data.result2['msg']);
                             	console.log(data.result2['emotion']);
-                            	if(emotion.equals("공포")){
-                            	}
-                            	else if(emotion.equals("공포")){
-                            		
-                            	}
-                            	else if(emotion.equals("놀람")){
-                            	}
-                            	else if(emotion.equals("분노")){
-                            	}
-                            	else if(emotion.equals("슬픔")){
-                            	}
-                            	else if(emotion.equals("중립")){
-                            	}
-                            	else if(emotion.equals("행복")){
-                            	}
-                            	else if(emotion.equals("혐오")){
-                            	}
+                            	
                                 return sendMessage(data.result2['msg'],'left');
                             },
                             

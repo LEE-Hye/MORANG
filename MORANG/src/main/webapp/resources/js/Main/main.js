@@ -135,6 +135,32 @@ let disgust=0;
                             	console.log(data.result2['msg']);
                             	console.log(data.result2['emotion']);
                             	
+                            	switch (data.result2['emotion']) {
+								  case '공포':
+								    fear++;
+								    break;
+								  case '놀람':
+								    surprise++;
+								    break;
+								  case '분노':
+								    angry++;
+								    break;
+								  case '슬픔':
+								    sadness++;
+								    break;
+								  case '중립':
+								    neutral++;
+								    break;
+								  case '행복':
+								    happiness++;
+								    break;
+								  case '혐오':
+								    disgust++;
+								    break;
+								  default:
+								    alert( "어떤 값인지 파악이 되지 않습니다." );
+								}
+                            	console.log(happiness);
                                 return sendMessage(data.result2['msg'],'left');
                             },
                             

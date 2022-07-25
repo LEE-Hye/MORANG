@@ -149,8 +149,7 @@
                         <ul class="icon">
                           <li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
                           <li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
-                          <li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain"
-                            name="weather">
+                          <li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
                           <li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
 
                         </ul>
@@ -197,7 +196,7 @@
         </div>
 
 
-
+	</article>
     </section>
   
     <div>

@@ -10,17 +10,18 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
-
-public class comment {
+public class shareNote {
 	
-	private int cmt_seq;
+	private int seq;
 	
-	private int c_seq;
 	@NonNull
-	private String cmt_content;
+	private String note_title;
 	
-	private String cmt_date;
+	@NonNull
+	private String note_content;
 	
+	@NonNull
 	private String u_id;
 	
+	private String date;
 }

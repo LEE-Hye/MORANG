@@ -31,41 +31,50 @@ page language="java" contentType="text/html; charset=UTF-8"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+   @font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+font-family: 'BMJUA';
+}
+   </style>
 </head>
 <body>
-	<body>
     <nav class="navbar">
-        <div class="navbar_logo" >
-            <i class="fa-thin fa-hands-holding-child"></i>
-            <a href="메인 페이지.html">MoRang.</a>
-        </div>
+    <div class="navbar_logo">
+      <i class="fa-thin fa-hands-holding-child"></i>
+      <a href="메인 페이지.html">MoRang.</a>
+    </div>
 
-        <ul class="navbar_menu" >
-            <li><a href="">개인정보수정</a></li>
-            <li><a href="">로그아웃</a></li>
-        </ul>
-    </nav>
-
-    <div class="app">
-        <div class="menu-toggle">
-            <div class="hamburger">
-                <span></span>
-            </div>
-        </div>
-        <nav class="sidebar">
-            <div class="toggle-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
+    <ul class="navbar_menu">
+      <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+      <li><a href="">개인정보수정</a></li>
+      <li><a href="logout.do">로그아웃</a></li>
+    </ul>
+  </nav>
+  <div class="app">
+    <div class="menu-toggle">
+      <div class="hamburger">
+        <span></span>
+      </div>
+    </div>
+    <nav class="sidebar">
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
             <h1>Menu</h1>
             <nav class="menu">
-                <a href="메인 페이지.html" class="menu-item">HOME</a>
-                <a href="산전 우울증.html" class="menu-item">우울증 자가진단</a>
-                <a href="일기장.html" class="menu-item">일기장</a>
-                <a href="산모수첩.html" class="menu-item">산모수첩</a>
-                <a href="board.jsp" class="menu-item">게시판</a>
+                <form action="Main.do"><a href="Main.do" class="menu-item">HOME</a></form>
+        <a href="산전 우울증.html" class="menu-item">우울증 자가진단</a>
+        <a href="감정일기장.html" class="menu-item">감정 일기장</a>
+        <a href="공유수첩.html" class="menu-item">공유수첩</a>
+        <form action="boardList.do"><a href="boardList.do" class="menu-item">게시판</a></form>
             </nav>
         </nav>
         <div class="container">
@@ -101,7 +110,7 @@ page language="java" contentType="text/html; charset=UTF-8"
                       
                     </table>
                     <button onclick="location.href='boardInsert.do'"
-                    class="btn btn-sm btn-danger">작성</button>
+                    class="btn btn-sm btn-danger" style="width: 100px; height: 50px;">작성</button>
                 </div>
                 <div class="panel+footer" style="background-color:Green; color:yellow;">스마트인재개발원 최종프로젝트 팀 우산</div>
             </div>

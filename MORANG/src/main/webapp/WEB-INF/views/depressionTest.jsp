@@ -32,8 +32,9 @@
         </div>
 
         <ul class="navbar_menu">
-            <li><a href="">개인정보수정</a></li>
-            <li><a href="">로그아웃</a></li>
+            <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+     		<li><a href="">개인정보수정</a></li>
+     		<li><a href="logout.do">로그아웃</a></li>
         </ul>
     </nav>
     <div class="app">
@@ -53,24 +54,24 @@
 
             <h1>Menu</h1>
             <nav class="menu">
-                <a href="메인 페이지.html" class="menu-item">HOME</a>
-                <a href="산전 우울증.html" class="menu-item">우울증 자가진단</a>
-                <a href="감정일기장.html" class="menu-item">감정 일기장</a>
-                <a href="공유수첩.html" class="menu-item">공유수첩</a>
-                <a href="게시판.html" class="menu-item">게시판</a>
-            </nav>
+		        <a href="Main.do" class="menu-item">HOME</a>
+		        <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
+		        <a href="diary.do" class="menu-item">감정 일기장</a>
+		        <a href="note.do" class="menu-item">공유수첩</a>
+		        <a href="board.do" class="menu-item">게시판</a>
+      </nav>
         </nav>
         <main class="content">
             <div class="channel-introduce">
-                <img src='5301.jpg' width="700px" height="400px" />
+                <img src='resources/img/5301.jpg' width="700px" height="400px" />
                 <h1 class="test-title">
-                    정확도 0%의 검사
+                    정확도 100%의 검사
                     <br>
                     산전 우울증 자가진단
                     <br>
                     <strong>함께 확인해볼까요?</strong>
                 </h1>
-                <form action='진단결과.html'>
+                <form action='drepressionTestResult.do'>
                     <h1 class="question-title">1. 어떤 것을 봐도 웃음이 잘 나지 않는다.</h1>
                     <ul class="question-answer">
                         <label><input type="radio" name="fav1" value="0">전혀 그렇지 않았다.</label>

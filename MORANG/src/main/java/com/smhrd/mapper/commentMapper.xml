@@ -9,8 +9,8 @@
       </select>
       
       <insert id="commentInsert" parameterType="com.smhrd.domain.comment">
-          insert into mr_comment(comment_content, u_id, cmt_date)
-          values(#{comment_content}, #{u_id},#{cmt_date})
+          insert into mr_comment(cmt_content, u_id, cmt_date)
+          values(#{cmt_content}, #{u_id},#{cmt_date})
       </insert>
       
       <select id="commentContent" resultType="com.smhrd.domain.comment">
@@ -20,7 +20,7 @@
       
       <update id="commentUpdate" parameterType="com.smhrd.domain.comment">
           update mr_comment
-          set comment_content = #{comment_content}
-          where comment_seq = #{comment_seq}
+          set cmt_content = #{cmt_content}
+          where cmt_seq = #{cmt_seq}
       </update>
 </mapper>

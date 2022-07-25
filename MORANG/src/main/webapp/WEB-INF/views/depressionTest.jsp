@@ -16,12 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
-    <script src="calendar.js"></script>
-    <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="bootstrap.js" type="text/javascript"></script>
-    <script src="bootstrap.min.js" type="text/javascript"></script>
-    <script src="main.js" type="text/javascript"></script>
 </head>
 
 <body>

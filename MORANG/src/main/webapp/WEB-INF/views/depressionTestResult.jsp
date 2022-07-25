@@ -15,12 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
-    <script src="calendar.js"></script>
-    <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="bootstrap.js" type="text/javascript"></script>
-    <script src="bootstrap.min.js" type="text/javascript"></script>
-    <script src="main.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -60,41 +54,35 @@
 		        <a href="board.do" class="menu-item">게시판</a>
             </nav>
         </nav>
-        </div>
-        
         <main class="content">
             <div class="channel-introduce">
                 <img src='resources/img/6460.jpg' width="700px" height="400px" />
                 <h1 class=test-title>
                     자가진단 결과
                     <br>
-                    자가진단 점수가 10점 이상인 경우 상담받을 것을 권유드립니다.</h1>
+                    자가진단 점수가 10점 이상인 경우 상담받을 것을 권유드립니다.
                     <div class="score-result">total_sum</div>
-                    <table class="score-length">
-                        <th>점수</th>
-                        <th>상태</th>
-                        <tr>
-                            <td>0~8점</td>
-                            <td>정상</td>
-                        </tr>
-                        <tr>
-                            <td>9~11점</td>
-                            <td>경도 우울증</td>
-                        </tr>
-                        <tr>
-                            <td>12~13점</td>
-                            <td>주요 우울증</td>
-                        </tr>
-                        <tr>
-                            <td>14점 이상</td>
-                            <td>고도의 우울증</td>
-                        </tr>
-                    </table>
-            </div>
-         </main>
-        
-			
-		<% request.setCharacterEncoding("UTF-8");
+                </h1>
+                <table class="score-length">
+                    <th>점수</th>
+                    <th>상태</th>
+                    <tr>
+                        <td>0~8점</td>
+                        <td>정상</td>
+                    </tr>
+                    <tr>
+                        <td>9~11점</td>
+                        <td>경도 우울증</td>
+                    </tr>
+                    <tr>
+                        <td>12~13점</td>
+                        <td>주요 우울증</td>
+                    </tr>
+                    <tr>
+                        <td>14점 이상</td>
+                        <td>고도의 우울증</td>
+                    </tr>
+                    <% request.setCharacterEncoding("UTF-8");
 				int sum = 0;
 				int fav = 0;
 			for(int i=1; i<=10; i++){
@@ -105,9 +93,19 @@
 			sum += fav;
 			}
 			
-			out.print(sum);
+			out.print("<h1>"+sum+"</h1>");
 			
 			%>
+                </table>
+            </div>
+        </main>
+    </div>
+        
+        
+        
+        
+      
+		
 
 
 

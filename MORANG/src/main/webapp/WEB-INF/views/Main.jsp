@@ -62,7 +62,7 @@
       </nav>
     </nav>
     <section id="soohyeonchatbotarea" style="display: none;">
-      <img src="soohyeon.gif" alt="실패" width="400px" height="320px" id="soohyeonbot">
+      <img src="resources/img/soohyeon.gif" alt="실패" width="400px" height="320px" id="soohyeonbot">
       <div class="chat_window">
         <div class="top_menu">
           <div class="buttons">

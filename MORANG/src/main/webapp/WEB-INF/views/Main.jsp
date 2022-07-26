@@ -24,6 +24,8 @@
   <script src="resources/js/Main/bootstrap.js" type="text/javascript"></script>
   <script src="resources/js/Main/bootstrap.min.js" type="text/javascript"></script>
   <script src="resources/js/Main/main.js" type="text/javascript"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+ 
 </head>
 
 <body>
@@ -58,7 +60,7 @@
         <a href="Main.do" class="menu-item">HOME</a>
         <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
         <a href="diary.do" class="menu-item">감정 일기장</a>
-        <a href="note.do" class="menu-item">공유수첩</a>
+        <a href="shareNote.do" class="menu-item">공유수첩</a>
         <a href="boardList.do" class="menu-item">게시판</a>
       </nav>
     </nav>
@@ -198,24 +200,24 @@
           </div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header">긍정</div>
-              <div class="pie-chart_pie-chart1"><span class="center">60%</span></div>
+              <div class="card-header">오늘 챗봇 대화</div>
+              <canvas id="doughnut-chart" width="300" height="250"></canvas>
 
             </div>
             <div class="today-graph">
-              <div class="card-header">부정</div>
-              <div class="pie-chart_pie-chart2"><span class="center">40%</span></div>
+              <div class="card-header">어제 와 오늘</div>
+              <canvas id="radar-chart" width="250" height="250"></canvas>
             </div>
           </div>
           </div>
        
 
 	</article>
-	
+	<article>
 	<div>
-            <canvas id="Week-Chart" width="500%"height="150%"></canvas>
+            <canvas id="Week-Chart" width="1200%"height="300%"></canvas>
         </div>
-	
+	</article>
 		 </section>
 		
     
@@ -299,8 +301,62 @@
 
 
     </script>
+	 
+   <script>
+   new Chart(document.getElementById("doughnut-chart"), {
+	    type: 'doughnut',
+	    data: {
+	      labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+	      datasets: [
+	        {
+	          label: "Population (millions)",
+	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",'#81F781','#8b22ff'],
+	          data: [2478,5267,734,784,433,543,453]
+	        }
+	      ]
+	    },
+	    options: {
+	      title: {
+	        display: true,
+	        
+	      }
+	    }
+	});
+</script>
+<script type="text/javascript">
+new Chart(document.getElementById("radar-chart"), {
+    type: 'radar',
+    data: {
+    labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+      datasets: [
+        {
+          label: "어제",
+          fill: true,
+          backgroundColor: "rgba(179,181,198,0.2)",
+          borderColor: "rgba(179,181,198,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(179,181,198,1)",
+          data: [8.77,55.61,21.69,6.62,6.82,7.77,6.53]
+        }, {
+          label: "오늘",
+          fill: true,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          data: [25.48,54.16,7.61,8.06,4.45,4.25,7.33]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true
+      }
+    }
+});
 
-
+</script>
 
 </body>
 

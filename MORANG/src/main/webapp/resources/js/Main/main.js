@@ -137,25 +137,25 @@ let disgust=0;
                             	
                             	switch (data.result2['emotion']) {
 								  case '공포':
-								    fear++;
+								    fear=fear+10;
 								    break;
 								  case '놀람':
-								    surprise++;
+								    surprise=surprise+10;
 								    break;
 								  case '분노':
-								    angry++;
+								    angry = angry+10;
 								    break;
 								  case '슬픔':
-								    sadness++;
+								    sadness = sadness+10;
 								    break;
 								  case '중립':
-								    neutral++;
+								    neutral = neutral+10;
 								    break;
 								  case '행복':
-								    happiness++;
+								    happiness = happiness+10;
 								    break;
 								  case '혐오':
-								    disgust++;
+								    disgust = disgust+10;
 								    break;
 								  default:
 								    alert( "어떤 값인지 파악이 되지 않습니다." );
@@ -193,9 +193,39 @@ let disgust=0;
           });
         
           $(document).on("click", "#chatbot_open",function(){
+          	console.log(happiness);
+          	 $.ajax({
+ 				url :'MainResult.do',
+ 				type : 'post',
+ 				data : {
+ 					'fear':fear,
+ 					'surprise':surprise,
+ 					'angry':angry,
+ 					'sadness':sadness,
+ 					'neutral':neutral,
+ 					'happiness':happiness,
+ 					'disgust':disgust
+ 				},
+ 				success:function(res){
+ 					// 기존에 있던 조회수를 바꿔줘야함
+ 					if(res==0){
+ 						console.log(res);
+ 					}
+ 					else if(res==1){
+ 						console.log('실패');
+ 					}
+ 					
+ 					
+ 					
+ 				},
+ 				error:function(e){alert('error!')}
+ 			});
             $('#soohyeonchatbotarea').css("display" ,"none");
             $('.content-main').css("display" ,"block");
             $('#chatbot_open').attr("id","chatbot_close")
+            
+           
+            
           });
         
         

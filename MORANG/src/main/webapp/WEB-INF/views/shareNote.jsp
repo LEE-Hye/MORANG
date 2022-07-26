@@ -76,7 +76,7 @@
 <!-- 			<div class="delete_b">
 					<button id="delete_btn">X</button>
 				</div> -->	
-				<div class="share_content"><a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><%=shareNote.getNote_content()%></a></div>
+				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><div class="share_content"><%=shareNote.getNote_content()%></div></a>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
 				<div class="share_date"><%=shareNote.getNote_date()%></div>
 			</div>
@@ -105,13 +105,8 @@
 				<span class="head-title">공유 수첩 작성</span>
 			</div>
 			<form action="shareNoteInsert.do" method="post">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="writer">작성자:</label>
-					<div class="col-sm-10">
-						<input name="u_id" class="form-control" id="writer" type="text"
-							value="${loginMember.u_id}" readonly>
-					</div>
-				</div>
+				<input name="u_id" class="form-control" id="writer" type="text"
+							value="${loginMember.u_id}" hidden>
 				<div class="popup-body">
 					<div class="body-content">
 						<div class="body-titlebox">
@@ -145,7 +140,9 @@
 			$("#close3").click(function() {
 				modalClose();
 			});
-
+            function modalClose() {
+                $("#popup3").fadeOut();
+            }
 		});
 	</script>
 </body>

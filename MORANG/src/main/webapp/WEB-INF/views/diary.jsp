@@ -77,6 +77,7 @@
         <div class="container">
            
             <div class="panel panel-default" style="margin-left: 30px; margin-top: 30px;">
+            <h1 style="color: rgb(139, 42, 42);">감정분석 일기장</h1>
                 <div class="panel-heading" style="font-size: 20px ; background-color: #e4beb3;">오늘의 기분을 적어보세요~</div>
                 <div class="panel-body">
 				<%
@@ -121,7 +122,7 @@
 					<%} %>
 				</table>
 				<button onclick="location.href='diarywrite.do'"
-					class="btn-3" style="width: 100px; height: 50px; font-size:30px;">작성</button>
+					class="btn-3" style="width: 100px; height: 50px; font-size:20px;">작성</button>
                 </div>
                <div class="panel+footer" style="background-color:#e4beb3; color:white; font-size:30px">스마트인재개발원 최종프로젝트 팀 우산</div>
 		</div>

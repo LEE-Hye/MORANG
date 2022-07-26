@@ -31,23 +31,13 @@ page language="java" contentType="text/html; charset=UTF-8"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<style>
-   @font-face {
-    font-family: 'BMJUA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{
-font-family: 'BMJUA';
-}
-   </style>
+
 </head>
 <body>
-    <nav class="navbar">
+   <nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="메인 페이지.html">MoRang.</a>
+      <a href="Main.do">MoRang.</a>
     </div>
 
     <ul class="navbar_menu">
@@ -62,21 +52,24 @@ font-family: 'BMJUA';
         <span></span>
       </div>
     </div>
+    
     <nav class="sidebar">
       <div class="toggle-btn">
         <span></span>
         <span></span>
         <span></span>
       </div>
-            <h1>Menu</h1>
+
+      <h1>Menu</h1>
       <nav class="menu">
         <a href="Main.do" class="menu-item">HOME</a>
         <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
         <a href="diary.do" class="menu-item">감정 일기장</a>
-        <a href="note.do" class="menu-item">공유수첩</a>
+        <a href="shareNote.do" class="menu-item">공유수첩</a>
         <a href="boardList.do" class="menu-item">게시판</a>
-            </nav>
-        </nav>
+      </nav>
+    </nav>
+    
         <div class="container">
             <h2 style=color:red;">임산부 자유게시판</h2>
             <div class="panel panel-default">

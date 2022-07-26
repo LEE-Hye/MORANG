@@ -28,35 +28,40 @@
 </head>
 <body>
 	<nav class="navbar">
-		<div class="navbar_logo">
-			<i class="fa-thin fa-hands-holding-child"></i> <a href="메인 페이지.html">MoRang.</a>
-		</div>
+    <div class="navbar_logo">
+      <i class="fa-thin fa-hands-holding-child"></i>
+      <a href="Main.do">MoRang.</a>
+    </div>
 
-		<ul class="navbar_menu">
-			<li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
-			<li><a href="">개인정보수정</a></li>
-			<li><a href="logout.do">로그아웃</a></li>
-		</ul>
-	</nav>
-	<div class="app">
-		<div class="menu-toggle">
-			<div class="hamburger">
-				<span></span>
-			</div>
-		</div>
-		<nav class="sidebar">
-			<div class="toggle-btn">
-				<span></span> <span></span> <span></span>
-			</div>
+    <ul class="navbar_menu">
+      <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+      <li><a href="">개인정보수정</a></li>
+      <li><a href="logout.do">로그아웃</a></li>
+    </ul>
+  </nav>
+  <div class="app">
+    <div class="menu-toggle">
+      <div class="hamburger">
+        <span></span>
+      </div>
+    </div>
+    
+    <nav class="sidebar">
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-			<h1>Menu</h1>
-			<nav class="menu">
-				<a href="메인 페이지.html" class="menu-item">HOME</a> <a
-					href="산전 우울증.html" class="menu-item">우울증 자가진단</a> <a
-					href="감정일기장.html" class="menu-item">감정 일기장</a> <a href="공유수첩.html"
-					class="menu-item">공유수첩</a> <a href="게시판.html" class="menu-item">게시판</a>
-			</nav>
-		</nav>
+      <h1>Menu</h1>
+      <nav class="menu">
+        <a href="Main.do" class="menu-item">HOME</a>
+        <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
+        <a href="diary.do" class="menu-item">감정 일기장</a>
+        <a href="shareNote.do" class="menu-item">공유수첩</a>
+        <a href="boardList.do" class="menu-item">게시판</a>
+      </nav>
+    </nav>
 
 
 		<%
@@ -71,7 +76,7 @@
 <!-- 			<div class="delete_b">
 					<button id="delete_btn">X</button>
 				</div> -->	
-				<div class="share_content"><a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><%=shareNote.getNote_content()%></a></div>
+				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><div class="share_content"><%=shareNote.getNote_content()%></div></a>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
 				<div class="share_date"><%=shareNote.getNote_date()%></div>
 			</div>
@@ -100,13 +105,8 @@
 				<span class="head-title">공유 수첩 작성</span>
 			</div>
 			<form action="shareNoteInsert.do" method="post">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="writer">작성자:</label>
-					<div class="col-sm-10">
-						<input name="u_id" class="form-control" id="writer" type="text"
-							value="${loginMember.u_id}" readonly>
-					</div>
-				</div>
+				<input name="u_id" class="form-control" id="writer" type="text"
+							value="${loginMember.u_id}" hidden>
 				<div class="popup-body">
 					<div class="body-content">
 						<div class="body-titlebox">
@@ -140,7 +140,9 @@
 			$("#close3").click(function() {
 				modalClose();
 			});
-
+            function modalClose() {
+                $("#popup3").fadeOut();
+            }
 		});
 	</script>
 </body>

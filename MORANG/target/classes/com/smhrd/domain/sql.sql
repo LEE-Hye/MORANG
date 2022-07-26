@@ -23,3 +23,5 @@ create table mot(
 );
 
 select * from mot
+
+SELECT content FROM mot ORDER BY RAND() LIMIT 1

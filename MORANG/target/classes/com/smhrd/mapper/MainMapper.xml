@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.MainMapper">
       
       <select id="motList" resultType="com.smhrd.domain.mot">
-          select * from mot
+          SELECT content FROM mot ORDER BY RAND() LIMIT 1
       </select>
      
    

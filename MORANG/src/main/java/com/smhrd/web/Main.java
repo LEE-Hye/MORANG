@@ -21,11 +21,10 @@ public class Main {
 	@RequestMapping("/Main.do")
 	public String Main() {
 		
-		List<mot>motlist=mapper.motList();
+		mot vo=(mot)mapper.motList();
 		
-		for(int i=0;i<motlist.size();i++) {
-			System.out.println(motlist.get(i).getContent());
-		}
+		System.out.println(vo.getContent());
+		
 		return "Main";
 	}
 	

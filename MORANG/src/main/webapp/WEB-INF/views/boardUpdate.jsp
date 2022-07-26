@@ -29,9 +29,9 @@ font-family: 'BMJUA';
 <body>
 
    <div class="container">
-      <h2>SpringMVC01</h2>
+      <h2>자유게시판 글</h2>
       <div class="panel panel-default">
-         <div class="panel-heading">Panel Heading</div>
+         <div class="panel-heading" style="background-color:#e4beb3; color:aliceblue;">글 수정하기</div>
          <div class="panel-body">
 
             <form class="form-horizontal" action="boardUpdate.do" method="post">
@@ -61,7 +61,7 @@ font-family: 'BMJUA';
                </div>
                <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-default">수정하기</button>
+                     <button type="submit" class="btn btn-danger">수정하기</button>
                   </div>
                </div>
             </form>

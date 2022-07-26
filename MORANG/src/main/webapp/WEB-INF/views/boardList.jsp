@@ -69,12 +69,12 @@ font-family: 'BMJUA';
         <span></span>
       </div>
             <h1>Menu</h1>
-            <nav class="menu">
-                <form action="Main.do"><a href="Main.do" class="menu-item">HOME</a></form>
-        <a href="산전 우울증.html" class="menu-item">우울증 자가진단</a>
-        <a href="감정일기장.html" class="menu-item">감정 일기장</a>
-        <a href="공유수첩.html" class="menu-item">공유수첩</a>
-        <form action="boardList.do"><a href="boardList.do" class="menu-item">게시판</a></form>
+      <nav class="menu">
+        <a href="Main.do" class="menu-item">HOME</a>
+        <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
+        <a href="diary.do" class="menu-item">감정 일기장</a>
+        <a href="note.do" class="menu-item">공유수첩</a>
+        <a href="boardList.do" class="menu-item">게시판</a>
             </nav>
         </nav>
         <div class="container">

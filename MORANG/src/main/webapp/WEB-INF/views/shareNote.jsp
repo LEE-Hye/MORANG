@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/noteshare.css">
+<link rel="stylesheet" href="./resources/css/noteshare.css">
 <script src="https://kit.fontawesome.com/3e55fa4950.js"
 	crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
 <!-- 			<div class="delete_b">
 					<button id="delete_btn">X</button>
 				</div> -->	
-				<div class="share_content"><a href="/web/shareNotedetail.do/<%=shareNote.getNote_seq()%>"><%=shareNote.getNote_content()%></a></div>
+				<div class="share_content"><a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><%=shareNote.getNote_content()%></a></div>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
 				<div class="share_date"><%=shareNote.getNote_date()%></div>
 			</div>

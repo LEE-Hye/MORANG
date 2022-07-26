@@ -7,6 +7,12 @@ let neutral=0;
 let happiness=0;
 let disgust=0;
 
+
+
+
+
+
+
 (function () {
     var Message;
     Message = function (arg) {
@@ -210,6 +216,8 @@ let disgust=0;
  					// 기존에 있던 조회수를 바꿔줘야함
  					if(res==0){
  						console.log(res);
+ 						
+ 						location.replace('Main.do') 
  					}
  					else if(res==1){
  						console.log('실패');

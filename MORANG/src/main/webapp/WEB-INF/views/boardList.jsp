@@ -12,7 +12,7 @@ page language="java" contentType="text/html; charset=UTF-8"
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="resources/css/Main/style.css">
   <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
-  <title>morang</title>
+  <title>자유게시판</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="resources/css/Main/calendar.css">

@@ -39,6 +39,7 @@
     </div>
 
     <ul class="navbar_menu">
+    	<div id="login" style="display:none">${loginMember.u_nick}</div>
       <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
       <li><a href="">개인정보수정</a></li>
       <li><a href="logout.do">로그아웃</a></li>
@@ -193,12 +194,12 @@
           <div class="flex_sh">
             <div class="yesterday-graph">
               <div class="card-header">긍정</div>
-              <div class="pie-chart_pie-chart1"><span class="center">60%</span></div>
+              <div class="pie-chart_pie-chart1"><span class="center">'${diaryyesterdayemotion.diary_pos}'%</span></div>
 
             </div>
             <div class="today-graph">
               <div class="card-header">부정</div>
-              <div class="pie-chart_pie-chart2"><span class="center">40%</span></div>
+              <div class="pie-chart_pie-chart2"><span class="center">'${diaryyesterdayemotion.diary_neg}'%</span></div>
             </div>
           </div>
           <div class="flex_sh">
@@ -227,10 +228,9 @@
   
     <div>
       <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
-      <img src="resources/img/soohyeon.gif" alt="실패" id="chatbot_close" width="130px" height="130px">
+      <img src="resources/img/soohyeon.gif" alt="실패" id="chatbot_close" width="130px" height="130px" >
     </div>
 </div>
-<button type="button" id="reData">데이터 변경</button>
 
 
 
@@ -245,7 +245,7 @@
 
         // 챠트를 그릴 데이타
         data: {
-          labels: ['월', '화', '수', '목', '금', '토', '일'],
+          labels: ['7day', '6day', '5day', '4day', '3day', '2day', '1day'],
           datasets: [{
             label: '주간 감정 데이터 비교',
             backgroundColor: 'transparent',
@@ -269,9 +269,13 @@
 
     <!-- 파이차트 스크립트 -->
     <script>
+    let pos = Number('${diaryyesterdayemotion.diary_pos}')
+     let neg = Number('${diaryyesterdayemotion.diary_neg}')
+    
+    
       $(window).ready(function () {
-        draw(80, '.pie-chart_pie-chart1', '#81F781');
-        draw(50, '.pie-chart_pie-chart2', '#8b22ff');
+        draw(pos, '.pie-chart_pie-chart1', '#81F781');
+        draw(neg, '.pie-chart_pie-chart2', '#8b22ff');
       });
 
       function draw(max, classname, colorname) {
@@ -313,8 +317,8 @@
    let neutral2 = Number('${todayemotion.neutral}');
    let happiness2 = Number('${todayemotion.happiness}');
    let disgust2 = Number('${todayemotion.disgust}');
-   var ctx = document.getElementById('doughnut-chart')
-   var config = {
+   var ctx1 = document.getElementById('doughnut-chart')
+   var config1 = {
 	   type: 'doughnut',
 	    data: {
 	      labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
@@ -322,7 +326,7 @@
 	        {
 	          label: "Population (millions)",
 	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",'#81F781','#8b22ff'],
-	          data: [10,10,10,10,10,10,10]
+	          data: [1,1,1,1,1,1,1]
 	        }
 	      ]
 	    },
@@ -334,62 +338,98 @@
 	    }
 	};
    
-   var myChart1 = new Chart(ctx, config);
+   var myChart1 = new Chart(ctx1, config1);
    
  	console.log(happiness);
    
    if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgust2>0){
 		
 		//데이터셋 수 만큼 반복
-		var dataset = config.data.datasets;
-		for(var i=0; i<dataset.length; i++){
-			console.log(dataset);
+		var dataset1 = config1.data.datasets;
+		for(var i=0; i<dataset1.length; i++){
+			console.log(dataset1);
 			//데이터 갯수 만큼 반복
-			var data = dataset[i].data;
-			data[0]=fear2;
-			data[1]=surprise2;
-			data[2]=angry2;
-			data[3]=sadness2;
-			data[4]=neutral2;
-			data[5]=happiness2;
-			data[6]=disgust;
+			var data1 = dataset1[i].data;
+			data1[0]=fear2;
+			data1[1]=surprise2;
+			data1[2]=angry2;
+			data1[3]=sadness2;
+			data1[4]=neutral2;
+			data1[5]=happiness2;
+			data1[6]=disgust;
 		}
 		
 		myChart1.update();	//차트 업데이트
    }
 </script>
 <script type="text/javascript">
-new Chart(document.getElementById("radar-chart"), {
-    type: 'radar',
-    data: {
-    labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
-      datasets: [
-        {
-          label: "어제",
-          fill: true,
-          backgroundColor: "rgba(179,181,198,0.2)",
-          borderColor: "rgba(179,181,198,1)",
-          pointBorderColor: "#fff",
-          pointBackgroundColor: "rgba(179,181,198,1)",
-          data: [8.77,55.61,21.69,6.62,6.82,7.77,6.53]
-        }, {
-          label: "오늘",
-          fill: true,
-          backgroundColor: "rgba(255,99,132,0.2)",
-          borderColor: "rgba(255,99,132,1)",
-          pointBorderColor: "#fff",
-          pointBackgroundColor: "rgba(255,99,132,1)",
-          pointBorderColor: "#fff",
-          data: [25.48,54.16,7.61,8.06,4.45,4.25,7.33]
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true
-      }
-    }
-});
+let fear3 = Number('${yesterdayemotion.fear}');
+let surprise3 = Number('${yesterdayemotion.surprise}');
+let angry3 = Number('${yesterdayemotion.angry}');
+let sadness3 = Number('${yesterdayemotion.sadness}');
+let neutral3 = Number('${yesterdayemotion.neutral}');
+let happiness3 = Number('${yesterdayemotion.happiness}');
+let disgust3 = Number('${yesterdayemotion.disgust}');
+
+
+var ctx2 = document.getElementById('radar-chart')
+ var config2 = {
+	 type: 'radar',
+	    data: {
+	    labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+	      datasets: [
+	        {
+	          label: "어제",
+	          fill: true,
+	          backgroundColor: "rgba(179,181,198,0.2)",
+	          borderColor: "rgba(179,181,198,1)",
+	          pointBorderColor: "#fff",
+	          pointBackgroundColor: "rgba(179,181,198,1)",
+	          data: [fear3,surprise3,angry3,sadness3,neutral3,happiness3,disgust3]
+	        }, {
+	          label: "오늘",
+	          fill: true,
+	          backgroundColor: "rgba(255,99,132,0.2)",
+	          borderColor: "rgba(255,99,132,1)",
+	          pointBorderColor: "#fff",
+	          pointBackgroundColor: "rgba(255,99,132,1)",
+	          pointBorderColor: "#fff",
+	          data: [5,5,5,5,5,5,5]
+	        }
+	      ]
+	    },
+	    options: {
+	      title: {
+	        display: true
+	      }
+	    }
+	};
+
+var myChart2 = new Chart(ctx2, config2);
+
+
+
+if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgust2>0){
+	
+	//데이터셋 수 만큼 반복
+	var dataset2 = config2.data.datasets;
+	
+		console.log(dataset2);
+		//데이터 갯수 만큼 반복
+		var data2 = dataset2[1].data;
+		data2[0]=fear2;
+		data2[1]=surprise2;
+		data2[2]=angry2;
+		data2[3]=sadness2;
+		data2[4]=neutral2;
+		data2[5]=happiness2;
+		data2[6]=disgust;
+	
+	
+	myChart2.update();	//차트 업데이트
+}
+
+
 
 </script>
 

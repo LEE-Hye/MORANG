@@ -42,6 +42,12 @@ SELECT DATE_FORMAT(NOW(),'%Y-%m-%d');
 
 select * from chatbotEmotion
 insert into chatbotEmotion values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)
+insert into chatbotEmotion values('11',CURDATE() ,1,2,3,4,5,6,7)
 drop table chatbotEmotion
 delete from chatbotEmotion where u_id='11'
 select * from chatbotEmotion where u_id='11' and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');
+
+
+select * from diary3 where u_id='11'
+
+

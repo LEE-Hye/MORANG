@@ -30,6 +30,13 @@ public class Main {
 		return "Main";
 	}
 	
+	@RequestMapping("/MainResult.do")
+	public String MainResult(int pos, int neg) {
+		
+		
+		return "";
+	}
+	
 	
 }
 	

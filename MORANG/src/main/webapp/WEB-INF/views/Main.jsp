@@ -45,6 +45,7 @@
         <span></span>
       </div>
     </div>
+    
     <nav class="sidebar">
       <div class="toggle-btn">
         <span></span>
@@ -61,6 +62,7 @@
         <a href="board.do" class="menu-item">게시판</a>
       </nav>
     </nav>
+    
     <section id="soohyeonchatbotarea" style="display: none;">
       <img src="resources/img/soohyeon.gif" alt="실패" width="400px" height="320px" id="soohyeonbot">
       <div class="chat_window">
@@ -95,11 +97,12 @@
         </li>
       </div>
     </section>
+    
     <section class="content-main">
       <div class="good-text">
         ${mot}
       </div>
-
+		
       <article>
         <div class="calender">
           <div class="container3">
@@ -178,6 +181,9 @@
             </div>
           </div>
         </div>
+        
+        
+        
         <div>
           <div class="flex_sh">
             <div class="yesterday-graph">
@@ -190,20 +196,35 @@
               <div class="pie-chart_pie-chart2"><span class="center">40%</span></div>
             </div>
           </div>
-          <div>
-            <canvas id="Week-Chart" width="500px" height="500px"></canvas>
-          </div>
-        </div>
+          <div class="flex_sh">
+            <div class="yesterday-graph">
+              <div class="card-header">긍정</div>
+              <div class="pie-chart_pie-chart1"><span class="center">60%</span></div>
 
+            </div>
+            <div class="today-graph">
+              <div class="card-header">부정</div>
+              <div class="pie-chart_pie-chart2"><span class="center">40%</span></div>
+            </div>
+          </div>
+          </div>
+       
 
 	</article>
-    </section>
+	
+	<div>
+            <canvas id="Week-Chart" width="500%"height="150%"></canvas>
+        </div>
+	
+		 </section>
+		
+    
   
     <div>
       <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
       <img src="resources/img/soohyeon.gif" alt="실패" id="chatbot_close" width="130px" height="130px">
     </div>
-  </div>
+</div>
 
 
 

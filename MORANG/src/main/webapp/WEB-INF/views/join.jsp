@@ -32,7 +32,7 @@
 
 <body>
 
-    <h3 style="color : rgb(255, 0, 0)">母랑<br>임산부<br>우울감 케어서비스</h3>
+    <h3 style="color : rgb(255, 051, 051)">母랑<br>임산부<br>우울감 케어 서비스</h3>
     <section class="top">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
             style="background-color: red; border: none; margin-right: 10px;">
@@ -69,14 +69,14 @@
         <!-- 로그인페이지로 이동 -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" style="background-color: black; border: none;">
-                                로그인하러가기
+                                확인하기
                             </button>
                             <br>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <a href="main.html"><button type="button" class="btn btn-primary">로그인하기</button></a>
+                        <a href="join.do"><button type="button" class="btn btn-primary">로그인하기</button></a>
                     </div>
                 </div>
             </div>

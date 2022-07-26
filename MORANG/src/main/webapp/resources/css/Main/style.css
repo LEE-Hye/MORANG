@@ -1,5 +1,240 @@
 
+/*--------모달창에서 일기작성시 업로드 css------------*/
 
+
+textarea{
+    resize: none;
+    width: 88%;
+    border-radius: 0.35rem;
+  }
+  
+  .title{
+    overflow: hidden;
+    font-size: 20px;
+  }
+  
+  .next_diary{
+    display: flex;
+    margin: auto;
+  }
+  
+  .sub_btn{
+    display: flex;
+    margin: auto;
+  }
+ 
+  /*             일기                 */
+
+.tab-content{
+     display: none;
+     padding: 12px;
+  }
+
+.modal_Content {
+    margin: auto;
+    padding: 20px;
+    width: 30%;
+    border: 1px solid grey;
+    background-color: #fff;
+    background-image:linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    border-radius: 0.35rem;
+}
+
+.modal_Wrap { /*모달창에 전체틀*/
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  .modal_Content p { /*모달창의 본문*/
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #content_sh{
+    width: 87.5%;
+  }
+  #content_id{
+    width: 97.5%;
+  }
+/*---------------------------모달창------------------------------------*/
+
+.icon{
+    list-style:none;
+    color: gray;
+    display: flex;
+  }
+  
+  .icon li{
+    padding:8px 12px
+  }
+  
+  span.weather_text {
+    font-size: 40px;
+}
+  
+  
+  /* 라디오 버튼 */
+  .test_obj input[type="radio"] {
+    display: none;
+  }
+  
+  .test_obj input[type="radio"] + label {
+    display: inline-block;
+    padding: 15px 10px;
+    border: 1px solid #dfdfdf;
+    background-color: #e4dede;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .test_obj input[type="radio"]:checked + label.fa-sun {
+    background-color: #e4dede;
+    color: #ff140b;
+  }
+  
+  .test_obj input[type="radio"]:checked + label.fa-cloud {
+    background-color: #e4dede;
+    color: #86d4d6;
+  }
+  
+  .test_obj input[type="radio"]:checked + label.fa-cloud-showers-heavy {
+    background-color: #e4dede;
+    color: #5788f0;
+  }
+  
+  .test_obj input[type="radio"]:checked + label.fa-snowflake {
+    background-color: #e4dede;
+    color: #ffffff;
+  }
+
+/*--------------모달 아이콘------------------*/
+.card-img-top{
+    max-width: 20rem;
+    max-height: 20rem;
+    min-width: 20rem;
+    min-height: 20rem;
+    border-radius: 0.35rem;
+   
+}
+
+.card{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 30px;
+    
+}
+
+.card-body{
+    
+    width: 200%;
+    height: 318.5px;
+    border-radius: 0.35rem;
+    margin-right: 2%;
+}
+
+.score-length{
+    border: 1px solid #e0e0e0;
+    border-collapse: collapse;
+    margin-top: 2%; 
+    font-size: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+th, td{
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}    
+
+
+#bold-text{
+    font-size: 30px;
+}
+
+.bookcover{
+    position: relative;
+    width: 50%;
+    padding: 4%;
+    margin-top:3%;
+     /** 배경 색깔 지정  */
+  background-color: white;
+  /** 모서리 둥글게 */
+  border-radius: 9px;
+  /** 윤곽선 */
+  border: 1px solid #e3e6f0;
+  /** 좌우 마진을 auto(중앙에 배치), 상하 마진을 100px로 지정 */
+  margin: 3.8% auto;
+
+  /** .bookdot 요소에서 absolute 속성값을 이용하기 위해 position: relative 로 설정 */
+  position: relative;
+
+  background-color: #fff;
+  background-image:
+  
+  linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
+
+.note {
+    flex: 0.1;
+    border: 1px solid #e3e6f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0.35rem;
+    font-size: 50px;
+    background-color: #e4beb3;
+}
+
+
+.day {
+    flex: 0.125;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.month {
+    flex: 0.875;
+    margin: 10px;
+}
+
+
+.diary {
+    margin: 10px 20px 20px 20px;
+    flex: 0.9;
+}
+
+
+.diary-box {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 0.35rem;
+    background-color: white;
+}
+
+
+.diary-date {
+    font-size: 0.75rem;
+}
+
+
+.diary-text {
+    text-align: center;
+}
+/*-----------------------------------일기장 css --------------------------------------------------------------*/
 
 #chatbot_close{
     position: fixed;

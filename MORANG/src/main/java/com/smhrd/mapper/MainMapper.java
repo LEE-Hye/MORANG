@@ -7,7 +7,7 @@ import com.smhrd.domain.mot;
 
 public interface MainMapper {
 	
-	public List<mot> motList();
+	public mot motList();
 	
 	
 }

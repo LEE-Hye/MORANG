@@ -2,6 +2,8 @@ package com.smhrd.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +21,11 @@ public class Main {
 	MainMapper mapper;
 	// 이거 글 목록
 	@RequestMapping("/Main.do")
-	public String Main() {
+	public String Main(HttpSession session) {
 		
-		mot vo=(mot)mapper.motList();
-		
-		System.out.println(vo.getContent());
+		mot vo=mapper.motList();
+		String motcontent=vo.getContent();
+		session.setAttribute("mot", vo);
 		
 		return "Main";
 	}

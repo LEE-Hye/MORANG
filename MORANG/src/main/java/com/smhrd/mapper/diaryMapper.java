@@ -10,7 +10,7 @@ import com.smhrd.domain.diary;
 
 public interface diaryMapper {
 	
-	public List<diary> diaryList();
+	public List<diary> diaryList(String u_id);
 	
 	public int diarywrite(diary vo);
 	

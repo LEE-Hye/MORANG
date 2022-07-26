@@ -5,7 +5,7 @@
 <mapper namespace="com.smhrd.mapper.diaryMapper">
       <!-- 게시글 가져오기 -->
       <select id="diaryList" resultType="com.smhrd.domain.diary">
-          select * from diary3
+          select * from diary3 where u_id=#{u_id}
       </select>
       
       <insert id="diarywrite" parameterType="com.smhrd.domain.diary">

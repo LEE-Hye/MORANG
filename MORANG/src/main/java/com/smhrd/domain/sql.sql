@@ -17,3 +17,9 @@ select *from mr_user where u_id='11' and u_pw='11'
 delete from mr_user 
 
 select * from mr_community
+
+create table mot(
+	content varchar(100)
+);
+
+select * from mot

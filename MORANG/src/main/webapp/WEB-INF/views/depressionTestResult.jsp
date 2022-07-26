@@ -62,32 +62,34 @@
                     자가진단 점수가 10점 이상인 경우 상담받을 것을 권유드립니다.
                     <div class="score-result">total_sum</div>
                 </h1>
-                <table class="score-length">
+               <table class="score-length">
                     <th>점수</th>
                     <th>상태</th>
+                    <th>도움 사이트</th>
+                    <th>전화상담</th>
                     <tr>
                         <td>0~8점</td>
                         <td>정상</td>
+                        <td>[마음온라인]<br><a href="https://www.on-maum.com/">https://www.on-maum.com/</a></td>
+                        <td>[허그맘허그인]<br>1600-6226</td>
                     </tr>
                     <tr>
                         <td>9~11점</td>
                         <td>경도 우울증</td>
+                        <td>[밝은희망]<br><a href="http://brightdepression.com/">http://brightdepression.com/</a></td>
+                        <td>[자살예방상담전화]<br>1393</td>
                     </tr>
                     <tr>
                         <td>12~13점</td>
                         <td>주요 우울증</td>
+                        <td>[MiNDCAFE]<br><a href="http://www.mindcafe.co.kr/">http://www.mindcafe.co.kr/</a></td>
+                        <td>[한국생명의전화]<br>1588-9191</td>
                     </tr>
                     <tr>
                         <td>14점 이상</td>
                         <td>고도 우울증</td>
-                    </tr>
-                    <tr>
-                        <td>[마음온라인]<br><a href="https://www.on-maum.com/">https://www.on-maum.com/</a></td>
-                        <td>[MiNDCAFE]<br><a href="http://www.mindcafe.co.kr/">http://www.mindcafe.co.kr/</a></td>
-                        <td>[밝은희망]<br><a href="http://brightdepression.com/">http://brightdepression.com/</a></td>
                         <td>[CHEEU]<br><a href="https://www.cheeu.co.kr/home">https://www.cheeu.co.kr/home</a></td>
-                        <td>[자살예방상담전화]<br>1393</td>
-                        <td>[한국생명의전화]<br>1588-9191</td>
+                        <td>[정신건강복지센터]<br>1577-0199</td>
                     </tr>
                     
                     <% request.setCharacterEncoding("UTF-8");

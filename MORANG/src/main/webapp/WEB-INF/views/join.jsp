@@ -32,7 +32,7 @@
 
 <body>
 
-    <h3 style="color : rgb(255, 0, 0)">우산👶<br>우리들의<br>산모 일기 </h3>
+    <h3 style="color : rgb(255, 0, 0)">母랑<br>임산부<br>우울감 케어서비스</h3>
     <section class="top">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
             style="background-color: red; border: none; margin-right: 10px;">

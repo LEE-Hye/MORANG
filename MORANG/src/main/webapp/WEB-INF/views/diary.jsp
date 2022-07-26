@@ -35,7 +35,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	
+	<style>
+    th, td{
+	    font-size:25px
+    }
+    </style>
 </head>
 <body>
    <nav class="navbar">
@@ -121,9 +125,9 @@
 					<%} %>
 				</table>
 				<button onclick="location.href='diarywrite.do'"
-					class="btn btn-sm btn-danger" style="width: 100px; height: 50px;">작성</button>
+					class="btn btn-sm btn-danger" style="width: 100px; height: 50px; font-size:30px">작성</button>
                 </div>
-                <div class="panel+footer" style="background-color:Green; color:yellow;">스마트인재개발원 최종프로젝트 팀 우산</div>
+               <div class="panel+footer" style="background-color:#e4beb3; color:white; font-size:30px">스마트인재개발원 최종프로젝트 팀 우산</div>
 		</div>
 	</div>
 </body>

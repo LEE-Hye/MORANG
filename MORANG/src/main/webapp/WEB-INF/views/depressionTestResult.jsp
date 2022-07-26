@@ -15,6 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
+    <style>
+    th, td{
+	    font-size:25px
+   		width : 30%
+    }
+    </style>
 </head>
 
 <body>
@@ -60,12 +66,12 @@
                     자가진단 결과
                     <br>
                     자가진단 점수가 10점 이상인 경우 상담받을 것을 권유드립니다.
-                    <div class="score-result">total_sum</div>
+                    <div class="score-result">자가진단 점수 총합은?</div>
                 </h1>
-               <table class="score-length">
+               <table class="score-length" align="center">
                     <th>점수</th>
                     <th>상태</th>
-                    <th>도움 사이트</th>
+                    <th>온라인 상담 사이트</th>
                     <th>전화상담</th>
                     <tr>
                         <td>0~8점</td>
@@ -103,7 +109,7 @@
 			sum += fav;
 			}
 			
-			out.print("<h1>"+sum+"</h1>");
+			out.print("<h1 style='color: red;'>"+sum+"점"+"</h1>");
 			
 			%>
                 </table>

@@ -42,27 +42,14 @@
 *{
 font-family: 'BMJUA';
 }
-input,
-.accordion-button{
-    background-color: #000;
-    color: #fff;
-    border-radius: 15px;
-    margin: 5px;
-    padding: 5px;
-}
-.accordion-button:hover,
-input:hover{
-    background-color: #fff;
-    color:#000;
-}
    </style>
 </head>
 <body>
 
 <div class="container">
-  <h2>모랑모랑</h2>
+  <h2>임산부 자유게시판</h2>
   <div class="panel panel-default">
-    <div class="panel-heading">글쓴걸 확인해바</div>
+    <div class="panel-heading" style="background-color:#e4beb3; color:aliceblue;">자유글</div>
     <div class="panel-body">
 
     <table class="table table-hover">
@@ -102,30 +89,24 @@ input:hover{
     </div>
 
 
-      <!-- Comments Form -->
-	<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h4 class="accordion-header" id="headingOne">
-    	로그인한 아이디 : ${loginMember.u_id}
-    	<br>   
-    </h4>
-    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        댓글 작성하기
-      </button>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      <textarea rows="3" cols="90%"></textarea>
-
-      </div>
-      <input type="submit" value="작성하기" >
+<!-- Comments Form -->
+<h3>현재 로그인한 아이디 : ${loginMember.u_id}</h3>
+	<div class="card my-4">
+		<h5 class="card-header">댓글 달기 ...</h5>
+		<div class="card-body">
+			<form name="comment-form" action="commentInsert.do" method="post" autocomplete="off">
+				<div class="form-group">
+					<input type="hidden" name="cmt_seq" th:value="*{cmt_seq}" />
+					<textarea name="cmt_content" class="form-control" rows="3"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">댓글 등록</button>
+			</form>
+		</div>
+	</div>
       <div> 댓글 리스트  : </div>
     </div>
   </div>
-  </div>
-    </div>
-    <div class="panel-footer">스마트인재개발원장 방제엽</div>
-  </div>
-</div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

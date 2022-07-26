@@ -58,7 +58,7 @@
         <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
         <a href="diary.do" class="menu-item">감정 일기장</a>
         <a href="note.do" class="menu-item">공유수첩</a>
-        <a href="board.do" class="menu-item">게시판</a>
+        <a href="boardList.do" class="menu-item">게시판</a>
       </nav>
     </nav>
     <section id="soohyeonchatbotarea" style="display: none;">

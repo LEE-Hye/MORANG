@@ -28,8 +28,8 @@ SELECT content FROM mot ORDER BY RAND() LIMIT 1
 
 
 create table chatbotEmotion(
-	u_id VARCHAR(20),
-	chatday datetime,
+	u_id VARCHAR(20) ,
+	chatday datetime ,
 	fear float,
 	surprise float,
 	angry float,
@@ -38,9 +38,10 @@ create table chatbotEmotion(
 	happiness float,
 	disgust float
 );
+SELECT DATE_FORMAT(NOW(),'%Y-%m-%d');
 
 select * from chatbotEmotion
-
+insert into chatbotEmotion values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)
 drop table chatbotEmotion
-
-select * from chatbotEmotion where u_id='11' and chatday=now()
+delete from chatbotEmotion where u_id='11'
+select * from chatbotEmotion where u_id='11' and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');

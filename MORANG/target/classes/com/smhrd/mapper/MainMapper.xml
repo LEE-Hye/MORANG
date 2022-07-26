@@ -12,8 +12,7 @@
      </insert>
      
      <select id="chatemotionselect" parameterType="String" resultType="com.smhrd.domain.chatbotEmotion">
-         select * from chatbotEmotion where u_id=#{u_id} and chatday=now()
-         
+         select * from chatbotEmotion where u_id=#{u_id} and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d');
      </select>
    
 </mapper>

@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.chatbotEmotion"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% response.setHeader("Access-Control-Allow-Origin","http://222.102.104.182:8082/ajax"); %>
@@ -25,6 +26,8 @@
   <script src="resources/js/Main/bootstrap.min.js" type="text/javascript"></script>
   <script src="resources/js/Main/main.js" type="text/javascript"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
  
 </head>
 
@@ -227,7 +230,7 @@
       <img src="resources/img/soohyeon.gif" alt="실패" id="chatbot_close" width="130px" height="130px">
     </div>
 </div>
-
+<button type="button" id="reData">데이터 변경</button>
 
 
 
@@ -303,8 +306,57 @@
     </script>
 	 
    <script>
-  
+   let fear2 = Number('${todayemotion.fear}');
+   let surprise2 = Number('${todayemotion.surprise}');
+   let angry2 = Number('${todayemotion.angry}');
+   let sadness2 = Number('${todayemotion.sadness}');
+   let neutral2 = Number('${todayemotion.neutral}');
+   let happiness2 = Number('${todayemotion.happiness}');
+   let disgust2 = Number('${todayemotion.disgust}');
+   var ctx = document.getElementById('doughnut-chart')
+   var config = {
+	   type: 'doughnut',
+	    data: {
+	      labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+	      datasets: [
+	        {
+	          label: "Population (millions)",
+	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",'#81F781','#8b22ff'],
+	          data: [10,10,10,10,10,10,10]
+	        }
+	      ]
+	    },
+	    options: {
+	      title: {
+	        display: true,
+	        
+	      }
+	    }
+	};
    
+   var myChart1 = new Chart(ctx, config);
+   
+ 	console.log(happiness);
+   
+   if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgust2>0){
+		
+		//데이터셋 수 만큼 반복
+		var dataset = config.data.datasets;
+		for(var i=0; i<dataset.length; i++){
+			console.log(dataset);
+			//데이터 갯수 만큼 반복
+			var data = dataset[i].data;
+			data[0]=fear2;
+			data[1]=surprise2;
+			data[2]=angry2;
+			data[3]=sadness2;
+			data[4]=neutral2;
+			data[5]=happiness2;
+			data[6]=disgust;
+		}
+		
+		myChart1.update();	//차트 업데이트
+   }
 </script>
 <script type="text/javascript">
 new Chart(document.getElementById("radar-chart"), {

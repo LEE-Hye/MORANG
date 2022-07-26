@@ -7,6 +7,31 @@ let neutral=0;
 let happiness=0;
 let disgust=0;
 
+
+new Chart(document.getElementById("doughnut-chart"), {
+		
+	    type: 'doughnut',
+	    data: {
+	      labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+	      datasets: [
+	        {
+	          label: "Population (millions)",
+	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",'#81F781','#8b22ff'],
+	          data: [fear,surprise,angry,sadness,neutral,happiness,disgust]
+	        }
+	      ]
+	    },
+	    options: {
+	      title: {
+	        display: true,
+	        
+	      }
+	    }
+	});
+
+
+
+
 (function () {
     var Message;
     Message = function (arg) {
@@ -210,6 +235,14 @@ let disgust=0;
  					// 기존에 있던 조회수를 바꿔줘야함
  					if(res==0){
  						console.log(res);
+ 						fear=${todayemotion.fear};
+						surprise=${todayemotion.surprise};
+						angry=${todayemotion.angry};
+						sadness=${todayemotion.sadness};
+						neutral=${todayemotion.neutral};
+						happiness=${todayemotion.happiness};
+						disgust=${todayemotion.disgust};
+ 						location.replace('Main.do') 
  					}
  					else if(res==1){
  						console.log('실패');

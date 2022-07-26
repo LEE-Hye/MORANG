@@ -25,3 +25,22 @@ create table mot(
 select * from mot
 
 SELECT content FROM mot ORDER BY RAND() LIMIT 1
+
+
+create table chatbotEmotion(
+	u_id VARCHAR(20),
+	chatday datetime,
+	fear float,
+	surprise float,
+	angry float,
+	sadness float,
+	neutral float,
+	happiness float,
+	disgust float
+);
+
+select * from chatbotEmotion
+
+drop table chatbotEmotion
+
+select * from chatbotEmotion where u_id='11' and chatday=now()

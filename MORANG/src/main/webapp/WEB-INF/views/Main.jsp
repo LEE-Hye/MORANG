@@ -32,7 +32,7 @@
   <nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="메인 페이지.html">MoRang.</a>
+      <a href="Main.do">MoRang.</a>
     </div>
 
     <ul class="navbar_menu">
@@ -303,25 +303,8 @@
     </script>
 	 
    <script>
-   new Chart(document.getElementById("doughnut-chart"), {
-	    type: 'doughnut',
-	    data: {
-	      labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
-	      datasets: [
-	        {
-	          label: "Population (millions)",
-	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",'#81F781','#8b22ff'],
-	          data: [2478,5267,734,784,433,543,453]
-	        }
-	      ]
-	    },
-	    options: {
-	      title: {
-	        display: true,
-	        
-	      }
-	    }
-	});
+  
+   
 </script>
 <script type="text/javascript">
 new Chart(document.getElementById("radar-chart"), {

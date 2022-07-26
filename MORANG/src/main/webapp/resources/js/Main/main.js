@@ -134,23 +134,33 @@ let disgust=0;
                             success: function(data){
                             	console.log(data.result2['msg']);
                             	console.log(data.result2['emotion']);
-                            	if(emotion.equals("공포")){
-                            	}
-                            	else if(emotion.equals("공포")){
-                            		
-                            	}
-                            	else if(emotion.equals("놀람")){
-                            	}
-                            	else if(emotion.equals("분노")){
-                            	}
-                            	else if(emotion.equals("슬픔")){
-                            	}
-                            	else if(emotion.equals("중립")){
-                            	}
-                            	else if(emotion.equals("행복")){
-                            	}
-                            	else if(emotion.equals("혐오")){
-                            	}
+                            	
+                            	switch (data.result2['emotion']) {
+								  case '공포':
+								    fear++;
+								    break;
+								  case '놀람':
+								    surprise++;
+								    break;
+								  case '분노':
+								    angry++;
+								    break;
+								  case '슬픔':
+								    sadness++;
+								    break;
+								  case '중립':
+								    neutral++;
+								    break;
+								  case '행복':
+								    happiness++;
+								    break;
+								  case '혐오':
+								    disgust++;
+								    break;
+								  default:
+								    alert( "어떤 값인지 파악이 되지 않습니다." );
+								}
+                            	console.log(happiness);
                                 return sendMessage(data.result2['msg'],'left');
                             },
                             

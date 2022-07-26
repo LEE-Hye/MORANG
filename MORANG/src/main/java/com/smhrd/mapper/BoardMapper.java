@@ -22,7 +22,7 @@ public interface BoardMapper {
 	// 어노테이션 이름 == 사용하고자 하는 문장이름
 	// @Delete("SQL 쿼리)
 	// 추상 메서드 <---mapping(1 : 1) --> SQL쿼리
-	@Delete("delete from board where c_seq = #{c_seq}")
+	@Delete("delete from mr_community where c_seq =#{c_seq}")
 	public int boardDelete(int c_seq);
 	
 	public int boardUpdate(Board vo);

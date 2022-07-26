@@ -13,16 +13,13 @@ import lombok.RequiredArgsConstructor;
 
 public class comment {
 	
-	@NonNull
 	private int cmt_seq;
 	
 	private int c_seq;
-	
+	@NonNull
 	private String cmt_content;
 	
 	private String cmt_date;
-	
-	private String diary_date;
 	
 	private String u_id;
 	

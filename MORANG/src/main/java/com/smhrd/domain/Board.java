@@ -28,12 +28,12 @@ public class Board {
 	// 글 작성일
 	private String c_date;
 	
-	@NonNull
+
 	// 글 첨부파일
 	private String c_file;
 	
 	// 작성자
-	
+	@NonNull
 	private String u_id;
 
 	// 조회수(추천수)

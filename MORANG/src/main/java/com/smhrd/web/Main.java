@@ -25,7 +25,7 @@ public class Main {
 		
 		mot vo=mapper.motList();
 		String motcontent=vo.getContent();
-		session.setAttribute("mot", vo);
+		session.setAttribute("mot", motcontent);
 		
 		return "Main";
 	}

@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/noteshare.css">
 <script src="https://kit.fontawesome.com/3e55fa4950.js"
 	crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +23,8 @@
 <!-- 차트 js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 자바 스크립트 -->
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="resources/js/Main/bootstrap.js" type="text/javascript"></script>
-<script src="resources/js/Main/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="resources/css/Main/calendar.css">
-<script src="resources/js/Main/calendar.js"></script>
-<link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
-<script src="resources/js/Main/main.js" type="text/javascript"></script>
+
+
     <script type="text/javascript">
 	function goList(){
 		location.href = "/web/shareNote.do";

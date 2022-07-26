@@ -97,7 +97,7 @@
     </section>
     <section class="content-main">
       <div class="good-text">
-        딸기가 딸기 맛을 지니고 있듯이, 삶은 행복이란 맛을 지니고 있다. -알랭
+        ${mot}
       </div>
 
       <article>

@@ -25,7 +25,7 @@
 <!-- 자바 스크립트 -->
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
 	function goList(){
 		location.href = "/web/shareNote.do";
 	}		
@@ -45,63 +45,52 @@
 </head>
 <body>
 	<nav class="navbar">
-    <div class="navbar_logo">
-      <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="Main.do">MoRang.</a>
-    </div>
+		<div class="navbar_logo">
+			<i class="fa-thin fa-hands-holding-child"></i> <a href="Main.do">MoRang.</a>
+		</div>
 
-    <ul class="navbar_menu">
-      <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
-      <li><a href="">개인정보수정</a></li>
-      <li><a href="logout.do">로그아웃</a></li>
-    </ul>
-  </nav>
-  <div class="app">
-    <div class="menu-toggle">
-      <div class="hamburger">
-        <span></span>
-      </div>
-    </div>
-    
-    <nav class="sidebar">
-      <div class="toggle-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+		<ul class="navbar_menu">
+			<li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+			<li><a href="">개인정보수정</a></li>
+			<li><a href="logout.do">로그아웃</a></li>
+		</ul>
+	</nav>
+	<div class="app">
+		<div class="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+			</div>
+		</div>
 
-      <h1>Menu</h1>
-      <nav class="menu">
-        <a href="Main.do" class="menu-item">HOME</a>
-        <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
-        <a href="diary.do" class="menu-item">감정 일기장</a>
-        <a href="shareNote.do" class="menu-item">공유수첩</a>
-        <a href="boardList.do" class="menu-item">게시판</a>
-      </nav>
-    </nav>
+		<nav class="sidebar">
+			<div class="toggle-btn">
+				<span></span> <span></span> <span></span>
+			</div>
+
+			<h1>Menu</h1>
+			<nav class="menu">
+				<a href="Main.do" class="menu-item">HOME</a> <a
+					href="depressionTest.do" class="menu-item">우울증 자가진단</a> <a
+					href="diary.do" class="menu-item">감정 일기장</a> <a href="shareNote.do"
+					class="menu-item">공유수첩</a> <a href="boardList.do" class="menu-item">게시판</a>
+			</nav>
+		</nav>
 
 		<div class="share_note">
-
+			<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-x"></i>
 			<div class="share_note_detail">
 				<div class="share_title">${requestScope.shareNote.note_title}</div>
 				<% pageContext.setAttribute("newLine", "\n"); %>
 				<div class="share_content">
-				${fn:replace(shareNote.note_content, newLine, "<br>") }
-				</div>
-					
+					${fn:replace(shareNote.note_content, newLine, "<br>") }</div>
+
 				<div class="share_btn">
 					<button onclick="goUpdate(${shareNote.note_seq})">수정</button>
-					<button onclick="goDelete(${shareNote.note_seq})">삭제</button>
 					<button onclick="goList()">돌아가기</button>
 				</div>
 			</div>
 
 		</div>
-
-
-
-
-
 
 	</div>
 </body>

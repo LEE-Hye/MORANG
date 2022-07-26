@@ -1,8 +1,9 @@
-<%@page import="com.smhrd.domain.note"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="com.smhrd.domain.shareNote"%>
 <%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,23 @@
 <script src="resources/js/Main/calendar.js"></script>
 <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
 <script src="resources/js/Main/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	function goList(){
+		location.href = "/web/shareNote.do";
+	}		
+	
+	function goDelete(note_seq){
+		
+		location.href = '/web/shareNoteDelete.do?note_seq=' + note_seq;
+		
+	}
+	
+	function goUpdate(note_seq){
+		location.href = "/web/shareNoteGoUpdate.do?note_seq=" + note_seq;
+	}
 
+	
+</script>
 </head>
 <body>
 	<nav class="navbar">
@@ -38,9 +55,8 @@
 		</div>
 
 		<ul class="navbar_menu">
-			<li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
 			<li><a href="">개인정보수정</a></li>
-			<li><a href="logout.do">로그아웃</a></li>
+			<li><a href="">로그아웃</a></li>
 		</ul>
 	</nav>
 	<div class="app">
@@ -63,90 +79,29 @@
 			</nav>
 		</nav>
 
-
-		<%
-			List<shareNote> list = (List<shareNote>) request.getAttribute("list");
-		%>
-
 		<div class="share_note">
-			<%
-				for (shareNote shareNote : list) {
-			%>
-			<div class="share_note1">
-<!-- 			<div class="delete_b">
-					<button id="delete_btn">X</button>
-				</div> -->	
-				<div class="share_content"><a href="/web/shareNotedetail.do/<%=shareNote.getNote_seq()%>"><%=shareNote.getNote_content()%></div>
-				<div class="share_title"><%=shareNote.getNote_title()%></div>
-				<div class="share_date"><%=shareNote.getNote_date()%></div>
+
+			<div class="share_note_detail">
+				<div class="share_title">${requestScope.shareNote.note_title}</div>
+				<% pageContext.setAttribute("newLine", "\n"); %>
+				<div class="share_content">
+				${fn:replace(shareNote.note_content, newLine, "<br>") }
+				</div>
+					
+				<div class="share_btn">
+					<button onclick="goUpdate(${shareNote.note_seq})">수정</button>
+					<button onclick="goDelete(${shareNote.note_seq})">삭제</button>
+					<button onclick="goList()">돌아가기</button>
+				</div>
 			</div>
 
-			<%
-				}
-			%>
 		</div>
+
+
+
+
+
 
 	</div>
-
-		<div id="plus_note">
-			<i class="fa-solid fa-circle-plus fa-3x" id="modal-open"></i>
-		</div>
-
-
-
-
-
-	<div class="popup-wrap" id="popup3">
-
-		<div class="popup">
-
-			<div class="popup-head">
-
-				<span class="head-title">공유 수첩 작성</span>
-			</div>
-			<form action="shareNoteInsert.do" method="post">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="writer">작성자:</label>
-					<div class="col-sm-10">
-						<input name="u_id" class="form-control" id="writer" type="text"
-							value="${loginMember.u_id}" readonly>
-					</div>
-				</div>
-				<div class="popup-body">
-					<div class="body-content">
-						<div class="body-titlebox">
-							<textarea name="note_title" rows="2" cols="40"
-								placeholder="제목을 입력해주세요" class="note_title"></textarea>
-						</div>
-						<div class="body-contentbox">
-							<p>
-								<textarea name="note_content" rows="5" cols="43"
-									placeholder="내용을 입력해주세요" class="note_content"></textarea>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="popup-foot">
-					<button class="pop-btn confirm" id="confirm3" type="submit">저장</button>
-					<button class="pop-btn close" id="close3" type="reset" type="button">창닫기</button>
-				</div>
-			</form>
-		</div>
-	</div>
-
-	<script>
-		$(function() {
-			$("#confirm3").click(function() {
-				modalClose();
-			});
-			$("#modal-open").click(function() {
-				$("#popup3").css('display', 'flex').hide().fadeIn();
-			});
-			$("#close3").click(function() {
-				modalClose();
-			});
-
-		});
-	</script>
 </body>
 </html>

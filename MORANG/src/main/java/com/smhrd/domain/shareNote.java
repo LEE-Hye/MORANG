@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class shareNote {
 	
-	private int seq;
+	private int note_seq;
 	
 	@NonNull
 	private String note_title;
@@ -23,5 +23,5 @@ public class shareNote {
 	@NonNull
 	private String u_id;
 	
-	private String date;
+	private String note_date;
 }

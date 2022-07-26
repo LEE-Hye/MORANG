@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.mapper.shareNoteMapper">
+
+	<!-- 노트 가져오기 -->
+	<select id="shareNoteList"
+		resultType="com.smhrd.domain.shareNote">
+		select * from mr_sharenote
+	</select>
+
+	<!-- 노트 글쓰기 -->
+	<insert id="shareNoteInsert"
+		parameterType="com.smhrd.domain.shareNote">
+		insert into mr_sharenote(note_title, note_content, u_id)
+		values(#{note_title}, #{note_content}, #{u_id})
+	</insert>
+
+	<!-- 노트 상세보기 -->
+	<select id="shareNotedetail"
+		resultType="com.smhrd.domain.shareNote">
+		select * from mr_sharenote
+		where note_seq = #{note_seq}
+	</select>
+
+	<!-- 노트 수정 -->
+	<update id="shareNoteUpdate" parameterType="com.smhrd.domain.shareNote">
+		update mr_sharenote
+		set note_title = #{note_title}, note_content = #{note_content}
+		where note_seq = #{note_seq}
+	</update>
+	
+	<!-- 노트 삭제 -->
+	<delete id="shareNoteDelete" parameterType="com.smhrd.domain.shareNote">
+	    delete from mr_sharenote
+	    where note_seq = #{note_seq}
+	</delete>
+</mapper>

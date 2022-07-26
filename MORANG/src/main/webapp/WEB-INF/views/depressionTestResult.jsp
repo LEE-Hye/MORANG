@@ -80,8 +80,17 @@
                     </tr>
                     <tr>
                         <td>14점 이상</td>
-                        <td>고도의 우울증</td>
+                        <td>고도 우울증</td>
                     </tr>
+                    <tr>
+                        <td>[마음온라인]<br><a href="https://www.on-maum.com/">https://www.on-maum.com/</a></td>
+                        <td>[MiNDCAFE]<br><a href="http://www.mindcafe.co.kr/">http://www.mindcafe.co.kr/</a></td>
+                        <td>[밝은희망]<br><a href="http://brightdepression.com/">http://brightdepression.com/</a></td>
+                        <td>[CHEEU]<br><a href="https://www.cheeu.co.kr/home">https://www.cheeu.co.kr/home</a></td>
+                        <td>[자살예방상담전화]<br>1393</td>
+                        <td>[한국생명의전화]<br>1588-9191</td>
+                    </tr>
+                    
                     <% request.setCharacterEncoding("UTF-8");
 				int sum = 0;
 				int fav = 0;

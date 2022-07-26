@@ -55,8 +55,8 @@ public class shareNoteController {
 		}
 	
 	// 노트 상세 보기
-		@RequestMapping("shareNotedetail.do/{note_seq}")
-		public String shareNotedetail(Model model, @PathVariable("note_seq") int note_seq) {
+		@RequestMapping("shareNotedetail.do")
+		public String shareNotedetail(Model model,  int note_seq) {
 			
 			shareNote vo = mapper.shareNotedetail(note_seq);
 			

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.domain.Board;
+import com.smhrd.domain.Join;
 import com.smhrd.domain.diary;
 import com.smhrd.mapper.diaryMapper;
 
@@ -29,9 +31,10 @@ public class diaryController {
 	
 	// 이거 글 목록
 	@RequestMapping("/diary.do")
-	public String diaryList(Model model) {
-		
-		List<diary> list = mapper.diaryList();
+	public String diaryList(Model model, HttpSession session) {
+		Join loginMember=(Join)session.getAttribute("loginMember");
+		String id=loginMember.getU_id();
+		List<diary> list = mapper.diaryList(id);
 		
 		model.addAttribute("list", list);
 		

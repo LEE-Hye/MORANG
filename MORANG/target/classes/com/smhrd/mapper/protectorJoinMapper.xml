@@ -13,12 +13,7 @@
           values(#{p_id}, #{p_pw},#{p_name},#{p_phone},#{p_birthdate},#{u_id})
       </insert>
       
-      <select id="protectorJoinSelect"
-		parameterType="com.smhrd.domain.protectorJoin"
-		resultType="com.smhrd.domain.protectorJoin">
-		select * from mr_protector 
-		where p_id=#{p_id} and p_pw=#{p_pw}
-	</select>
+     
       
       <update id="protectorJoinUpdate" parameterType="com.smhrd.domain.Join">
           update mr_protector

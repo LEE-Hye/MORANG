@@ -35,6 +35,15 @@
         color: white;
         background-color: rgb(240, 129, 129);
        }
+       @font-face {
+    font-family: 'Dongle-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family: 'Dongle-Bold';
+}
     </style>
 </head>
 <body>
@@ -78,7 +87,7 @@
            
             <div class="panel panel-default" style="margin-left: 30px; margin-top: 30px;">
             <h1 style="color: rgb(139, 42, 42);">감정분석 일기장</h1>
-                <div class="panel-heading" style="font-size: 20px ; background-color: #e4beb3;">오늘의 기분을 적어보세요~</div>
+                <div class="panel-heading" style="font-size: 20px ; background-color: #f1e3df;">오늘의 기분을 적어보세요~</div>
                 <div class="panel-body">
 				<%
 				List<diary> list = (List<diary>) request.getAttribute("list");

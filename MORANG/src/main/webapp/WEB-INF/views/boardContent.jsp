@@ -1,4 +1,5 @@
 <%@page import="com.smhrd.domain.Board"%>
+<%@page import="com.smhrd.domain.comment"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -90,20 +91,21 @@ font-family: 'BMJUA';
 
 
 <!-- Comments Form -->
-<h3>현재 로그인한 아이디 : ${loginMember.u_id}</h3>
-	<div class="card my-4">
-		<h5 class="card-header">댓글 달기 ...</h5>
-		<div class="card-body">
-			<form name="comment-form" action="commentInsert.do" method="post" autocomplete="off">
-				<div class="form-group">
-					<input type="hidden" name="cmt_seq" th:value="*{cmt_seq}" />
-					<textarea name="cmt_content" class="form-control" rows="3"></textarea>
-				</div>
-				<button type="submit" class="btn btn-primary">댓글 등록</button>
-			</form>
-		</div>
-	</div>
-      <div> 댓글 리스트  : </div>
+	<form action="commentInsert.do" method="post" style="margin-left: 30px; margin-bottom:30px">
+			ID : <input class="form-control" type="text" value="${loginMember.u_id}" readonly="readonly">
+			댓글 작성 :	<input class="form-control" type="text" name="cmt_comment" placeholder="댓글을 작성해주세요">
+			<input class="btn btn-warning btn-sm" type="submit" value="댓글 작성">
+	
+      <div> 댓글 리스트  :
+  		<c:forEach var="cmt_comment" items="${list}">
+					<tr>
+						<td width="200px">${comment.u_id}</td>
+						<td width="700px"><span style="margin-left:10px">${comment.cmt_comment}</span></td>
+						<td><span style="margin-left:20px"><button class="btn btn-info btn-sm">삭제</button></span></td>
+					</tr>
+		</c:forEach>
+       </div>
+       </form>
     </div>
   </div>
   

@@ -10,7 +10,7 @@ page language="java" contentType="text/html; charset=UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/Main/style.css">
     <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
-    <title>자가진단</title>
+    <title>자유 게시판</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="resources/css/calendar.css">
@@ -33,6 +33,15 @@ page language="java" contentType="text/html; charset=UTF-8"
         color: white;
         background-color: rgb(240, 129, 129);
        }
+       @font-face {
+    font-family: 'Dongle-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family: 'Dongle-Bold';
+}
     </style>
 </head>
 <body>
@@ -76,7 +85,7 @@ page language="java" contentType="text/html; charset=UTF-8"
             
             <div class="panel panel-default" style="margin-left: 30px; margin-top: 30px;">
             <h1 style="color: rgb(139, 42, 42);">임산부 자유게시판</h1>
-                <div class="panel-heading" style="font-size: 20px ; background-color: #e4beb3;">자유롭게 글을 써보아요^^</div>
+                <div class="panel-heading" style="font-size: 20px ; background-color: #f1e3df;">자유롭게 글을 써보아요^^</div>
                 <div class="panel-body">
                     
                     

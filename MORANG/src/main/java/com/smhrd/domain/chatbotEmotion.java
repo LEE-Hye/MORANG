@@ -31,4 +31,18 @@ public class chatbotEmotion {
 	private float happiness;
 	@NonNull
 	private float disgust;
+	public chatbotEmotion(@NonNull float fear, @NonNull float surprise, @NonNull float angry, @NonNull float sadness,
+			@NonNull float neutral, @NonNull float happiness, @NonNull float disgust) {
+		super();
+		this.fear = fear;
+		this.surprise = surprise;
+		this.angry = angry;
+		this.sadness = sadness;
+		this.neutral = neutral;
+		this.happiness = happiness;
+		this.disgust = disgust;
+	}
+	
+	
+	
 }

@@ -12,7 +12,7 @@ select * from note;
 
 use morang;
 
-select *from mr_user where u_id='11' and u_pw='11'
+select *from mr_user where u_id='11'
 
 delete from mr_user 
 

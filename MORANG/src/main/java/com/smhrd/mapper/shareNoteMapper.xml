@@ -9,6 +9,7 @@
 	<select id="shareNoteList"
 		resultType="com.smhrd.domain.shareNote">
 		select * from mr_sharenote
+		where u_id = #{u_id}
 	</select>
 
 	<!-- 노트 글쓰기 -->

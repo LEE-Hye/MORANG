@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.domain.Join;
 import com.smhrd.domain.diary;
 import com.smhrd.domain.shareNote;
 import com.smhrd.mapper.shareNoteMapper;
@@ -31,9 +33,12 @@ public class shareNoteController {
 //	노트 리스트 보기
 	
 	@RequestMapping("/shareNote.do")
-	public String shareNoteList(Model model) {
+	public String shareNoteList(Model model, HttpSession session) {
 		
-		List<shareNote> list = mapper.shareNoteList();
+		Join loginMember=(Join)session.getAttribute("loginMember");
+		String id=loginMember.getU_id();
+		
+		List<shareNote> list = mapper.shareNoteList(id);
 		
 		model.addAttribute("list", list);
 		

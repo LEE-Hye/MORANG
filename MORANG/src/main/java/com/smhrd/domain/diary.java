@@ -37,4 +37,13 @@ public class diary {
 	private float diary_neg;
 	
 	private String filename1;
+
+	public diary(@NonNull float diary_pos, @NonNull float diary_neg) {
+		super();
+		this.diary_pos = diary_pos;
+		this.diary_neg = diary_neg;
+	}
+	
+	
+	
 }

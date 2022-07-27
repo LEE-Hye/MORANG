@@ -1,6 +1,6 @@
 <%@page import="com.smhrd.domain.chatbotEmotion"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <% response.setHeader("Access-Control-Allow-Origin","http://222.102.104.182:8082/ajax"); %>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +28,9 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+ 
+ 
+ 
  
 </head>
 
@@ -70,7 +73,6 @@
     </nav>
     
     <section id="soohyeonchatbotarea" style="display: none;">
-      <img src="resources/img/soohyeon.gif" alt="실패" width="400px" height="320px" id="soohyeonbot">
       <div class="chat_window">
         <div class="top_menu">
           <div class="buttons">
@@ -135,7 +137,7 @@
             </div>
           </div>
 
-          <!-- <div id="modal" class="modal_Wrap">
+          <div id="modal" class="modal_Wrap">
             <div class="modal_Content">
               <span class="close">&times;</span>
               <ul class="tabs">
@@ -185,7 +187,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
         
         
@@ -193,24 +195,24 @@
         <div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header" style="text-align: center">긍정</div>
+              <div class="card-header">긍정</div>
               <div class="pie-chart_pie-chart1"><span class="center">'${diaryyesterdayemotion.diary_pos}'%</span></div>
 
             </div>
             <div class="today-graph">
-              <div class="card-header" style="text-align: center">부정</div>
+              <div class="card-header">부정</div>
               <div class="pie-chart_pie-chart2"><span class="center">'${diaryyesterdayemotion.diary_neg}'%</span></div>
             </div>
           </div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header" style="text-align: center">오늘 챗봇 대화</div>
-              <canvas id="doughnut-chart" width="262px" height="320px"></canvas>
+              <div class="card-header">오늘 챗봇 대화</div>
+              <canvas id="doughnut-chart" width="300" height="250"></canvas>
 
             </div>
             <div class="today-graph">
-              <div class="card-header"style="text-align: center">어제 와 오늘</div>
-              <canvas id="radar-chart" width="262px" height="320px"></canvas>
+              <div class="card-header">어제 와 오늘</div>
+              <canvas id="radar-chart" width="250" height="250"></canvas>
             </div>
           </div>
           </div>
@@ -227,8 +229,7 @@
     
   
     <div>
-      <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
-      <img src="resources/img/soohyeon.gif" alt="실패" id="chatbot_close" width="130px" height="130px" >
+      <img src="resources/img/하트하트.gif" alt="실패" id="chatbot_close" width="130px" height="130px" >
     </div>
 </div>
 
@@ -238,142 +239,33 @@
 
     <!-- 그래프 차트 스크립트 -->
     <script>
-    	var ctx3 = document.getElementById('Week-Chart');
-    	
-    	 let pos1day = Number('${diaryyesterdayemotion.diary_pos}')
-         let neg1day = Number('${diaryyesterdayemotion.diary_neg}')
-         
-         let pos2day = Number('${diary2emotion.diary_pos}')
-         let neg2day = Number('${diary2emotion.diary_neg}')
-         
-         let pos3day = Number('${diary3emotion.diary_pos}')
-         let neg3day = Number('${diary3emotion.diary_neg}')
-         
-         let pos4day = Number('${diary4emotion.diary_pos}')
-         let neg4day = Number('${diary4emotion.diary_neg}')
-         
-         let pos5day = Number('${diary5emotion.diary_pos}')
-         let neg5day = Number('${diary5emotion.diary_neg}')
-         
-         let pos6day = Number('${diary6emotion.diary_pos}')
-         let neg6day = Number('${diary6emotion.diary_neg}')
-         
-         let pos7day = Number('${diary7emotion.diary_pos}')
-         let neg7day = Number('${diary7emotion.diary_neg}')
-         
-         if (pos1day>0||neg1day>0){
-    			
-    	}
-         else{
-        	 pos1day=55;
-        	 neg1day=45;
-         }
-    	 if (pos2day>0||neg2day>0){
- 			
-     	}
-          else{
-         	 pos2day=55;
-         	 neg2day=45;
-          }
-    	 if (pos3day>0||neg3day>0){
- 			
-     	}
-          else{
-         	 pos3day=55;
-         	 neg3day=45;
-          }
-    	 if (pos4day>0||neg4day>0){
- 			
-     	}
-          else{
-         	 pos4day=55;
-         	 neg4day=45;
-          }
-    	 if (pos5day>0||neg5day>0){
- 			
-     	}
-          else{
-         	 pos5day=55;
-         	 neg5day=45;
-          }
-    	 if (pos6day>0||neg6day>0){
- 			
-     	}
-          else{
-         	 pos6day=55;
-         	 neg6day=45;
-          }
-    	 if (pos7day>0||neg7day>0){
-  			
-      	}
-           else{
-          	 pos7day=55;
-          	 neg7day=45;
-           }
-    	 
-      var config3 = {
+      var ctx = document.getElementById('Week-Chart').getContext('2d');
+      var chart = new Chart(ctx, {
         // 챠트 종류를 선택
         type: 'line',
 
         // 챠트를 그릴 데이타
         data: {
-			labels: [ // Date Objects
-				'day7',
-				'day6',
-				'day5',
-				'day4',
-				'day3',
-				'day2',
-				'day1'
-			],
-			datasets: [{
-				label: 'pos',
-				backgroundColor: 'rgba(75, 192, 192, 1)',
-				borderColor: 'rgba(75, 192, 192, 1)',
-				fill: false,
-				data: [
-					pos7day,
-					pos6day,
-					pos5day,
-					pos4day,
-					pos3day,
-					pos2day,
-					pos1day
-				],
-			}, {
-				label: 'neg',
-				backgroundColor: 'rgba(255, 99, 132, 1)',
-				borderColor: 'rgba(255, 99, 132, 1)',
-				fill: false,
-				data: [
-					neg7day,
-					neg6day,
-					neg5day,
-					neg4day,
-					neg3day,
-					neg2day,
-					neg1day
-				],
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			title: {
-				text: 'Chart.js Time Scale'
-			},
-			scales: {
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: '차트'
-					}
-				}]
-			},
-		}
-	};
-	 
-	//차트 그리기
-	var myChart3 = new Chart(ctx3, config3);
+          labels: ['7day', '6day', '5day', '4day', '3day', '2day', '1day'],
+          datasets: [{
+            label: '주간 감정 데이터 비교',
+            backgroundColor: 'transparent',
+            borderColor: '#FFA7A7',
+            data: [0, 10, 5, 2, 20, 30, 45]
+          }]
+        },
+        // 옵션
+        options: {
+          legend: {
+            display: false
+          }
+        },
+        title: {
+          display: true,
+          text: '주간 데이터 분석'
+        }
+
+      });
     </script>
 
     <!-- 파이차트 스크립트 -->
@@ -542,34 +434,6 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
 
 </script>
 
-
-<script type="text/javascript">
-	
-	
-	let dayday=0;
-	let monthpos=0;
-	let monthneg=0;
-	
-	 setTimeout(function() {
-		 <c:forEach items='${Monthemotionlist}' var='item'>
-			for (let i2 = 1; i2 <= 31; i2++) {
-				dayday=$('#day20').text();
-				if(i2==Number('${item.diary_date}')){
-					monthpos=Number('${item.diary_pos}')
-					monthneg=Number('${item.diary_neg}')
-					if(monthpos>=monthneg){
-						$('#day'+i2).append('<br><img alt="" src="resources/img/chatbotimg.png" width="50%" height="50%">');
-					}
-					else{
-						$('#day'+i2).append('<br><img alt="" src="resources/img/soohyeon.gif" width="50%" height="50%">');
-					}
-				}
-				else{}
-			}
-			</c:forEach>
-     },100);
-	
-</script>
 </body>
 
 </html>

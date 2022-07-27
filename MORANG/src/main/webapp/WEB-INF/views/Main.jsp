@@ -558,10 +558,10 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
                monthpos=Number('${item.diary_pos}')
                monthneg=Number('${item.diary_neg}')
                if(monthpos>=monthneg){
-                  $('#day'+i2).append('<br><img alt="" src="resources/img/chatbotimg.png" width="50%" height="50%">');
+                  $('#day'+i2).append('<br><img alt="" src="resources/img/sun2.png" width="100%" height="100%" class="seal">');
                }
                else{
-                  $('#day'+i2).append('<br><img alt="" src="resources/img/하트하트.gif" width="50%" height="50%">');
+                  $('#day'+i2).append('<br><img alt="" src="resources/img/usan2.png" width="150%" height="150%" class="seal">');
                }
             }
             else{}

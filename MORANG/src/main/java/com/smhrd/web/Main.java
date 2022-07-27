@@ -30,7 +30,35 @@ public class Main {
 		mot vo=mapper.motList();
 		String motcontent=vo.getContent();
 		session.setAttribute("mot", motcontent);
-		chatbotEmotion vo2 = mapper.chatemotionselect2(u_id);
+		
+		float fear=0;
+		float surprise=0;
+		float angry=0;
+		float sadness=0;
+		float neutral=0;
+		float happiness=0;
+		float disgust=0;
+		List<chatbotEmotion> yesterdaylist= mapper.chatemotionselect2(u_id);
+		for(int i=0 ;i<yesterdaylist.size();i++) {
+			fear+=yesterdaylist.get(i).getFear();
+			surprise+=yesterdaylist.get(i).getSurprise();
+			angry+=yesterdaylist.get(i).getAngry();
+			sadness+=yesterdaylist.get(i).getSadness();
+			neutral+=yesterdaylist.get(i).getNeutral();
+			happiness+=yesterdaylist.get(i).getHappiness();
+			disgust+=yesterdaylist.get(i).getDisgust();
+			
+		}
+		fear=fear/yesterdaylist.size();
+		surprise=surprise/yesterdaylist.size();
+		angry=angry/yesterdaylist.size();
+		sadness=sadness/yesterdaylist.size();
+		neutral=neutral/yesterdaylist.size();
+		happiness=happiness/yesterdaylist.size();
+		disgust=disgust/yesterdaylist.size();
+		
+		
+		chatbotEmotion vo2= new chatbotEmotion(fear,surprise,angry,sadness,neutral,happiness,disgust);
 		session.setAttribute("yesterdayemotion", vo2);
 		int pos=0;
 		int neg=0;
@@ -41,6 +69,9 @@ public class Main {
 		}
 		pos=pos/diaryemotionlist.size();
 		neg=neg/diaryemotionlist.size();
+		
+		System.out.println(pos);
+		System.out.println(neg);
 		diary dia=new diary(pos,neg);
 		session.setAttribute("diaryyesterdayemotion", dia);
 		

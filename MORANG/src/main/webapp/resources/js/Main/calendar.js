@@ -54,7 +54,7 @@
     document.querySelector(`.dateTitle`).innerText = `${nowYear}년 ${nowMonth}월`;
 
     // 날짜 클릭
-    $(document).on('click', '.grid.dateBoard>div', function(){
+    /*$(document).on('click', '.grid.dateBoard>div', function(){
       let i = $(this).text()
 
       console.log(i)
@@ -84,7 +84,7 @@
           }
       }
 
-    })
+    })*/
 
 
 

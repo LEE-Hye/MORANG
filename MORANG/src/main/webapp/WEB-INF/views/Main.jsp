@@ -135,7 +135,7 @@
             </div>
           </div>
 
-          <div id="modal" class="modal_Wrap">
+          <!-- <div id="modal" class="modal_Wrap">
             <div class="modal_Content">
               <span class="close">&times;</span>
               <ul class="tabs">
@@ -185,7 +185,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         
         
@@ -193,24 +193,24 @@
         <div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header">긍정</div>
+              <div class="card-header" style="text-align: center">긍정</div>
               <div class="pie-chart_pie-chart1"><span class="center">'${diaryyesterdayemotion.diary_pos}'%</span></div>
 
             </div>
             <div class="today-graph">
-              <div class="card-header">부정</div>
+              <div class="card-header" style="text-align: center">부정</div>
               <div class="pie-chart_pie-chart2"><span class="center">'${diaryyesterdayemotion.diary_neg}'%</span></div>
             </div>
           </div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header">오늘 챗봇 대화</div>
-              <canvas id="doughnut-chart" width="300" height="250"></canvas>
+              <div class="card-header" style="text-align: center">오늘 챗봇 대화</div>
+              <canvas id="doughnut-chart" width="262px" height="320px"></canvas>
 
             </div>
             <div class="today-graph">
-              <div class="card-header">어제 와 오늘</div>
-              <canvas id="radar-chart" width="250" height="250"></canvas>
+              <div class="card-header"style="text-align: center">어제 와 오늘</div>
+              <canvas id="radar-chart" width="262px" height="320px"></canvas>
             </div>
           </div>
           </div>

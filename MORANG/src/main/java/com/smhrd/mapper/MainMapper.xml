@@ -47,4 +47,23 @@
      <select id="selectemotion7" parameterType="String" resultType="com.smhrd.domain.diary">
          select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 7 DAY,'%Y-%m-%d');
      </select>
+     
+     <select id="selectMonthemotion" parameterType="String" resultType="com.smhrd.domain.diary">
+        select dategroup as diary_date, avg(avgpos)as diary_pos,avg(avgneg) as diary_neg
+		from
+		(SELECT DATE_FORMAT(diary_date,'%d') as dategroup, avg(diary_pos) as avgpos ,avg(diary_neg) as avgneg
+		FROM diary3
+		where u_id = #{u_id}
+		group by diary_date
+		having MONTH(diary_date) = MONTH(CURRENT_DATE())
+		AND YEAR(diary_date) = YEAR(CURRENT_DATE())
+		order by diary_date) c
+		group by dategroup
+     </select>
+     
+     
+     
+     
+     
+     
 </mapper>

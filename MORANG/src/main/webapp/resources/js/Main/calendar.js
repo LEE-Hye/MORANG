@@ -1,3 +1,7 @@
+
+
+  
+  
   // 달력 생성
   const makeCalendar = (date) => {
 
@@ -29,10 +33,15 @@
         i === new Date().getDate() &&
         date.getMonth() === new Date().getMonth()
       ) {
-        htmlDummy += `<div class="today">${i}</div>`;
+        htmlDummy += `<div class="today" id="day${i}">${i}</div>`;
       } else {
-        htmlDummy += `<div>${i}</div>`;
+      	
+        htmlDummy += `<div id="day${i}">${i}</div>`;
+        
       }
+   
+      
+      
     }
 
     // 다음달 날짜 표시하기

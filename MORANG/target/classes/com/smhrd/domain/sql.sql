@@ -47,7 +47,23 @@ drop table chatbotEmotion
 delete from chatbotEmotion where u_id='11'
 select * from chatbotEmotion where u_id='11' and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');
 
+select dategroup as diary_date, avg(avgpos)as diary_pos,avg(avgneg) as diary_neg
+from
+(SELECT DATE_FORMAT(diary_date,'%d') as dategroup, avg(diary_pos) as avgpos ,avg(diary_neg) as avgneg
+FROM diary3
+where u_id = '11'
+group by diary_date
+having MONTH(diary_date) = MONTH(CURRENT_DATE())
+AND YEAR(diary_date) = YEAR(CURRENT_DATE())
+order by diary_date) c
+group by dategroup
 
-select * from diary3 where u_id='11'
+select * from diary3
+where MONTH(diary_date) = MONTH(CURRENT_DATE())
+AND YEAR(diary_date) = YEAR(CURRENT_DATE())
+
+SELECT DATE_FORMAT(diary_date,'%Y-%m-%d'), avg(diary_pos),avg(diary_neg)
+FROM diary3
+where
 
 insert into diary3 values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)

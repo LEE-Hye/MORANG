@@ -1,6 +1,6 @@
 <%@page import="com.smhrd.domain.chatbotEmotion"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% response.setHeader("Access-Control-Allow-Origin","http://222.102.104.182:8082/ajax"); %>
 <!DOCTYPE html>
 <html lang="en">
@@ -542,6 +542,34 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
 
 </script>
 
+
+<script type="text/javascript">
+	
+	
+	let dayday=0;
+	let monthpos=0;
+	let monthneg=0;
+	
+	 setTimeout(function() {
+		 <c:forEach items='${Monthemotionlist}' var='item'>
+			for (let i2 = 1; i2 <= 31; i2++) {
+				dayday=$('#day20').text();
+				if(i2==Number('${item.diary_date}')){
+					monthpos=Number('${item.diary_pos}')
+					monthneg=Number('${item.diary_neg}')
+					if(monthpos>=monthneg){
+						$('#day'+i2).append('<br><img alt="" src="resources/img/chatbotimg.png" width="50%" height="50%">');
+					}
+					else{
+						$('#day'+i2).append('<br><img alt="" src="resources/img/soohyeon.gif" width="50%" height="50%">');
+					}
+				}
+				else{}
+			}
+			</c:forEach>
+     },100);
+	
+</script>
 </body>
 
 </html>

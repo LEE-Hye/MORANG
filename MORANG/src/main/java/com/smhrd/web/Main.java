@@ -141,6 +141,14 @@ public class Main {
 		diary dia7=new diary(pos7,neg7);
 		
 		
+		List<diary> Monthemotionlist = mapper.selectMonthemotion(u_id);
+		for(int i=0;i<Monthemotionlist.size();i++) {
+			System.out.println(Monthemotionlist.get(i).getDiary_pos());
+		}
+		
+		session.setAttribute("Monthemotionlist", Monthemotionlist);
+		
+		
 		session.setAttribute("diaryyesterdayemotion", dia);
 		session.setAttribute("diary2emotion", dia2);
 		session.setAttribute("diary3emotion", dia3);

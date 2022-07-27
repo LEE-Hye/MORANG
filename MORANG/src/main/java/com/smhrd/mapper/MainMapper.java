@@ -12,9 +12,9 @@ public interface MainMapper {
 	
 	public int chatemotioninsert(chatbotEmotion vo);
 	
-	public chatbotEmotion chatemotionselect(String u_id);
+	public List<chatbotEmotion> chatemotionselect(String u_id);
 	
-	public chatbotEmotion chatemotionselect2(String u_id);
+	public List<chatbotEmotion> chatemotionselect2(String u_id);
 	
 	public List<diary> selectemotion(String u_id);
 	

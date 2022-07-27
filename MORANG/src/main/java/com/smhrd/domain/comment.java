@@ -11,7 +11,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
-@ToString
 
 public class comment {
 	
@@ -23,7 +22,19 @@ public class comment {
 	private String cmt_content; // 댓글 내용
 	
 	private String cmt_date; // 댓글 작성일
-	
+	@NonNull
 	private String u_id; // 작성자
+	
+	public comment(int cmt_seq, @NonNull String cmt_content, @NonNull String u_id) {
+		super();
+		this.cmt_seq = cmt_seq;
+		this.cmt_content = cmt_content;
+		this.u_id = u_id;
+	}
+
+	
+	
+	
+	
 	
 }

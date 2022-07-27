@@ -10,6 +10,8 @@ public interface commentMapper {
 
 	public List<comment> commentList(int c_seq); 
 	
+	public int selectmaxcmt_seq();
+	
 	public int commentInsert(comment vo);
 	
 	public comment commentContent(int cmt_seq);

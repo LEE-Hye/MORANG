@@ -12,9 +12,14 @@
       
       <!-- 댓글쓰기  -->
       <insert id="commentInsert" parameterType="com.smhrd.domain.comment">
-		insert into mr_comment(u_id, cmt_content, c_seq)
-		values(#{u_id}, #{cmt_content}, #{c_seq} )
+		insert into mr_comment
+		values(#{cmt_seq}, #{c_seq}, #{cmt_content},now(),#{u_id} )
 	</insert>
+	
+      <select id="selectmaxcmt_seq" resultType="int">
+          select Max(cmt_seq) from mr_comment 
+          
+      </select>
       
       <!-- 댓글 수정  -->
       <update id="commentUpdate" parameterType="com.smhrd.domain.comment">

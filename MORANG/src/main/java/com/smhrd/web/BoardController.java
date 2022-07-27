@@ -20,8 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.domain.Board;
-
+import com.smhrd.domain.comment;
 import com.smhrd.mapper.BoardMapper;
+import com.smhrd.mapper.commentMapper;
 
 @Controller //어노테이션
 // 이 파일이 알바생(POJO)이다
@@ -30,7 +31,8 @@ public class BoardController {
 
 	@Autowired 
 	BoardMapper mapper;
-
+	@Autowired 
+	commentMapper mapper2;
 
 	@RequestMapping("/boardList.do") 
 	public String boardList( Model model) {
@@ -65,10 +67,12 @@ public class BoardController {
 
 		// 확인해보기
 		System.out.println(vo.getC_title());
-
+		
 		// 객체 바인딩 request 영역에 저장
 		model.addAttribute("board", vo);
-
+		List<comment> commentlist = mapper2.commentList(c_seq);
+		
+		model.addAttribute("commentlist", commentlist);
 		return "boardContent"; // Path Variable을 사용할 때는, 반드시 직접 view를 알려줄것
 	}
 

@@ -67,3 +67,12 @@ FROM diary3
 where
 
 insert into diary3 values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)
+
+select Max(cmt_seq) from mr_comment 
+select * from mr_comment 
+
+
+insert into mr_comment(cmt_seq,c_seq,cmt_content, u_id )
+		values(4,62,'혜빈아 롤하자','morang')
+
+delete from mr_comment where cmt_seq=123

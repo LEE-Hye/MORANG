@@ -91,21 +91,39 @@ font-family: 'BMJUA';
 
 
 <!-- Comments Form -->
-	<form action="commentInsert.do" method="post" style="margin-left: 30px; margin-bottom:30px">
-			ID : <input class="form-control" type="text" value="${loginMember.u_id}" readonly="readonly">
-			댓글 작성 :	<input class="form-control" type="text" name="cmt_comment" placeholder="댓글을 작성해주세요">
+	<form action="/web/commentInsert.do" method="post" style="margin-left: 30px; margin-bottom:30px">
+				<input type="hidden" value="${board.c_seq}" name="c_seq">
+			ID : <input class="form-control" type="hidden" value="${loginMember.u_id}" name="u_id">
+			댓글 작성 :	<input class="form-control" type="text" name="cmt_content" placeholder="댓글을 작성해주세요">
 			<input class="btn btn-warning btn-sm" type="submit" value="댓글 작성">
 	
-      <div> 댓글 리스트  :
-  		<c:forEach var="cmt_comment" items="${list}">
-					<tr>
-						<td width="200px">${comment.u_id}</td>
-						<td width="700px"><span style="margin-left:10px">${comment.cmt_comment}</span></td>
-						<td><span style="margin-left:20px"><button class="btn btn-info btn-sm">삭제</button></span></td>
-					</tr>
-		</c:forEach>
-       </div>
+      
        </form>
+       <div> 전체댓글
+       
+  		<c:forEach var="cmt_comment" items="${commentlist}">
+  		<table>
+					<tr>
+						<td width="100px"> ${cmt_comment.u_id}</td></tr>
+						<tr><td width="100px"><span style="margin-left:10px">${cmt_comment.cmt_content}</span></td></tr>
+						<tr>
+						<td width="200px" style="color: gray">${cmt_comment.cmt_date}</td>
+						
+
+						<c:if test="${cmt_comment.u_id eq loginMember.u_id}">
+						<td><a href="">삭제</a></td>
+						<c:set var="name" value="홍길동" />
+						
+						</c:if>
+						
+						</tr>
+						
+					
+		</table>
+		<br>
+		</c:forEach>
+		
+       </div>
     </div>
   </div>
   

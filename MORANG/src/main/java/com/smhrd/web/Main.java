@@ -142,9 +142,7 @@ public class Main {
 		
 		
 		List<diary> Monthemotionlist = mapper.selectMonthemotion(u_id);
-		for(int i=0;i<Monthemotionlist.size();i++) {
-			System.out.println(Monthemotionlist.get(i).getDiary_pos());
-		}
+		
 		
 		session.setAttribute("Monthemotionlist", Monthemotionlist);
 		

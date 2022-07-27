@@ -9,13 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/Main/style.css">
     <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
-    <title>main</title>
+    <title>자가진단</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="resources/css/calendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
+   <style>
+       .btn-3{
+        border: 1px solid rgb(240, 129, 129);
+        background-color: rgba(0, 0, 0, 0);
+        color: rgb(240, 129, 129);;
+        padding: 10px;
+        border-radius: 10px;
+       }
+       .btn-3:hover{
+        color: white;
+        background-color: rgb(240, 129, 129);
+       }
+    </style>
 </head>
 
 <body>
@@ -143,18 +156,10 @@
                         <label><input type="radio" name="fav10" value="3">매우 그렇다.</label>
                     </ul>
 
-
-                    <button type="submit" class="btn-3"><span>결과확인</span></button>
+                    <button type="submit" class="btn-3" ><span>결과확인</span></button>
                 </form>
             </div>
         </main>
-
-			
-
-
-
-       
-
 </body>
 
 </html>

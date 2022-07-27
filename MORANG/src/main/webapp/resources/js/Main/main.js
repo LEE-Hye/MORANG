@@ -7,6 +7,12 @@ let neutral=0;
 let happiness=0;
 let disgust=0;
 
+
+
+
+
+
+
 (function () {
     var Message;
     Message = function (arg) {
@@ -53,35 +59,12 @@ let disgust=0;
             
             return sendMessage(getMessageText(),'right');
         });
-        function setUserName(nickname) {
-            username=nickname;
-            if (username != null && username.replace(" ", "" !== "")) {
-                setTimeout(function () {
-                    return sendMessage("반갑습니다." + username + "님. 닉네임이 설정되었습니다.", 'left');
-                }, 1000);
-                setTimeout(function () {
-                    return sendMessage("저는 임산부 감정케어봇 모랑입니다.", 'left');
-                }, 2000);
-                setTimeout(function () {
-                    return sendMessage("오늘 기분은 어떠신가요??", 'left');
-                }, 3000);
-                console.log(username)
-                return username;
         
-            } else {
-                setTimeout(function () {
-                    return sendMessage("올바른 닉네임을 이용해주세요.", 'left');
-                }, 1000);
-        
-                return null;
-                }
-            }
         $('.message_input').keyup(function (e) {
             if (e.which === 13) {
                 if(username==null){
-                    console.log(username)
-                    setUserName(getMessageText())
-                    return sendMessage(getMessageText(),'right');
+                    console.log('error')
+                    
                 }
                 else{
                     
@@ -92,7 +75,7 @@ let disgust=0;
                         }, 1000);
                     } else if (messageText.includes('반가워')) {
                         setTimeout(function () {
-                            return sendMessage("안녕하세요. 저는 모랑 임산부 케어 봇입니다", 'left');
+                            return sendMessage("저도 반갑습니다.✧⁺⸜(･ ᗜ ･ )⸝⁺✧ ", 'left');
                         }, 1000);
                     } else if (messageText.includes('고마워')) {
                         setTimeout(function () {
@@ -177,6 +160,7 @@ let disgust=0;
             }
         });
         $(document).on("click", "#chatbot_close",function(){
+        	username=$('#login').text();
             $('#soohyeonchatbotarea').css("display" ,"block");
             $('.content-main').css("display" ,"none");
             $('#chatbot_close').attr("id","chatbot_open");
@@ -185,8 +169,14 @@ let disgust=0;
             if(k==""){
                 sendMessage('우산팀 데모에 오신걸 환영합니다.','left');
                 setTimeout(function () {
-                    return sendMessage('사용할 닉네임을 알려주세요.','left');
+                    return sendMessage("반갑습니다." + username + "님.✧⁺⸜(･ ᗜ ･ )⸝⁺✧  ", 'left');
                 }, 1000);
+                setTimeout(function () {
+                    return sendMessage("저는 임산부 감정케어봇 모랑입니다.", 'left');
+                }, 2000);
+                setTimeout(function () {
+                    return sendMessage("오늘 기분은 어떠신가요??", 'left');
+                }, 3000);
             }
             
                 
@@ -210,6 +200,8 @@ let disgust=0;
  					// 기존에 있던 조회수를 바꿔줘야함
  					if(res==0){
  						console.log(res);
+ 						
+ 						location.replace('Main.do') 
  					}
  					else if(res==1){
  						console.log('실패');

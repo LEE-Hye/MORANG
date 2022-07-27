@@ -7,6 +7,19 @@
       <select id="motList" resultType="com.smhrd.domain.mot">
           SELECT content FROM mot ORDER BY RAND() LIMIT 1
       </select>
+     <insert id="chatemotioninsert" parameterType="com.smhrd.domain.chatbotEmotion">
+         insert into chatbotEmotion values(#{u_id},now(),#{fear},#{surprise},#{angry},#{sadness},#{neutral},#{happiness},#{disgust})
+     </insert>
      
+     <select id="chatemotionselect" parameterType="String" resultType="com.smhrd.domain.chatbotEmotion">
+         select * from chatbotEmotion where u_id=#{u_id} and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW(),'%Y-%m-%d');
+     </select>
    
+     <select id="chatemotionselect2" parameterType="String" resultType="com.smhrd.domain.chatbotEmotion">
+         select * from chatbotEmotion where u_id=#{u_id} and DATE_FORMAT(chatday,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');
+     </select>
 </mapper>

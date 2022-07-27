@@ -8,7 +8,7 @@ import com.smhrd.domain.comment;
 
 public interface commentMapper {
 
-	public List<comment> commentList(); 
+	public List<comment> commentList(int c_seq); 
 	
 	public int commentInsert(comment vo);
 	
@@ -18,5 +18,6 @@ public interface commentMapper {
 	public int commentDelete(int cmt_seq);
 	
 	public int commentUpdate(comment vo);
+
 
 }

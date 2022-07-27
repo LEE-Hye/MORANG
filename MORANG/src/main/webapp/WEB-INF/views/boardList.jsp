@@ -6,32 +6,43 @@ page language="java" contentType="text/html; charset=UTF-8"
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="resources/css/Main/style.css">
-  <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
-  <title>morang</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="resources/css/Main/calendar.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
-  <script src="resources/js/Main/calendar.js"></script>
-  <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="resources/js/Main/bootstrap.js" type="text/javascript"></script>
-  <script src="resources/js/Main/bootstrap.min.js" type="text/javascript"></script>
-  <script src="resources/js/Main/main.js" type="text/javascript"></script>
-    <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/Main/style.css">
+    <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
+    <title>자유 게시판</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="resources/css/calendar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
+	<style>
+    th, td{
+	    font-size:25px
+    }
+    .btn-3{
+        border: 1px solid rgb(240, 129, 129);
+        background-color: rgba(0, 0, 0, 0);
+        color: rgb(240, 129, 129);;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+       }
+       .btn-3:hover{
+        color: white;
+        background-color: rgb(240, 129, 129);
+       }
+       @font-face {
+    font-family: 'Dongle-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family: 'Dongle-Bold';
+}
+    </style>
 </head>
 <body>
    <nav class="navbar">
@@ -71,9 +82,10 @@ page language="java" contentType="text/html; charset=UTF-8"
     </nav>
     
         <div class="container">
-            <h2 style=color:red;">임산부 자유게시판</h2>
-            <div class="panel panel-default">
-                <div class="panel-heading" style="font-size: 20px ; background-color: #e4beb3;">자유롭게 글을 써보아요^^</div>
+            
+            <div class="panel panel-default" style="margin-left: 30px; margin-top: 30px;">
+            <h1 style="color: rgb(139, 42, 42);">임산부 자유게시판</h1>
+                <div class="panel-heading" style="font-size: 20px ; background-color: #f1e3df;">자유롭게 글을 써보아요^^</div>
                 <div class="panel-body">
                     
                     
@@ -103,9 +115,9 @@ page language="java" contentType="text/html; charset=UTF-8"
 
                     </table>
                     <button onclick="location.href='boardInsert.do'"
-                    class="btn btn-sm btn-danger" style="width: 100px; height: 50px;">작성</button>
+                    class="btn-3" style="width: 100px; height: 50px; font-size:20px">작성</button>
                 </div>
-                <div class="panel+footer" style="background-color:Green; color:yellow;">스마트인재개발원 최종프로젝트 팀 우산</div>
+                <div class="panel+footer" style="background-color:#e4beb3; color:white; font-size:30px">스마트인재개발원 최종프로젝트 팀 우산</div>
             </div>
         </div>
     </div>

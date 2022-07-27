@@ -85,8 +85,8 @@
 					${fn:replace(shareNote.note_content, newLine, "<br>") }</div>
 
 				<div class="share_btn">
-					<button onclick="goUpdate(${shareNote.note_seq})">수정</button>
-					<button onclick="goList()">돌아가기</button>
+					<button class="w-btn w-btn-indigo" onclick="goUpdate(${shareNote.note_seq})">수정</button>
+					<button class="w-btn w-btn-indigo" onclick="goList()">돌아가기</button>
 				</div>
 			</div>
 

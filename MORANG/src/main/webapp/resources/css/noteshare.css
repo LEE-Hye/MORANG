@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
 #chatbot_close {
 	position: fixed;
 	right: 40px;
@@ -392,7 +394,7 @@ span.center {
     border: 1px solid #e3e6f0;
     border-radius: 0.35rem;
     background-color: #f4e3dc;
-    width: 30%;
+    width: 20%;
     height: 60%;
     position: absolute;
     margin-top: 3%;
@@ -453,9 +455,18 @@ textarea {
 }
 
 .fa-x{
-	margin-left: 450%;
+	margin-left: 400%;
     margin-top: 10%;
     cursor:pointer;
+}
+
+.note_alter_title{
+	    text-align: center;
+	    background-color:#f4e3dc;
+}
+
+.note_alter_content{
+	background-color:#f4e3dc;
 }
 
 /* 모달 */
@@ -560,4 +571,69 @@ textarea {
 	width: 20px;
 	height: 20px;
 	z-index: 1;
+}
+
+<!-- 버튼 -->
+
+button {
+    margin: 20px;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-indigo {
+    background-color: aliceblue;
+    color: #d87fa1;
+}
+
+.w-btn-indigo-outline {
+    border: 3px solid aliceblue;
+    color: #1e6b7b;
+}
+
+.w-btn-indigo-outline:hover {
+    color: #1e6b7b;
+    background: aliceblue;
+}
+
+.w-btn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn-outline:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn:active {
+    transform: scale(1.5);
+}
+
+.w-btn-outline:active {
+    transform: scale(1.5);
 }

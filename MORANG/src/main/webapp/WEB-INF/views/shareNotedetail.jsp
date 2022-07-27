@@ -23,19 +23,7 @@
 <!-- 차트 js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- 자바 스크립트 -->
-<style>
-       button{
-        border: 1px solid rgb(240, 129, 129);
-        background-color: rgba(0, 0, 0, 0);
-        color: rgb(240, 129, 129);;
-        padding: 10px;
-        border-radius: 10px;
-       }
-       .btn:hover{
-        color: white;
-        background-color: rgb(240, 129, 129);
-       }
-    </style>
+
 
 <script type="text/javascript">
 	function goList(){
@@ -97,8 +85,8 @@
 					${fn:replace(shareNote.note_content, newLine, "<br>") }</div>
 
 				<div class="share_btn">
-					<button onclick="goUpdate(${shareNote.note_seq})">수정</button>
-					<button onclick="goList()">돌아가기</button>
+					<button class="w-btn w-btn-indigo" onclick="goUpdate(${shareNote.note_seq})">수정</button>
+					<button class="w-btn w-btn-indigo" onclick="goList()">돌아가기</button>
 				</div>
 			</div>
 

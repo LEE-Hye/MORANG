@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Delete;
 import com.smhrd.domain.shareNote;
 
 public interface shareNoteMapper {
-	public List<shareNote> shareNoteList();
+	public List<shareNote> shareNoteList(String u_id);
 
 	public void shareNoteInsert(shareNote vo);
 	

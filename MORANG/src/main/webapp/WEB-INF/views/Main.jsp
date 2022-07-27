@@ -238,33 +238,142 @@
 
     <!-- 그래프 차트 스크립트 -->
     <script>
-      var ctx = document.getElementById('Week-Chart').getContext('2d');
-      var chart = new Chart(ctx, {
+    	var ctx3 = document.getElementById('Week-Chart');
+    	
+    	 let pos1day = Number('${diaryyesterdayemotion.diary_pos}')
+         let neg1day = Number('${diaryyesterdayemotion.diary_neg}')
+         
+         let pos2day = Number('${diary2emotion.diary_pos}')
+         let neg2day = Number('${diary2emotion.diary_neg}')
+         
+         let pos3day = Number('${diary3emotion.diary_pos}')
+         let neg3day = Number('${diary3emotion.diary_neg}')
+         
+         let pos4day = Number('${diary4emotion.diary_pos}')
+         let neg4day = Number('${diary4emotion.diary_neg}')
+         
+         let pos5day = Number('${diary5emotion.diary_pos}')
+         let neg5day = Number('${diary5emotion.diary_neg}')
+         
+         let pos6day = Number('${diary6emotion.diary_pos}')
+         let neg6day = Number('${diary6emotion.diary_neg}')
+         
+         let pos7day = Number('${diary7emotion.diary_pos}')
+         let neg7day = Number('${diary7emotion.diary_neg}')
+         
+         if (pos1day>0||neg1day>0){
+    			
+    	}
+         else{
+        	 pos1day=55;
+        	 neg1day=45;
+         }
+    	 if (pos2day>0||neg2day>0){
+ 			
+     	}
+          else{
+         	 pos2day=55;
+         	 neg2day=45;
+          }
+    	 if (pos3day>0||neg3day>0){
+ 			
+     	}
+          else{
+         	 pos3day=55;
+         	 neg3day=45;
+          }
+    	 if (pos4day>0||neg4day>0){
+ 			
+     	}
+          else{
+         	 pos4day=55;
+         	 neg4day=45;
+          }
+    	 if (pos5day>0||neg5day>0){
+ 			
+     	}
+          else{
+         	 pos5day=55;
+         	 neg5day=45;
+          }
+    	 if (pos6day>0||neg6day>0){
+ 			
+     	}
+          else{
+         	 pos6day=55;
+         	 neg6day=45;
+          }
+    	 if (pos7day>0||neg7day>0){
+  			
+      	}
+           else{
+          	 pos7day=55;
+          	 neg7day=45;
+           }
+    	 
+      var config3 = {
         // 챠트 종류를 선택
         type: 'line',
 
         // 챠트를 그릴 데이타
         data: {
-          labels: ['7day', '6day', '5day', '4day', '3day', '2day', '1day'],
-          datasets: [{
-            label: '주간 감정 데이터 비교',
-            backgroundColor: 'transparent',
-            borderColor: '#FFA7A7',
-            data: [0, 10, 5, 2, 20, 30, 45]
-          }]
-        },
-        // 옵션
-        options: {
-          legend: {
-            display: false
-          }
-        },
-        title: {
-          display: true,
-          text: '주간 데이터 분석'
-        }
-
-      });
+			labels: [ // Date Objects
+				'day7',
+				'day6',
+				'day5',
+				'day4',
+				'day3',
+				'day2',
+				'day1'
+			],
+			datasets: [{
+				label: 'pos',
+				backgroundColor: 'rgba(75, 192, 192, 1)',
+				borderColor: 'rgba(75, 192, 192, 1)',
+				fill: false,
+				data: [
+					pos7day,
+					pos6day,
+					pos5day,
+					pos4day,
+					pos3day,
+					pos2day,
+					pos1day
+				],
+			}, {
+				label: 'neg',
+				backgroundColor: 'rgba(255, 99, 132, 1)',
+				borderColor: 'rgba(255, 99, 132, 1)',
+				fill: false,
+				data: [
+					neg7day,
+					neg6day,
+					neg5day,
+					neg4day,
+					neg3day,
+					neg2day,
+					neg1day
+				],
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			title: {
+				text: 'Chart.js Time Scale'
+			},
+			scales: {
+				yAxes: [{
+					scaleLabel: {
+						display: true,
+						labelString: '차트'
+					}
+				}]
+			},
+		}
+	};
+	 
+	//차트 그리기
+	var myChart3 = new Chart(ctx3, config3);
     </script>
 
     <!-- 파이차트 스크립트 -->

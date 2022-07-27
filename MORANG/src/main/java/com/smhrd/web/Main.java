@@ -60,8 +60,8 @@ public class Main {
 		
 		chatbotEmotion vo2= new chatbotEmotion(fear,surprise,angry,sadness,neutral,happiness,disgust);
 		session.setAttribute("yesterdayemotion", vo2);
-		int pos=0;
-		int neg=0;
+		float pos=0;
+		float neg=0;
 		List<diary> diaryemotionlist = mapper.selectemotion(u_id);
 		for(int i=0 ;i<diaryemotionlist.size();i++) {
 			pos+=diaryemotionlist.get(i).getDiary_pos();
@@ -69,11 +69,85 @@ public class Main {
 		}
 		pos=pos/diaryemotionlist.size();
 		neg=neg/diaryemotionlist.size();
-		
-		System.out.println(pos);
-		System.out.println(neg);
 		diary dia=new diary(pos,neg);
+		
+		
+		float pos2=0;
+		float neg2=0;
+		List<diary> diaryemotionlist2 = mapper.selectemotion2(u_id);
+		for(int i=0 ;i<diaryemotionlist2.size();i++) {
+			pos2+=diaryemotionlist2.get(i).getDiary_pos();
+			neg2+=diaryemotionlist2.get(i).getDiary_neg();
+		}
+		pos2=pos2/diaryemotionlist2.size();
+		neg2=neg2/diaryemotionlist2.size();
+		diary dia2=new diary(pos2,neg2);
+		
+		float pos3=0;
+		float neg3=0;
+		List<diary> diaryemotionlist3 = mapper.selectemotion3(u_id);
+		for(int i=0 ;i<diaryemotionlist3.size();i++) {
+			pos3+=diaryemotionlist3.get(i).getDiary_pos();
+			neg3+=diaryemotionlist3.get(i).getDiary_neg();
+		}
+		pos3=pos3/diaryemotionlist3.size();
+		neg3=neg3/diaryemotionlist3.size();
+		diary dia3=new diary(pos3,neg3);
+		
+		float pos4=0;
+		float neg4=0;
+		List<diary> diaryemotionlist4 = mapper.selectemotion4(u_id);
+		for(int i=0 ;i<diaryemotionlist4.size();i++) {
+			pos4+=diaryemotionlist4.get(i).getDiary_pos();
+			neg4+=diaryemotionlist4.get(i).getDiary_neg();
+		}
+		pos4=pos4/diaryemotionlist4.size();
+		neg4=neg4/diaryemotionlist4.size();
+		diary dia4=new diary(pos4,neg4);
+		
+		
+		float pos5=0;
+		float neg5=0;
+		List<diary> diaryemotionlist5 = mapper.selectemotion5(u_id);
+		for(int i=0 ;i<diaryemotionlist5.size();i++) {
+			pos5+=diaryemotionlist5.get(i).getDiary_pos();
+			neg5+=diaryemotionlist5.get(i).getDiary_neg();
+		}
+		pos5=pos5/diaryemotionlist5.size();
+		neg5=neg5/diaryemotionlist5.size();
+		diary dia5=new diary(pos5,neg5);
+		
+		float pos6=0;
+		float neg6=0;
+		List<diary> diaryemotionlist6 = mapper.selectemotion6(u_id);
+		for(int i=0 ;i<diaryemotionlist6.size();i++) {
+			pos6+=diaryemotionlist6.get(i).getDiary_pos();
+			neg6+=diaryemotionlist6.get(i).getDiary_neg();
+		}
+		pos6=pos6/diaryemotionlist6.size();
+		neg6=neg6/diaryemotionlist6.size();
+		diary dia6=new diary(pos6,neg6);
+		
+		
+		float pos7=0;
+		float neg7=0;
+		List<diary> diaryemotionlist7 = mapper.selectemotion7(u_id);
+		for(int i=0 ;i<diaryemotionlist7.size();i++) {
+			pos7+=diaryemotionlist7.get(i).getDiary_pos();
+			neg7+=diaryemotionlist7.get(i).getDiary_neg();
+		}
+		pos7=pos7/diaryemotionlist7.size();
+		neg7=neg7/diaryemotionlist7.size();
+		diary dia7=new diary(pos7,neg7);
+		
+		
 		session.setAttribute("diaryyesterdayemotion", dia);
+		session.setAttribute("diary2emotion", dia2);
+		session.setAttribute("diary3emotion", dia3);
+		session.setAttribute("diary4emotion", dia4);
+		session.setAttribute("diary5emotion", dia5);
+		session.setAttribute("diary6emotion", dia6);
+		session.setAttribute("diary7emotion", dia7);
 		
 		return "Main";
 	}

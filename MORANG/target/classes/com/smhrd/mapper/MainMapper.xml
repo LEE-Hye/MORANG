@@ -22,4 +22,29 @@
      <select id="selectemotion" parameterType="String" resultType="com.smhrd.domain.diary">
          select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 1 DAY,'%Y-%m-%d');
      </select>
+     
+     
+     <select id="selectemotion2" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 2 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion3" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 3 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion4" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 4 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion5" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 5 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion6" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 6 DAY,'%Y-%m-%d');
+     </select>
+     
+     <select id="selectemotion7" parameterType="String" resultType="com.smhrd.domain.diary">
+         select * from diary3 where u_id=#{u_id} and DATE_FORMAT(diary_date,'%Y-%m-%d')=DATE_FORMAT(NOW()- INTERVAL 7 DAY,'%Y-%m-%d');
+     </select>
 </mapper>

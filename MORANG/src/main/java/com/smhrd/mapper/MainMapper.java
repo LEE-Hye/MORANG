@@ -18,4 +18,11 @@ public interface MainMapper {
 	
 	public List<diary> selectemotion(String u_id);
 	
+	public List<diary> selectemotion2(String u_id);
+	public List<diary> selectemotion3(String u_id);
+	public List<diary> selectemotion4(String u_id);
+	public List<diary> selectemotion5(String u_id);
+	public List<diary> selectemotion6(String u_id);
+	public List<diary> selectemotion7(String u_id);
+	
 }

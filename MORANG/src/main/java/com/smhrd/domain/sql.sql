@@ -50,4 +50,4 @@ select * from chatbotEmotion where u_id='11' and DATE_FORMAT(chatday,'%Y-%m-%d')
 
 select * from diary3 where u_id='11'
 
-
+insert into diary3 values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)

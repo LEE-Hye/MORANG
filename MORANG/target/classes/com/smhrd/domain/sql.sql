@@ -66,7 +66,7 @@ SELECT DATE_FORMAT(diary_date,'%Y-%m-%d'), avg(diary_pos),avg(diary_neg)
 FROM diary3
 where
 
-insert into diary3 values('11',CURDATE() - INTERVAL 1 DAY,1,2,3,4,5,6,7)
+insert into chatbotEmotion values('11',CURDATE() - INTERVAL 1 DAY,10,20,30,40,50,60,70)
 
 select Max(cmt_seq) from mr_comment 
 select * from mr_comment 
@@ -76,3 +76,7 @@ insert into mr_comment(cmt_seq,c_seq,cmt_content, u_id )
 		values(4,62,'혜빈아 롤하자','morang')
 
 delete from mr_comment where cmt_seq=123
+
+
+insert into diary3(diary_title, diary_content, u_id,diary_date,weather,diary_pos,diary_neg)
+          values('수현이가 테스트중', '오늘은 무엇을 할가?','11',CURDATE() - INTERVAL 1 DAY,'sun',62.73,37.27)

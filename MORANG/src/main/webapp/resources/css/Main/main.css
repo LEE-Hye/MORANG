@@ -9,8 +9,8 @@
 }
 .chat_window {
     position: absolute;
-    width: calc(100% - 20px);
-    max-width: 50%;
+    width: 60%;
+    max-width: 60%;
     height: 500px;
     border-radius: 10px;
     left: 60%;
@@ -178,7 +178,7 @@
 .bottom_wrapper .message_input_wrapper {
     display: inline-block;
     height: 50px;
-    width: 70%;
+    width: 60%;
     border-radius: 25px;
     border: 1px solid #bcbdc0;
     margin-right: 2%;

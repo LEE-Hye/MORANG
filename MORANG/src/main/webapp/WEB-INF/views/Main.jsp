@@ -81,7 +81,7 @@
           <div class="title">모랑</div>
         </div>
         <ul class="messages"></ul>
-        <div class="bottom_wrapper clearfix">
+        <div class="bottom_wrapper clearfix" style="display:flex">
           <div class="message_input_wrapper">
             <input class="message_input" placeholder="내용을 입력하세요." />
           </div>
@@ -228,7 +228,7 @@
   
     <div>
       <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
-      <img src="resources/img/하트하트.gif" alt="실패" id="chatbot_close" width="130px" height="130px" >
+      <img src="resources/img/하트하트.gif" alt="실패" id="chatbot_close" width="10%" height="10%" >
     </div>
 </div>
 
@@ -570,6 +570,9 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
      },100);
    
 </script>
+
+
+
 </body>
 
 </html>

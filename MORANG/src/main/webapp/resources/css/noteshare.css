@@ -372,7 +372,7 @@ span.center {
 
 /* 공유 수첩 */
 .share_note {
-	margin: 80px 110px 100px 110px;
+	margin: 80px 110px 30px 110px;
 	flex: 1;
 	border: 1px solid #e3e6f0;
 	border-radius: 0.35rem;
@@ -413,7 +413,7 @@ span.center {
 .share_content {
 	font-size: 30px;
 	width: 100%;
-	height: 90%;
+	height: 70%;
 	cursor: pointer;
 	padding: 0px 5px 0px 5px;
 	color: black;
@@ -459,7 +459,7 @@ textarea {
 	padding: 5px 5px 5px 5px;
 }
 
-.fa-thumbtack {
+#thumbtack {
 	margin-left: 300%;
 	margin-top: 11%;
 	cursor: pointer;
@@ -467,9 +467,15 @@ textarea {
 	margin-bottom: auto;
 }
 
-.fa-thumbtack:hover {
+#thumbtack:hover {
 	transform: scale(1.2) rotate(25deg) translateY(-30px);
 	transition: all 300ms ease-in;
+}
+
+#thumbtack2{
+	position: relative;
+    top: -8px;
+    left: 95px;
 }
 
 .note_alter_title {

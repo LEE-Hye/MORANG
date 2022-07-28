@@ -73,9 +73,7 @@
 				for (shareNote shareNote : list) {
 			%>
 			<div class="share_note1">
-<!-- 			<div class="delete_b">
-					<button id="delete_btn">X</button>
-				</div> -->	
+				<i class="fa-solid fa-thumbtack fa-2x" id="thumbtack2"></i>
 				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><div class="share_content"><%=shareNote.getNote_content()%></div></a>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
 				<div class="share_date"><%=shareNote.getNote_date()%></div>

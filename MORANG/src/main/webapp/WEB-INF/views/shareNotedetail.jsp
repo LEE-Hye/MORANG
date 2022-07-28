@@ -83,7 +83,7 @@ body {
 		</nav>
 
 		<div class="share_note">
-		<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-thumbtack fa-2x"></i>
+		<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-thumbtack fa-2x" id="thumbtack"></i>
 			<div class="share_note_detail">
 				<form action="shareNoteUpdate.do" method="post">
 					<input type="hidden" name="note_seq" value="${shareNote.note_seq}">

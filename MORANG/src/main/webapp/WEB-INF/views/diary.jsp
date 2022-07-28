@@ -70,8 +70,8 @@
                 <td class="bookcover-head">아이디</td>
                 <td class="bookcover-head">날씨</td>
                 <td class="bookcover-head">날짜</td>
-                <td class="bookcover-head">딥러닝 결과</td>
-                <td class="bookcover-head">사진</td>
+                <td class="bookcover-head">감정</td>
+               
 
               </tr>
               <% for (diary diary : list) { %>
@@ -98,22 +98,21 @@
                     <%=diary.getDiary_date()%>
                   </td>
                   <td>
-                    <%=diary.getDiary_pos()%>
-                      <%=diary.getDiary_neg()%>
+                                        긍정 : <%=diary.getDiary_pos()%>%
+                    <br>                    
+                                        부정 : <%=diary.getDiary_neg()%>%
                   </td>
-                  <td>
-                    <%=diary.getFilename1()%>
-                  </td>
+                   
                 </tr>
                 <%} %>
             </table>
+            <br>
             <button class="modal-diary" id="diary_write" style="width: 100px; height: 50px;">일기
               작성</button>
              
-
       </div>
-		<br>
-            <div class="footer" style="background-color:#e4beb3; color:white; font-size:30px " >스마트인재개발원 최종프로젝트 팀 우산</div>
+		
+            
     </div>
 
     <div id="modal" class="modal_Wrap">

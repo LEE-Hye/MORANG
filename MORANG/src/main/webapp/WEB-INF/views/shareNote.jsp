@@ -131,9 +131,7 @@
 
 	<script>
 		$(function() {
-			$("#confirm3").click(function() {
-				modalClose();
-			});
+
 			$("#modal-open").click(function() {
 				$("#popup3").css('display', 'flex').hide().fadeIn();
 			});

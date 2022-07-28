@@ -70,7 +70,7 @@
 					</div>
 
 					<div class="share_btn">
-						<button class="w-btn w-btn-indigo" type="submit" style="margin-top:10px">글 수정</button>
+						<button class="w-btn-outline w-btn-gray-outline" type="submit" style="margin-top:10px">글 수정</button>
 					</div>
 				</form>
 			</div>

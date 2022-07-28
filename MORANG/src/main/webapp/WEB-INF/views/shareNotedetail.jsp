@@ -32,7 +32,7 @@
 	
 	function goDelete(note_seq){
 		
-		location.href = '/web/shareNoteDelete.do?note_seq=' + note_seq;
+		location.href = "/web/shareNoteDelete.do?note_seq=" + note_seq;
 		
 	}
 	
@@ -42,6 +42,12 @@
 
 	
 </script>
+<style>
+body {
+	margin: 0;
+	font-family: 'Dongle', sans-serif;
+}
+</style>
 </head>
 <body>
 	<nav class="navbar">
@@ -77,21 +83,31 @@
 		</nav>
 
 		<div class="share_note">
-			<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-x"></i>
+		<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-thumbtack fa-2x"></i>
 			<div class="share_note_detail">
-				<div class="share_title">${requestScope.shareNote.note_title}</div>
-				<% pageContext.setAttribute("newLine", "\n"); %>
-				<div class="share_content">
-					${fn:replace(shareNote.note_content, newLine, "<br>") }</div>
+				<form action="shareNoteUpdate.do" method="post">
+					<input type="hidden" name="note_seq" value="${shareNote.note_seq}">
+					<div class="share_title">
+						<textarea name="note_title" rows="1.5" cols="32" class="note_alter_title">${shareNote.note_title}</textarea>
+					</div>
+					<div class="share_content">
+					
+						<textarea name="note_content" rows="12" cols="42"
+							class="note_alter_content">${shareNote.note_content }</textarea>
+					</div>
 
-				<div class="share_btn">
-					<button class="w-btn w-btn-indigo" onclick="goUpdate(${shareNote.note_seq})">수정</button>
-					<button class="w-btn w-btn-indigo" onclick="goList()">돌아가기</button>
-				</div>
+					<div class="share_btn">
+						<button class="w-btn-outline w-btn-gray-outline" type="submit" style="margin-top:10px">글 수정</button>
+						<button class="w-btn-outline w-btn-gray-outline" onclick="goList()">돌아가기</button>
+					</div>
+				</form>
 			</div>
 
 		</div>
+	 
 
 	</div>
+	
+
 </body>
 </html>

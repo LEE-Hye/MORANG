@@ -61,11 +61,11 @@ public class shareNoteController {
 	
 	// 노트 상세 보기
 		@RequestMapping("shareNotedetail.do")
-		public String shareNotedetail(Model model,  int note_seq) {
+		public String shareNotedetail(Model model, int note_seq) {
 			
 			shareNote vo = mapper.shareNotedetail(note_seq);
 			
-			System.out.println(vo.getNote_title());
+			System.out.println(vo.getNote_content());
 
 			model.addAttribute("shareNote", vo);
 			

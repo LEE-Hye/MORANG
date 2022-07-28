@@ -58,7 +58,7 @@
         <a href="Main.do" class="menu-item">HOME</a>
         <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
         <a href="diary.do" class="menu-item">감정 일기장</a>
-        <a href="shareNote.do" class="menu-item">공유수첩</a>
+        <a href="shareNote.do" class="menu-item"><span class="pagenow">공유수첩</span></a>
         <a href="boardList.do" class="menu-item">게시판</a>
       </nav>
     </nav>

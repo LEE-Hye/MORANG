@@ -20,10 +20,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
 
- 
-
-
-
 </head>
 
 <body>
@@ -116,7 +112,8 @@
              
 
       </div>
-
+		<br>
+            <div class="footer" style="background-color:#e4beb3; color:white; font-size:30px " >스마트인재개발원 최종프로젝트 팀 우산</div>
     </div>
 
     <div id="modal" class="modal_Wrap">

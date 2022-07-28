@@ -86,13 +86,13 @@
             <input class="message_input" placeholder="내용을 입력하세요." />
           </div>
 
-          <div class="send_message" id="send_message">
+         
 
+			
+            <img alt="" src="resources/img/mic.png" width="52px"height="52px" >
+         
 
-            <div class="text">보내기</div>
-          </div>
-
-        </div>
+        
       </div>
       <div class="message_template">
         <li class="message">
@@ -228,7 +228,7 @@
   
     <div>
       <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
-      <img src="resources/img/하트하트.gif" alt="실패" id="chatbot_close" width="10%" height="10%" >
+      <img src="resources/img/chatbottest.gif" alt="실패" id="chatbot_close" width="10%" height="10%" >
     </div>
 </div>
 
@@ -261,6 +261,34 @@
          let pos7day = Number('${diary7emotion.diary_pos}')
          let neg7day = Number('${diary7emotion.diary_neg}')
          
+         
+        	 
+        
+         const date = new Date();
+		 const year = date.getFullYear();
+		 const month = ('0' + (date.getMonth() + 1)).slice(-2);
+		 const day1 = ('0' + (date.getDate()-1)).slice(-2);
+		 const todaydate1 = year + '-' + month + '-' + day1;
+		 
+		 const day2 = ('0' + (date.getDate()-2)).slice(-2);
+		 const todaydate2 = year + '-' + month + '-' + day2;
+		 
+		 const day3 = ('0' + (date.getDate()-3)).slice(-2);
+		 const todaydate3 = year + '-' + month + '-' + day3;
+		 
+		 const day4 = ('0' + (date.getDate()-4)).slice(-2);
+		 const todaydate4 = year + '-' + month + '-' + day4;
+		 
+		 const day5 = ('0' + (date.getDate()-5)).slice(-2);
+		 const todaydate5 = year + '-' + month + '-' + day5;
+		 
+		 const day6 = ('0' + (date.getDate()-6)).slice(-2);
+		 const todaydate6 = year + '-' + month + '-' + day6;
+		 
+		 const day7 = ('0' + (date.getDate()-7)).slice(-2);
+		 const todaydate7 = year + '-' + month + '-' + day7;
+
+		
          if (pos1day>0||neg1day>0){
              
        }
@@ -318,13 +346,13 @@
         // 챠트를 그릴 데이타
         data: {
          labels: [ // Date Objects
-            'day7',
-            'day6',
-            'day5',
-            'day4',
-            'day3',
-            'day2',
-            'day1'
+            todaydate7,
+            todaydate6,
+            todaydate5,
+            todaydate4,
+            todaydate3,
+            todaydate2,
+            todaydate1
          ],
          datasets: [{
             label: 'pos',
@@ -430,7 +458,7 @@
    var config1 = {
       type: 'doughnut',
        data: {
-         labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+         labels: ["공포", "놀람", "분노", "슬픔", "중립","행복","혐오"],
          datasets: [
            {
              label: "Population (millions)",
@@ -485,7 +513,7 @@ var ctx2 = document.getElementById('radar-chart')
  var config2 = {
     type: 'radar',
        data: {
-       labels: ["fear", "surprise", "angry", "sadness", "neutral","happiness","disgust"],
+       labels: ["공포", "놀람", "분노", "슬픔", "중립","행복","혐오"],
          datasets: [
            {
              label: "어제",

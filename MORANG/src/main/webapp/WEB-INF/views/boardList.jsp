@@ -90,12 +90,9 @@ page language="java" contentType="text/html; charset=UTF-8"
                                 <% } %>
 
                         </table>
+                        <br>
                         <button onclick="location.href='boardInsert.do'" class="notice-board-btn">게시글 작성</button>
             </div>
-            <br>
-            <div class="footer" style="background-color:#e4beb3; color:white; font-size:30px " >스마트인재개발원 최종프로젝트 팀 우산</div>
-        </div>
-        <div class="side-img">
             
         </div>
         

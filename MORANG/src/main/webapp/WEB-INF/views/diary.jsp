@@ -79,7 +79,7 @@
                   <td>
                     <%=diary.getDiary_seq()%>
                   </td>
-                  <td><a href="/web/diaryContent.do/<%=diary.getDiary_seq()%>">
+                  <td><a href="/web/diaryContent.do?diary_seq=<%=diary.getDiary_seq()%>">
                       <%=diary.getDiary_title()%>
                   </td>
 

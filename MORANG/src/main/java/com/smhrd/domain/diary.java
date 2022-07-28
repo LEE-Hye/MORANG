@@ -35,7 +35,7 @@ public class diary {
 	private float diary_pos;
 	@NonNull
 	private float diary_neg;
-	
+	@NonNull
 	private String filename1;
 
 	public diary(@NonNull float diary_pos, @NonNull float diary_neg) {

@@ -121,7 +121,7 @@
 					<tr>
 						<td>사진</td>
 						<td>
-						<img src='resources/img/${diary.filename1}'></td>
+						<img src='${diary.filename1}'></td>
 					</tr>
 				
 

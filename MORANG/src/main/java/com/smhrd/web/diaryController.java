@@ -120,8 +120,8 @@ public class diaryController {
 	
 	
 	// 이거 상세 페이지 보여주기
-	@RequestMapping("diaryContent.do/{diary_seq}")
-	public String diaryContent(Model model, @PathVariable("diary_seq") int diary_seq) {
+	@RequestMapping("diaryContent.do")
+	public String diaryContent(Model model,  int diary_seq) {
 		diary vo = mapper.diaryContent(diary_seq);
 		
 		System.out.println(vo.getDiary_title());

@@ -26,7 +26,7 @@
   <nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="main.do">MoRang.</a>
+      <a href="Main.do">MoRang.</a>
     </div>
 
     <ul class="navbar_menu">

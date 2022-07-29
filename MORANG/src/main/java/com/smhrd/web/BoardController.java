@@ -21,6 +21,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.domain.Board;
 import com.smhrd.domain.comment;
+import com.smhrd.domain.diary;
 import com.smhrd.mapper.BoardMapper;
 import com.smhrd.mapper.commentMapper;
 
@@ -51,14 +52,63 @@ public class BoardController {
 		return "boardForm";
 	}
 
+//	@PostMapping("/boardInsert.do")
+//	public String boardInsert(Board vo) {
+//		mapper.boardInsert(vo);
+//
+//		return "redirect:/boardList.do";
+//
+//	}
+
 	@PostMapping("/boardInsert.do")
-	public String boardInsert(Board vo) {
+	public String boardInsert(Board vo,HttpServletRequest request,HttpServletResponse response) {
+		
+		response.setCharacterEncoding("UTF-8");
+		
+		String c_title="";
+		String u_id="";
+		String c_content="";
+		try {
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		String realFolder = "";
+		String c_file = "";
+		int maxSize = 1024*1024*5;
+		String encType = "UTF-8";
+		String savefile = "img";
+		
+		realFolder="C:/Users/smhrd/git/MR/MORANG/src/main/webapp/resources/img";
+		try{
+			 MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+			 Enumeration<?> files = multi.getFileNames();
+		     String file1 = (String)files.nextElement();
+		     c_file = multi.getFilesystemName(file1);
+		     c_title=multi.getParameter("c_title");
+		     u_id=multi.getParameter("u_id");
+		     c_content=multi.getParameter("c_content");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	
+		String fullpath = "resources/img/"+c_file;
+		
+
+		vo.setC_title(c_title);
+		vo.setU_id(u_id);
+		vo.setC_content(c_content);
+		vo.setC_file(fullpath);
+		System.out.println(vo.getC_title());
+		System.out.println(vo.getC_content());
+		System.out.println(vo.getU_id());
 		mapper.boardInsert(vo);
-
+		
 		return "redirect:/boardList.do";
-
 	}
-
+	
 	@RequestMapping("boardContent.do/{c_seq}") //Path Variable의 키값 선언
 	public String boardContent(Model model, @PathVariable("c_seq") int c_seq) {
 

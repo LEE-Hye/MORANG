@@ -84,16 +84,16 @@ body {
 
 		<div class="share_note">
 		<i onclick="goDelete(${shareNote.note_seq})" class="fa-solid fa-thumbtack fa-2x" id="thumbtack"></i>
-			<div class="share_note_detail">
+			<div class="share_note_detail" style="background-color:${shareNote.note_color}">
 				<form action="shareNoteUpdate.do" method="post">
 					<input type="hidden" name="note_seq" value="${shareNote.note_seq}">
 					<div class="share_title">
-						<textarea name="note_title" rows="1.5" cols="32" class="note_alter_title">${shareNote.note_title}</textarea>
+						<textarea name="note_title" rows="1.5" cols="32" class="note_alter_title" style="background-color:${shareNote.note_color}">${shareNote.note_title}</textarea>
 					</div>
 					<div class="share_content">
 					
 						<textarea name="note_content" rows="12" cols="42"
-							class="note_alter_content">${shareNote.note_content }</textarea>
+							class="note_alter_content" style="background-color:${shareNote.note_color}">${shareNote.note_content } </textarea>
 					</div>
 
 					<div class="share_btn">

@@ -24,4 +24,6 @@ public class shareNote {
 	private String u_id;
 	
 	private String note_date;
+	
+	private String note_color;
 }

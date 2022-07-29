@@ -426,7 +426,7 @@ span.center {
 	cursor: pointer;
 	padding: 0px 5px 0px 5px;
 	color: black;
-	overflow:hidden;
+	overflow: hidden;
 }
 
 .share_title {
@@ -462,10 +462,20 @@ textarea {
 .note_title {
 	text-align: center;
 	padding: 10px 0px 0px 10px;
+	font-family: 'Dongle', sans-serif;
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	font-size: 23px;
+	
 }
 
 .note_content {
 	padding: 5px 5px 5px 5px;
+	font-family: 'Dongle', sans-serif;
+		height:100%;
+	width:100%;
+	font-size:20px;
 }
 
 #thumbtack {
@@ -473,7 +483,7 @@ textarea {
 	margin-top: 11%;
 	cursor: pointer;
 	z-index: 1;
-	margin-bottom: auto;
+	margin-bottom: 670px;
 }
 
 #thumbtack:hover {
@@ -481,10 +491,10 @@ textarea {
 	transition: all 300ms ease-in;
 }
 
-#thumbtack2{
+#thumbtack2 {
 	position: relative;
-    top: -8px;
-    left: 95px;
+	top: -8px;
+	left: 95px;
 }
 
 .note_alter_title {
@@ -502,6 +512,10 @@ textarea {
 	font-size: 25px;
 	width: 100%;
 	height: 100%;
+}
+
+.bgColor {
+	display: flex;
 }
 
 /* 모달 */

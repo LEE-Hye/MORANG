@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
 </head>
 <body>
@@ -22,7 +21,7 @@
 	<div class="write_Content">
       
         <form class="form-horizontal" action="diarywrite.do" method="post" enctype="multipart/form-data"
-          onsubmit="checkNull()">
+          onsubmit="checkNull()"id="ajaxafter">
           <div class="form-group">
             <div class="headline">제목 :</div>
             <div class="col-sm-10">
@@ -84,7 +83,7 @@
 
           <div class="form-group">
             <div class="col-sm-10">
-              <button type="submit" class="modal-diary">저장하기</button>
+              <button type="button" class="modal-diary"id="test_Check">저장하기</button>
             </div>
           </div>
         </form>
@@ -93,41 +92,11 @@
     </div>
 	
 	
-	<script type="text/javascript">
-      $('#test').click(function() {
-         var text = $('#diary_test').val()
-         var postdata = {
-            'msg' : text
-         }
-
-         $.ajax({
-            type : 'POST',
-            url : 'http://127.0.0.7:9999/sentiment',
-            async : false,
-            data : JSON.stringify(postdata),
-            dataType : 'JSON',
-            contentType : "application/json",
-            success : function(data) {
-               let pos = data.result2['pos'];
-               let neg = data.result2['neg'];
-               //        $('#morang').append(pos);
-               //        $('#morang').append(neg);
-               document.getElementById("data1").innerHTML = pos;
-               document.getElementById("data2").innerHTML = neg;
-				$('#pos').val(pos);
-				$('#neg').val(neg);
-            },
-
-            error : function(request, status, error) {
-               alert('ajax 통신 실패')
-               alert(error);
-            }
-         });
-      })
-   </script>
+	
 
 <script type="text/javascript">
-      $('#test_Check').click(function() {
+		$(document).on('click', '#test_Check', function(){
+			
          var text = $('#diary_test').val()
          var postdata = {
             'msg' : text
@@ -135,15 +104,22 @@
 
          $.ajax({
             type : 'POST',
-            url : 'http://127.0.0.7:9999/sentiment',
+            url : 'http://220.80.88.59:8084/sentiment',
             async : false,
             data : JSON.stringify(postdata),
             dataType : 'JSON',
             contentType : "application/json",
             success : function(data) {
-               let pos = data.result2['pos'];
-               let neg = data.result2['neg'];
-
+            	let pos = data.result2['pos'];
+                let neg = data.result2['neg'];
+				console.log(pos);
+				$('#pos').val(pos);
+				$('#neg').val(neg);
+                
+				
+                let pos2=$('#pos').val()
+                console.log(pos2);
+                document.getElementById('ajaxafter').submit();
                //location.href = "diarywriteCon.do/" + pos + "/" + neg
             },
 

@@ -74,7 +74,7 @@ page language="java" contentType="text/html; charset=UTF-8"
                                         <%=board.getC_seq()%>
                                     </td>
 
-                                    <td><a href="/web/boardContent.do/<%=board.getC_seq()%>">
+                                    <td><a href="/web/boardContent.do?c_seq=<%=board.getC_seq()%>">
                                             <%=board.getC_title()%>
                                         </a></td>
                                     <td>

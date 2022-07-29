@@ -67,16 +67,11 @@ font-family: 'BMJUA';
           <% pageContext.setAttribute("newLine", "\n"); %>
           <td> ${ fn:replace(board.c_content, newLine, "<br>" ) } </td>
           <% pageContext.setAttribute("newLine", "\n"); %>
-          <td> ${ fn:replace(board.c_file, newLine, "<br>" ) } </td>
-          <%-- fn:replace(대상 문자열(불러오는 텍스트값), 바꿀 문자열, 바꾼뒤 문자열) --%>
-          <%-- \n 을 replace 하고 싶다면, scope에서 문자열로써 담아뒀다가 꺼내서 써야됨 --%>
-          <%-- "el공부 <br> 잘 되나 <br> 확인해볼게용" --%>
+          <td><img src="${board.c_file}"> </td>
        </tr>
        <tr>
           <td> 작성일 : </td>
           <td> ${ fn:split( board.c_date, " ")[0] }</td>
-          <!-- fn:split("대상 문자열", "구분자")  -->
-          <%-- ["2022-06-21", "17:16:33"] --%>
        </tr>
 
        	<tr>

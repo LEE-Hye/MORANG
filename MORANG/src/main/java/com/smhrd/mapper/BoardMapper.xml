@@ -32,9 +32,6 @@
  	
  	<update id="viewUpdate" parameterType="com.smhrd.domain.Board">
  	    update mr_community set c_likes= #{c_likes} where c_seq=#{c_seq}
- 	    
  	</update>
- 	
- 	
  	
 </mapper>

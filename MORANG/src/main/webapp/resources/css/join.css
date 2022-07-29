@@ -8,8 +8,11 @@
   box-sizing: content-box;
   font-family: 'BMJUA';
 }
+.modal-header{
+  background-color: rgb(240, 129, 129);
+}
 body {
-    background: rgb(255, 255, 255);
+    background: rgb(248, 237, 237);
     height: 100vh;
     
     overflow: hidden;

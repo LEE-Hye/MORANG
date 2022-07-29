@@ -43,7 +43,7 @@ public class commentController {
 		System.out.println(vo.getCmt_seq());
 		mapper.commentInsert(vo);
 		
-		return "redirect:/boardContent.do/"+vo.getC_seq();
+		return "redirect:/boardContent.do?c_seq="+vo.getC_seq();
 	}
 	
 

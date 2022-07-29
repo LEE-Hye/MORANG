@@ -109,8 +109,8 @@ public class BoardController {
 		return "redirect:/boardList.do";
 	}
 	
-	@RequestMapping("boardContent.do/{c_seq}") //Path Variable의 키값 선언
-	public String boardContent(Model model, @PathVariable("c_seq") int c_seq) {
+	@RequestMapping("boardContent.do") //Path Variable의 키값 선언
+	public String boardContent(Model model,  int c_seq) {
 
 		// 특정한 하나의 글 데이터를 가져오기
 		Board vo = mapper.boardContent(c_seq);

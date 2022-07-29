@@ -26,12 +26,23 @@
                       padding-left: 10px;
                       background-color: rgb(233, 233, 233)
         }
-        
+        .btn-3 {
+        border: 1px solid rgb(240, 129, 129);
+        background-color: rgb(240, 129, 129);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+       }
+       .btn-3:hover{
+        color: rgb(240, 129, 129);
+        background-color: white;
+       }
     </style>
 </head>
 
 <body>
-
+    
     <h3 style="color : rgb(255, 051, 051)">母랑<br>임산부<br>우울감 케어 서비스</h3>
     <section class="top">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -76,7 +87,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <a href="join.do"><button type="button" class="btn btn-primary">로그인하기</button></a>
+                        <a href="join.do"><button type="button" class="btn btn-danger">로그인하기</button></a>
                     </div>
                 </div>
             </div>
@@ -150,8 +161,8 @@
                                         <hr>
                                     </div>
                                     <div align="center">
-                                        <input type="submit" value="회원가입"
-                                            style="color: azure; background-color: #000; margin-bottom: 20px;">
+                                        <input type="submit" value="회원가입" class="btn-3">
+                                           
         
                                     </div>
                                 </form>
@@ -204,8 +215,8 @@
                                     <hr>
                                 </div>
                                 <div align="center">
-                                    <input type="submit" value="회원가입"
-                                        style="color: azure; background-color: #000; margin-bottom: 20px;">
+                                    <input type="submit" value="회원가입" class="btn-3">
+                                        
     
                                 </div>
                             </form>
@@ -221,47 +232,104 @@
 
        
         <!-- 로그인 Modal -->
+        <!-- 여기부터 임산부  로그인 모달 -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="login.do"  method="post">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">로그인 </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="wrapper" align="center">
-                            <br>
-                            <br>
-                            <div class="id">
-                                ID : <input id="id" type="text" name="u_id" placeholder="아이디를 입력해 주세요." class="inputList">
-                                <div id="idError" class="error"></div>
+                    <br>
+                    <div class="wrapper" >
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" align="center">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab1" data-bs-toggle="tab" data-bs-target="#home1" type="button" role="tab" aria-controls="home1" aria-selected="true">임산부</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab1" data-bs-toggle="tab" data-bs-target="#profile1" type="button" role="tab" aria-controls="profile1" aria-selected="false">보호자</button>
+                            </li>
+
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab1">
+                                <form action="login.do" method="post">
                                 <br>
+                                <div class="modal-body">
+                                    <div class="wrapper" align="center">
+                                        <br>
+                                        <br>
+                                        <div class="id">
+                                            ID : <input id="id" type="text" name="u_id" placeholder="임산부 아이디를 입력해 주세요." class="inputList">
+                                            <div id="idError" class="error"></div>
+                                            <br>
+                                        </div>
+                                        <div class="password">
+                                            PW : <input id="password" type="password" name="u_pw" placeholder="비밀번호를 입력해 주세요." class="inputList">
+                                            <div id="passwordError" class="error"></div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <p>생각나지 않는다면 ? 😑</p>
+            
+                                        <!-- test -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModa3"
+                                            style="background-color: black; border: none; text-align : center">
+                                            아이디/비밀번호 찾기
+                                        </button>
+            
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                    <button type="submit" class="btn btn-danger">로그인하기</button></a>
+                                </div>
+                                </form>
                             </div>
-                            <div class="password">
-                                PW : <input id="password" type="password" name="u_pw" placeholder="비밀번호를 입력해 주세요." class="inputList">
-                                <div id="passwordError" class="error"></div>
+
+                            
+                            <!-- 여기부터 보호자  로그인 모달 -->
+                            <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
+                                <form action="login.do" method="post">
+                                <br>
+                                <div class="modal-body">
+                                    <div class="wrapper" align="center">
+                                        <br>
+                                        <br>
+                                        <div class="id">
+                                            ID : <input id="id" type="text" name="p_id" placeholder="보호자 아이디를 입력해 주세요." class="inputList">
+                                            <div id="idError" class="error"></div>
+                                            <br>
+                                        </div>
+                                        <div class="password">
+                                            PW : <input id="password" type="password" name="p_pw" placeholder="비밀번호를 입력해 주세요." class="inputList">
+                                            <div id="passwordError" class="error"></div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <p>생각나지 않는다면 ? 😑</p>
+            
+                                        <!-- test -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModa3"
+                                            style="background-color: black; border: none; text-align : center">
+                                            아이디/비밀번호 찾기
+                                        </button>
+            
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                                    <button type="submit" class="btn btn-danger">로그인하기</button></a>
+                                </div>
+                                </form>
                             </div>
-                            <br>
-                            <br>
-                            <p>생각나지 않는다면 ? 😑</p>
-
-                            <!-- test -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModa3"
-                                style="background-color: black; border: none; text-align : center">
-                                아이디/비밀번호 찾기
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <button type="submit" class="btn btn-primary">로그인하기</button></a>
+                          </div>
+                        <br />                        
                     </div>
                 </div>
             </div>
-            </form>
         </div>
     </section>
     <!-- 하트비 -->
@@ -567,6 +635,7 @@
                             <div class="right"></div>
                         </div>
                     </div>
+                    
                     <div class="reverse">
                         <div class="movable">
                             <div class="left"></div>

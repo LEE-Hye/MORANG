@@ -3,103 +3,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/3e55fa4950.js"
-	crossorigin="anonymous"></script>
-
-	<style>
-		
-	   button{
-			padding: 8px;
-			/*border-radius: 6px;*/
-		}
-		
-	</style>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/diaryMain.css">
+  <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
+  <title>일기장</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
 </head>
 <body>
-	<div class="container">
-		<h2>SpringMVC01</h2>
-		<div class="panel panel-default">
-			 <div class="panel panel-default">
-			<div class="panel-heading"></div>
-			<div class="panel-body">
-				<form class="form-horizontal" action="diarywrite.do" method="post" enctype="multipart/form-data"  onsubmit="checkNull()">
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="title">제목:</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="title"
-								placeholder="Enter title" name="diary_title">
-						</div>
-					</div>
+<div class="stars">
+    </div>
+    
+	<div class="write_Content">
+      
+        <form class="form-horizontal" action="diarywrite.do" method="post" enctype="multipart/form-data"
+          onsubmit="checkNull()">
+          <div class="form-group">
+            <div class="headline">제목 :</div>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="title" placeholder="Enter title" name="diary_title">
+            </div>
+          </div>
 
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="title">음성인식</label>
-						<div class="col-sm-10">
-							<button type="button" id="speech" onclick="speech_to_text()">Start STT</button>
-     						<button type="button" id="stop" onclick="stop()">Stop</button>
-						</div>
-					</div>
+          <div class="form-group">
+            <div class="headline">음성인식</div>
+            <div class="col-sm-10">
+              <button type="button" id="speech" class="modal-diary" onclick="speech_to_text()">Start STT</button>
+              <button type="button" id="stop" class="modal-diary" onclick="stop()">Stop</button>
+            </div>
+          </div>
 
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="content">내용:</label>
-						<div class="col-sm-10">
-							<textarea name="diary_content" id="diary_test" rows="10"
-								class="form-control"></textarea>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="writer">작성자:</label>
-						<div class="col-sm-10">
-							<input name="u_id" class="form-control" id="writer" type="text" value="${loginMember.u_id}" readonly>
-						</div>
-					</div>
-					<div class="form-group">
-					
-					<div class="weather">
-					<label class="control-label col-sm-2" for="content">날씨:</label>
-						<div>
-							<ul class="icon">
-								<li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
-								<li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
-								<li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
-								<li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
-								
-							</ul>
-						</div>
-						<input type="hidden" id="pos" name="pos">
-						<input type="hidden" id="neg" name="neg">
-						 <input type="button" value="감정 확인" id="test">
-						 
-					</div>
-					<div id="data1"></div>
+          <div class="form-group">
+            <div class="headline">내용 :</div>
+            <div class="col-sm-10">
+              <textarea name="diary_content" id="diary_test" rows="10" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="headline">작성자 :</div>
+            <div class="col-sm-10">
+              <input name="u_id" class="form-control" id="writer" type="text" value="${loginMember.u_id}" readonly>
+            </div>
+          </div>
+          <div class="form-group">
 
-     				 <div id="data2"></div>
-					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="filename1">사진:</label>
-						<div class="col-sm-10">
-							<input type="file" class="form-control" name="filename1">
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default" id="test_Check">글작성</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			
-		</div>
+            <div class="weather">
+              <div class="headline">날씨 :</div>
+              <div>
+                <ul class="icon">
+                  <li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
+                  <li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
+                  <li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
+                  <li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
+                  <input type="hidden" id="pos" name="pos">
+                  <input type="hidden" id="neg" name="neg">
+                </ul>
+              
+              </div>
+              
+
+            </div>
+            <div id="data1"></div>
+
+            <div id="data2"></div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-10">
+            <div class="headline">사진 :</div>
+          </div>
+            <div class="col-sm-10">
+              <input type="file" class="form-control" name="filename1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-10">
+              <button type="submit" class="modal-diary">저장하기</button>
+            </div>
+          </div>
+        </form>
+      
+
+    </div>
 	
 	
 	<script type="text/javascript">
@@ -263,6 +254,28 @@
              window.speechSynthesis.speak(msg);
          }
 
+    </script>
+    
+     <script>
+      $(document).ready(function () {
+        var stars = 800;
+        var $stars = $(".stars");
+        var r = 800;
+        for (var i = 0; i < stars; i++) {
+          var $star = $("<div/>").addClass("star");
+          $stars.append($star);
+        }
+        $(".star").each(function () {
+          var cur = $(this);
+          var s = 0.2 + (Math.random() * 1);
+          var curR = r + (Math.random() * 300);
+          cur.css({
+            transformOrigin: "0 0 " + curR + "px",
+            transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
+
+          })
+        })
+      })
     </script>
 	
 	

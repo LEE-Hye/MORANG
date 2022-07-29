@@ -34,7 +34,7 @@ font-family: 'BMJUA';
                <div class="panel-heading" style="background-color: #e4beb3;">자유롭게 글을 써보세요~</div>
                <div class="panel-body">
 
-            <form class="form-horizontal" action="boardInsert.do" method="post">
+            <form class="form-horizontal" action="boardInsert.do" method="post" enctype="multipart/form-data">
                <div class="form-group">
                   <label class="control-label col-sm-2" for="title">제목:</label>
                   <div class="col-sm-10">
@@ -57,10 +57,11 @@ font-family: 'BMJUA';
                   </div>
                </div>
                <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                           <input type="file" class="btn btn-default">사진첨부</button>
-                        </div>
-                     </div>
+						<label class="control-label col-sm-2" for="c_file">사진:</label>
+						<div class="col-sm-10">
+							<input type="file" class="form-control" name="c_file">
+						</div>
+					</div>
                <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                      <button type="submit" class="btn btn-danger">글쓰기</button>

@@ -85,7 +85,7 @@
 			<%
 				for (shareNote shareNote : list) {
 			%>
-			<div class="share_note1">
+			<div class="share_note1" style="background-color:<%=shareNote.getNote_color()%>">
 				<i class="fa-solid fa-thumbtack fa-2x" id="thumbtack2"></i>
 				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><div class="share_content"><%=shareNote.getNote_content()%></div></a>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
@@ -130,6 +130,10 @@
 									placeholder="내용을 입력해주세요" class="note_content"></textarea>
 							</p>
 						</div>
+						<p>
+						메모지 색깔을 고르세요:
+						<input type="color" class="bgColor" name="note_color" value="#fff44f">
+						</p>
 					</div>
 				</div>
 				<div class="popup-foot">

@@ -30,7 +30,7 @@
 	<nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="Main.do">MoRang.</a>
+      <a href="Main.do"><img class="pic_morang" src="./resources/img/morang2.png"></a>
     </div>
 
     <ul class="navbar_menu">

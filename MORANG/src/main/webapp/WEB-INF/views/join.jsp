@@ -291,7 +291,7 @@
                             
                             <!-- 여기부터 보호자  로그인 모달 -->
                             <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
-                                <form action="login.do" method="post">
+                                <form action="login2.do" method="post">
                                 <br>
                                 <div class="modal-body">
                                     <div class="wrapper" align="center">

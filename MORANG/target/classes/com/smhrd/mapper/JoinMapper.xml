@@ -29,5 +29,10 @@
           from mr_user
           where u_id=#{u_id} and u_pw=#{u_pw}
       </select>
+      
+      <select id="prologin" parameterType="String" resultType="com.smhrd.domain.Join">
+          select * from mr_user where u_id=#{u_id}
+          
+      </select>
    
 </mapper>

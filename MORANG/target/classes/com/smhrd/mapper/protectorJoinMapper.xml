@@ -22,4 +22,10 @@
           p_type = #{p_type}
           where p_id = #{p_id}
       </update>
+      
+      <select id="login2" parameterType="com.smhrd.domain.protectorJoin" resultType="com.smhrd.domain.protectorJoin">
+          select *
+          from mr_protector
+          where p_id=#{p_id} and p_pw=#{p_pw}
+      </select>
 </mapper>

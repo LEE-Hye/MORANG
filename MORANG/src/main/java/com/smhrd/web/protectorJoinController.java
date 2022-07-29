@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.smhrd.mapper.JoinMapper;
 import com.smhrd.mapper.protectorJoinMapper;
+import com.smhrd.domain.Join;
 import com.smhrd.domain.protectorJoin;
 
 @Controller
@@ -21,6 +23,9 @@ public class protectorJoinController {
 
 	@Autowired
 	protectorJoinMapper mapper;
+	
+	 @Autowired
+	 JoinMapper mapper2;
 
 	// 이거 회원 가입
 	@GetMapping("/protectorJoinInsert.do")
@@ -46,4 +51,31 @@ public class protectorJoinController {
 		
 		
 	}
+	
+	
+	  @PostMapping("/login2.do")
+	   public String login2(HttpServletResponse response,protectorJoin invo, HttpSession session) throws Exception{
+		   response.setContentType("text/html; charset=euc-kr");
+		   PrintWriter out = response.getWriter();
+
+		   
+		  protectorJoin loginMember2 = null;
+		  loginMember2=mapper.login2(invo);
+		  session.setAttribute("protectorMember", loginMember2);
+		  
+		  
+		  if(loginMember2!=null) {
+			  String u_id=loginMember2.getU_id();
+			  Join loginMember=mapper2.prologin(u_id);
+			  session.setAttribute("loginMember", loginMember);
+			  return "redirect:/Main.do";
+		  }
+		  else {
+			  out.println("<script>alert('아이디와 비밀번호를 다시 확인해주세요');location.href='join.do'</script>");
+			  out.flush();
+			  return "redirect:/join.do";
+		  }
+	      
+	      
+	   }
 }

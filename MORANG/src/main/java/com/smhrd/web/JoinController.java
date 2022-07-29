@@ -79,6 +79,10 @@ public class JoinController {
    }
    
    
+ 
+   
+   
+   
    
    @GetMapping("/logout.do")
    public String logout(HttpSession session) throws Exception{

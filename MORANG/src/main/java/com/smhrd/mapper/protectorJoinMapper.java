@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 
+import com.smhrd.domain.Join;
 import com.smhrd.domain.protectorJoin;
 
 public interface protectorJoinMapper {
@@ -16,4 +17,6 @@ public interface protectorJoinMapper {
 	public int protectorJoinDelete(int p_id);
 	
 	public int protectorJoinUpdate(protectorJoin vo);
+	
+	public protectorJoin login2(protectorJoin vo);
 }

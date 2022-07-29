@@ -21,6 +21,8 @@ public interface JoinMapper {
 	// 로그인 처리
 	public Join login(Join vo);
 	
+	public Join prologin(String u_id);
+	
 	@Select("select * from mr_user where u_id = #{u_id}")
 	public Join joincheck1(String u_id);
 	

@@ -7,11 +7,6 @@
     background-color: #e4beb3;
 }
  
- textarea {
-    width: 82%;
-    height: 20.25em;
-    resize: none;
-  }
 
 input#title {
     width: 80%;
@@ -76,9 +71,9 @@ ul.icon {
     background-color: #e4beb3;
 }
 
-.modal_Content {
+.write_Content {
     margin: auto;
-    margin-top: 1%;
+    margin-top: 7%;
     padding: 20px;
     width: 40%;
     border: 1px solid grey;
@@ -86,22 +81,8 @@ ul.icon {
     background-image:linear-gradient(#eee .1em, transparent .1em);
     background-size: 100% 1.2em;
     border-radius: 0.35rem;
-    font-size: 30px;
+    font-size: 100%;
 }
-
-.modal_Wrap { /*모달창에 전체틀*/
-    display: none;
-    position: fixed;
-    padding-top: 100px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: auto;
-    z-index: 1;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 
 /*                          일기장 및 모달                              */  
 

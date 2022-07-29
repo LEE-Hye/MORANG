@@ -35,7 +35,7 @@
   <nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="Main.do">MoRang.</a>
+      <a href="Main.do"><img class="pic_morang" src="./resources/img/morang2.png"></a>
     </div>
 
     <ul class="navbar_menu">
@@ -132,7 +132,7 @@
             <div class='rap'>
               <div class="header">
                 <div class="btn prevDay"></div>
-                <h2 class='dateTitle'></h2>
+                <div class='dateTitle'></div>
                 <div class="btn nextDay"></div>
               </div>
               <div class="to_btn">
@@ -221,12 +221,12 @@
           </div>
           <div class="flex_sh">
             <div class="yesterday-graph">
-              <div class="card-header" style="text-align: center">오늘 챗봇 대화</div>
+              <div class="card-header" style="text-align: center">오늘의 대화</div>
               <canvas id="doughnut-chart" width="262px" height="320px"></canvas>
 
             </div>
             <div class="today-graph">
-              <div class="card-header"style="text-align: center">어제 와 오늘</div>
+              <div class="card-header"style="text-align: center">어제와 오늘</div>
               <canvas id="radar-chart" width="262px" height="320px"></canvas>
             </div>
           </div>

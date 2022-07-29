@@ -1,3 +1,8 @@
+.pic_morang {
+    width: 130px;
+    height: 100px;
+}
+
 #nowpage{
 	color:gray;
 }
@@ -84,6 +89,7 @@ ul.icon {
     background-size: 100% 1.2em;
     border-radius: 0.35rem;
     font-size: 130%;
+    display: flex;
 }
 
 /*                          일기장 및 모달                              */  

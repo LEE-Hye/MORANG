@@ -26,7 +26,7 @@
   <nav class="navbar">
     <div class="navbar_logo">
       <i class="fa-thin fa-hands-holding-child"></i>
-      <a href="main.do">MoRang.</a>
+      <a href="Main.do">MoRang.</a>
     </div>
 
     <ul class="navbar_menu">
@@ -107,108 +107,11 @@
                 <%} %>
             </table>
             <br>
-            <button class="modal-diary" id="diary_write" style="width: 100px; height: 50px;">일기
-              작성</button>
-             
+            <button onclick="location.href='diarywrite.do'"class="modal-diary" style="width: 100px; height: 50px;">일기작성</button>      
       </div>
-		
-            
-    </div>
+	</div>
 
-    <div id="modal" class="modal_Wrap">
-      <div class="modal_Content">
-        
-          <form class="form-horizontal" action="diarywrite.do" method="post" enctype="multipart/form-data"
-            onsubmit="checkNull()">
-            <div class="form-group">
-              <div class="headline">제목 :</div>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="title" placeholder="Enter title" name="diary_title">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="headline">음성인식 :</div>
-              <div class="col-sm-10">
-                <button type="button" id="speech" onclick="speech_to_text()">Start STT</button>
-                <button type="button" id="stop" onclick="stop()">Stop</button>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="headline">내용 :</div>
-              <div class="col-sm-10">
-                <textarea name="diary_content" id="diary_test" rows="10" class="form-control"></textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="headline">작성자 :</div>
-              <div class="col-sm-10">
-                <input name="u_id" class="form-control" id="writer" type="text" value="${loginMember.u_id}" readonly>
-              </div>
-            </div>
-            <div class="form-group">
-
-              <div class="weather">
-                <div class="headline">날씨 :</div>
-                <div>
-                  <ul class="icon">
-                    <li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
-                    <li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
-                    <li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
-                    <li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
-                  </ul>
-                </div>
-                <input type="hidden" id="pos" name="pos">
-                <input type="hidden" id="neg" name="neg">
-                <div class="headline"><input type="button" value="감정 확인" id="test"></div>
-
-              </div>
-              <div id="data1"></div>
-
-              <div id="data2"></div>
-            </div>
-
-            <div class="form-group">
-              <div class="headline">사진 :</div>
-              <div class="col-sm-10">
-                <input type="file" class="form-control" name="filename1">
-              </div>
-            </div>
-
-            
-              
-              
-            
-
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn-finish" id="diary_Check">저장하기</button>
-                <button type="submit" class="btn-finish" id="diary_close">창 닫기</button>
-              </div>
-            </div>
-          </form>
-        
-
-      </div>
-    </div>
-
-    <script>
-      $(function() {
-        $("#test_Check").click(function() {
-          modalClose();
-        });
-        $("#diary_write").click(function() {
-          $("#modal").css('display', 'flex').hide().fadeIn();
-        });
-        $("#diary_close").click(function() {
-          modalClose();
-        });
-              function modalClose() {
-                  $("#modal").fadeOut();
-              }
-      });
-    </script>
+    
 
     <script type="text/javascript">
       $('#test').click(function () {

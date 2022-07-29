@@ -28,8 +28,8 @@ public class Board {
 	// 글 작성일
 	private String c_date;
 	
-
 	// 글 첨부파일
+	@NonNull
 	private String c_file;
 	
 	// 작성자

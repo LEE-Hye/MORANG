@@ -2,7 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ 
 page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,18 @@ page language="java" contentType="text/html; charset=UTF-8"
         </div>
 
         <ul class="navbar_menu">
-            <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+            <li>
+            <c:choose>
+		      <c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
+		      <a href="">${loginMember.u_id}님 환영합니다!!</a>
+		      		
+		      </c:when>
+		      <c:otherwise>
+		      	<a href="">${protectorMember.p_id}님 환영합니다!!</a>
+		      </c:otherwise>
+		      </c:choose>
+            
+            </li>
             <li><a href="">개인정보수정</a></li>
             <li><a href="logout.do">로그아웃</a></li>
         </ul>
@@ -50,9 +62,11 @@ page language="java" contentType="text/html; charset=UTF-8"
             <nav class="menu">
                 <a href="Main.do" class="menu-item">HOME</a>
                 <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
-                <a href="diary.do" class="menu-item">감정 일기장</a>
+                <c:if test='${protectorMember.p_id eq "soohyeonempty" }'>
+        		<a href="diary.do" class="menu-item">감정 일기장</a>
+        		</c:if>
                 <a href="shareNote.do" class="menu-item">공유수첩</a>
-                <a href="boardList.do" class="menu-item">게시판</a>
+                <a href="boardList.do" class="menu-item" id="nowpage">게시판</a>
             </nav>
         </nav>
 

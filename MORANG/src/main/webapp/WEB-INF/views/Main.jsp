@@ -41,7 +41,7 @@
     <ul class="navbar_menu">
        <div id="login" style="display:none">${loginMember.u_nick}</div>
       <li>
-     	 <c:choose>
+      <c:choose>
       <c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
       <a href="">${loginMember.u_id}님 환영합니다!!</a>
       		
@@ -72,9 +72,15 @@
 
       <h1>Menu</h1>
       <nav class="menu">
-        <a href="Main.do" class="menu-item">HOME</a>
+        <a href="Main.do" class="menu-item" id="nowpage">HOME</a>
         <a href="depressionTest.do" class="menu-item">우울증 자가진단</a>
+        <c:if test='${protectorMember.p_id eq "soohyeonempty" }'>
         <a href="diary.do" class="menu-item">감정 일기장</a>
+        </c:if>
+        
+      		
+      
+        
         <a href="shareNote.do" class="menu-item">공유수첩</a>
         <a href="boardList.do" class="menu-item">게시판</a>
       </nav>
@@ -238,8 +244,16 @@
     
   
     <div>
-      <!--<img src="soohyeon.gif" alt="실패" id="shbot" width="130px" height="130px">-->
+      <c:choose>
+      <c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
       <img src="resources/img/chatbottest.gif" alt="실패" id="chatbot_close" width="10%" height="10%" >
+      		
+      </c:when>
+      <c:otherwise>
+      	<img src="resources/img/chatbottest.gif" alt="실패" id="chatbot_close" width="10%" height="10%" style="display:none">
+      </c:otherwise>
+      </c:choose>
+      
     </div>
 </div>
 
@@ -404,7 +418,7 @@
             yAxes: [{
                scaleLabel: {
                   display: true,
-                  labelString: '차트'
+                  labelString: '긍 부정'
                }
             }]
          },
@@ -496,7 +510,7 @@
       var dataset1 = config1.data.datasets;
       for(var i=0; i<dataset1.length; i++){
          console.log(dataset1);
-         //데이터 갯수 만큼 반복
+       
          var data1 = dataset1[i].data;
          data1[0]=fear2;
          data1[1]=surprise2;
@@ -563,7 +577,7 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
    var dataset2 = config2.data.datasets;
    
       console.log(dataset2);
-      //데이터 갯수 만큼 반복
+     
       var data2 = dataset2[1].data;
       data2[0]=fear2;
       data2[1]=surprise2;

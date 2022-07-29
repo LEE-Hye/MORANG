@@ -374,7 +374,7 @@ let disgust=0;
  					'disgust':disgust
  				},
  				success:function(res){
- 					// 기존에 있던 조회수를 바꿔줘야함
+ 					
  					if(res==0){
  						console.log(res);
  						

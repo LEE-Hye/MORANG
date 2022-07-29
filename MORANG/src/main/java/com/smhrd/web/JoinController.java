@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.smhrd.domain.Join;
+import com.smhrd.domain.protectorJoin;
 import com.smhrd.mapper.JoinMapper;
 
 @Controller
@@ -60,13 +61,15 @@ public class JoinController {
    public String login(HttpServletResponse response,Join invo, HttpSession session) throws Exception{
 	   response.setContentType("text/html; charset=euc-kr");
 	   PrintWriter out = response.getWriter();
-
+	   
 	   
 	  Join loginMember = null;
 	  loginMember=mapper.login(invo);
+	  protectorJoin pro=new protectorJoin("soohyeonempty", "soohyeonempty", "soohyeonempty", "soohyeonempty", "soohyeonempty", "soohyeonempty");
 	  if(loginMember!=null) {
 		  System.out.println(loginMember.getU_nick());
 		  session.setAttribute("loginMember", loginMember);
+		  session.setAttribute("protectorMember", pro);
 		  return "redirect:/Main.do";
 	  }
 	  else {
@@ -88,6 +91,7 @@ public class JoinController {
    public String logout(HttpSession session) throws Exception{
       // 로그 아웃 처리 - session의 정보를 지운다
       session.removeAttribute("loginMember");
+      session.removeAttribute("protectorMember");
       return "redirect:/join.do";
    }
    

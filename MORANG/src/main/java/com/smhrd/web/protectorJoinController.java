@@ -61,11 +61,14 @@ public class protectorJoinController {
 		   
 		  protectorJoin loginMember2 = null;
 		  loginMember2=mapper.login2(invo);
-		  session.setAttribute("protectorMember", loginMember2);
+
+		  
+
 		  
 		  
 		  if(loginMember2!=null) {
 			  String u_id=loginMember2.getU_id();
+			  session.setAttribute("protectorMember", loginMember2);
 			  Join loginMember=mapper2.prologin(u_id);
 			  session.setAttribute("loginMember", loginMember);
 			  return "redirect:/Main.do";

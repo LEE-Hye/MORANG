@@ -40,9 +40,20 @@
 
     <ul class="navbar_menu">
        <div id="login" style="display:none">${loginMember.u_nick}</div>
-      <li><a href="">${loginMember.u_id}님 환영합니다!!</a></li>
+      <li>
+     	 <c:choose>
+      <c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
+      <a href="">${loginMember.u_id}님 환영합니다!!</a>
+      		
+      </c:when>
+      <c:otherwise>
+      	<a href="">${protectorMember.p_id}님 환영합니다!!</a>
+      </c:otherwise>
+      </c:choose>
+      </li>
       <li><a href="">개인정보수정</a></li>
       <li><a href="logout.do">로그아웃</a></li>
+     
     </ul>
   </nav>
   <div class="app">

@@ -79,7 +79,7 @@ page language="java" contentType="text/html; charset=UTF-8"
                                 <td>글번호</td>
                                 <td>제목</td>
                                 <td>작성자</td>
-                                <td>날짜</td>
+                                <td>작성일</td>
                                 <td>조회수</td>
                             </tr>
                             <%for (Board board : list) {%>
@@ -89,7 +89,7 @@ page language="java" contentType="text/html; charset=UTF-8"
                                     </td>
 
                                     <td><a href="/web/boardContent.do?c_seq=<%=board.getC_seq()%>">
-                                            <%=board.getC_title()%>
+                                            <%=board.getC_title()%> 
                                         </a></td>
                                     <td>
                                         <%=board.getU_id()%>
@@ -110,6 +110,28 @@ page language="java" contentType="text/html; charset=UTF-8"
             
         </div>
         
+        <script type="text/javascript">
+        function open(c_seq){
+        	
+        	let c_likes = Number($('#c_likes'+c_seq).html());
+        	$.ajax({
+        		url : 'viewUpdate.do',
+        		type : 'post',
+        		data : {
+        			'c_seq' : c_seq,
+        			'c_likes' : c_likes+1
+        		},
+        		success : function(res){
+        			// 기존에 있던 조회수를 바꿔줘야함
+        			$('#c_likes'+c_seq).html(c_likes+1)
+        		},
+        		error : function(e){alert('error!')}
+        	})
+
+        	 $('#board'+c_seq).css('display','table-row');
+         
+        }
+        </script>
 </body>
 
 </html>

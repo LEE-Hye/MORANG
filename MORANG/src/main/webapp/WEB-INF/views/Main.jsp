@@ -28,7 +28,6 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
- 
 </head>
 
 <body>
@@ -51,8 +50,12 @@
       </c:otherwise>
       </c:choose>
       </li>
-      <li><a href="">개인정보수정</a></li>
+      <li><c:if test="${loginMember.u_id eq 'admin'}">
+      <a href="joinList.do">회원목록보기</a>
+      </c:if></li>
+      <li><a href="joinGoUpdate.do">개인정보수정</a></li>
       <li><a href="logout.do">로그아웃</a></li>
+      
      
     </ul>
   </nav>

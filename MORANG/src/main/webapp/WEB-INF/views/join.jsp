@@ -1,6 +1,7 @@
 <%@page import="com.smhrd.domain.Join"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -38,6 +39,23 @@
         color: rgb(240, 129, 129);
         background-color: white;
        }
+       .nav-tabs .nav-link.active {
+	    color: #ffffff;
+	    background-color: #000000;
+	    border-color: #dee2e6 #eaf5ff #fff;
+		}
+	
+		.nav-link:focus, .nav-link:hover {
+	    color: #000000;
+		}
+	
+		.nav-link {
+	    display: block;
+	    padding: 0.5rem 1rem;
+	    color: #000000;
+	    text-decoration: none;
+	    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+		}
     </style>
 </head>
 
@@ -67,27 +85,28 @@
                     <div class="modal-body">
                         <div class="wrapper" align="center">
                             <div class="name">
-                                이름 : <input id="name" type="text" placeholder="이름을 입력해 주세요." class="inputList">
-                                <div id="nameError" class="error"></div>
-                            </div>
-                            <br>
-                            <div class="phone">
-                                연락처 : <input id="phone" type="text" placeholder="연락처를 입력해 주세요." class="inputList">
-                                <div id="phoneError" class="error"></div>
-                                <br>
-                            </div>
-
+                            
+                                이름 : <input id="u_name" type="text" placeholder="이름을 입력해 주세요." class="inputList" name="u_name" >
+                       </div>
+                       <br>
+                      <div class="phone">
+                                연락처 : <input id="u_phone" type="text" placeholder="연락처를 입력해 주세요." class="inputList" name="u_phone">
+                       <br>
+                       <br>
+                       <br>
+                       </div>
+                       <div><button type="submit" class="btn btn-dark" id="repeatcheck3" onclick="findid()">확인하기</button></div> 
+                       <br>
+                       
+                       <div id="findError" class="error">호출장소</div>  
         <!-- 로그인페이지로 이동 -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" style="background-color: black; border: none;">
-                                확인하기
-                            </button>
                             <br>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <a href="join.do"><button type="button" class="btn btn-danger">로그인하기</button></a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">로그인하기</button>
                     </div>
                 </div>
             </div>
@@ -870,10 +889,10 @@
     				success:function(res){
     					// 기존에 있던 조회수를 바꿔줘야함
     					if(res==0){
-    						$('#nameError1').html("사용할 수 없는 아이디입니다");
+    						$('#nameError1').html("사용할 수 없는 아이디입니다").css( "color", "red");
     					}
     					else if(res==1){
-    						$('#nameError1').html("사용할 수 있는 아이디입니다");
+    						$('#nameError1').html("사용할 수 있는 아이디입니다").css( "color", "black");
     					}
     					
     				},
@@ -897,10 +916,37 @@
  					// 기존에 있던 조회수를 바꿔줘야함
  					console.log(res);
  					if(res==0){
- 						$('#nameError2').html("사용할 수 없는 아이디입니다");
+ 						$('#nameError2').html("사용할 수 없는 아이디입니다").css( "color", "red");
  					}
  					else if(res==1){
- 						$('#nameError2').html("사용할 수 있는 아이디입니다");
+ 						$('#nameError2').html("사용할 수 있는 아이디입니다").css( "color", "black");
+ 					}
+ 					
+ 				},
+ 				error:function(e){alert('error!')}
+ 			});
+
+ 	}
+     
+     function findid(){
+ 		
+ 		let u_name= $('#u_name').val()
+		let u_phone= $('#u_phone').val()
+ 		
+ 			$.ajax({
+ 				url :'findid.do',
+ 				type : 'post',
+ 				data : {
+ 					'u_name':u_name,
+ 					'u_phone':u_phone,
+ 				},
+ 				success:function(res){
+ 					// 기존에 있던 조회수를 바꿔줘야함
+ 					if(res==0){
+ 						$('#findError').html("사용자의 아이디는 ["+res+"] 입니다").css( "color", "black");
+ 					}
+ 					else if(res==1){
+ 						$('#findError').html("찾을 수 없는 아이디입니다.").css( "color", "red");
  					}
  					
  				},

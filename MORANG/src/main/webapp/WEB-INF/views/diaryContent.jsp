@@ -60,7 +60,7 @@
                                         %>
 
                                         <div class="write_Content">
-
+											<div class="big-form-group">
                                             <div class="form-group">
                                                 <div class="headline">제목 :</div>
                                                 <div class="col-sm-10">
@@ -122,13 +122,6 @@
                                                 </div> 
 
                                                 <div class="form-group">
-                                                <div class="headline">사진 :</div>
-                                                <div class="col-sm-10">
-                                                    <div><img src='${diary.filename1}'></div>
-                                                </div>
-                                                </div> 
-                                               
-                                                <div class="form-group">
                                                 <div class="col-sm-10">
                                                     <button class="modal-diary"
                                                     onclick="goUpdate(${diary.diary_seq})"
@@ -140,9 +133,11 @@
                                                     class="btn btn-sm btn-success">목록</button>
                                                 </div>
                                                 </div>
-                                                
+                                                </div>
                       
-                                               
+                                                 <div class="img-group">
+                                                    <img src='${diary.filename1}' style="width: 100%; height:100%;">
+                                                </div> 
 
 
                                             

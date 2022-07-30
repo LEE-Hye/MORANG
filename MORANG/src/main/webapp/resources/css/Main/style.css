@@ -1,3 +1,8 @@
+.pic_morang {
+    width: 130px;
+    height: 100px;
+}
+
 #nowpage{
 	color:gray;
 }
@@ -55,7 +60,6 @@ th, td{
     box-sizing: border-box;
     border: 1px solid #e3e6f0;
     margin-top: 1.5%;
-    height: 10%;
     width: 100%;
     font-size: 50px;
     text-align: center;
@@ -346,6 +350,7 @@ a{
         border-radius: 26px;
         display: flex;
         font-size: 30px;
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%);
     }
         
 

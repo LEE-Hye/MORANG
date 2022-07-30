@@ -87,7 +87,9 @@
 			%>
 			<div class="share_note1" style="background-color:<%=shareNote.getNote_color()%>">
 				<i class="fa-solid fa-thumbtack fa-2x" id="thumbtack2"></i>
-				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>"><div class="share_content"><%=shareNote.getNote_content()%></div></a>
+				<a href="/web/shareNotedetail.do?note_seq=<%=shareNote.getNote_seq()%>&writerId=<%=shareNote.getU_id()%>">
+				<div class="share_content"><%=shareNote.getNote_content()%></div>
+				</a>
 				<div class="share_title"><%=shareNote.getNote_title()%></div>
 				<div class="share_date"><%=shareNote.getNote_date()%></div>
 			</div>
@@ -116,8 +118,18 @@
 				<span class="head-title">공유 수첩 작성</span>
 			</div>
 			<form action="shareNoteInsert.do" method="post">
-				<input name="u_id" class="form-control" id="writer" type="text"
-							value="${loginMember.u_id}" hidden>
+			 <c:choose>
+				  <c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
+			      <input name="u_id" class="form-control" id="writer" type="hidden"
+							value="${loginMember.u_id}" >
+			      		
+			      </c:when>
+			      <c:otherwise>
+			      	<input name="u_id" class="form-control" id="writer" type="hidden"
+							value="${protectorMember.p_id}" >
+			      </c:otherwise>
+			      </c:choose>
+				
 				<div class="popup-body">
 					<div class="body-content">
 						<div class="body-titlebox">

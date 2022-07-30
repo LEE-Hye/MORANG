@@ -2,6 +2,8 @@ package com.smhrd.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,4 +42,12 @@ public class JoinRestController {
       return result;
    }
    
+ // 이거 아이디 찾기 
+   @RequestMapping("/findid.do")
+	public void findid(Model model, Join vo) {
+		Join idfind = mapper.findid(vo);
+		model.addAttribute("idfind", idfind);
+		System.out.println(vo.getU_name());
+		System.out.println(vo.getU_phone());
+   }
 }

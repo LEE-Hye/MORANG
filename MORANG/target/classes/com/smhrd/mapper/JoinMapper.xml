@@ -13,8 +13,6 @@
           values(#{u_id}, #{u_pw},#{u_name},#{u_nick},#{u_phone},#{u_birthdate})
       </insert>
       
-     
-      
       <update id="joinUpdate" parameterType="com.smhrd.domain.Join">
           update mr_user
           set u_pw = #{u_pw}, u_name = #{u_name}, u_nick = #{u_nick},
@@ -34,5 +32,19 @@
           select * from mr_user where u_id=#{u_id}
           
       </select>
+      
+      <!-- 로그인시 아이디와 비밀번호 확인
+	
+	<select id="findid" resultType="com.smhrd.domain.Join"> 
+		select * from mr_user where u_name=#{u_name} and u_phone=#{u_phone}
+	</select>
+	
+	<select id="findpw" resultType="com.smhrd.domain.Join">
+		select * from mr_user where u_id=#{u_id} and u_name=#{u_name} and u_phone=#{u_phone}
+	</select>
+	
+	<update id="updatepw" parameterType="com.smhrd.domain.Join">
+		update mr_user set u_pw=#{u_pw} where u_id=#{u_id}
+	</update> -->
    
 </mapper>

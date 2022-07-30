@@ -8,8 +8,10 @@
 	<!-- 노트 가져오기 -->
 	<select id="shareNoteList"
 		resultType="com.smhrd.domain.shareNote">
-		select * from mr_sharenote
-		where u_id = #{u_id}
+		 select * from mr_sharenote where u_id=#{u_id}
+		 union all
+		 select * from mr_pr_sharenote where p_id = any(select p_id from mr_protector where u_id=#{u_id})    
+ 		 order by note_date desc
 	</select>
 
 	<!-- 노트 글쓰기 -->
@@ -18,6 +20,12 @@
 		insert into mr_sharenote(note_title, note_content, u_id, note_color)
 		values(#{note_title}, #{note_content}, #{u_id}, #{note_color})
 	</insert>
+	
+	<insert id="shareNoteInsertpro"
+	    parameterType="com.smhrd.domain.shareNote">
+		insert into mr_pr_sharenote(note_title, note_content, p_id, note_color)
+		values(#{note_title}, #{note_content}, #{u_id}, #{note_color}) 
+	</insert>
 
 	<!-- 노트 상세보기 -->
 	<select id="shareNotedetail"
@@ -25,11 +33,25 @@
 		select * from mr_sharenote
 		where note_seq = #{note_seq}
 	</select>
+	
+	<select id="shareNotedetailpro"
+	    resultType="com.smhrd.domain.shareNote">
+		select * from mr_pr_sharenote
+		where note_seq = #{note_seq}
+	</select>
+	
+	
+	
 
 	<!-- 노트 수정 -->
 	<update id="shareNoteUpdate" parameterType="com.smhrd.domain.shareNote">
 		update mr_sharenote
-		set note_title = #{note_title}, note_content = #{note_content}
+		set note_title = #{note_title}, note_content = #{note_content}, note_color=#{note_color}
+		where note_seq = #{note_seq}
+	</update>
+	<update id="shareNoteUpdatepro">
+	    update mr_pr_sharenote
+		set note_title = #{note_title}, note_content = #{note_content}, note_color=#{note_color}
 		where note_seq = #{note_seq}
 	</update>
 	
@@ -38,4 +60,14 @@
 	    delete from mr_sharenote
 	    where note_seq = #{note_seq}
 	</delete>
+	<delete id="shareNoteDeletepro" parameterType="int">
+	    delete from mr_pr_sharenote
+	    where note_seq = #{note_seq}
+	</delete>
+	
+	
+	<select id="shareNoteID" parameterType="int" resultType="String">
+		select p_id from mr_pr_sharenote
+		where note_seq=#{note_seq}
+	</select>
 </mapper>

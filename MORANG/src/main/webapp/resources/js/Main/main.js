@@ -130,7 +130,7 @@ let disgust=0;
             
             return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
         };
-        $('.send_message').click(function () {
+        $('#Sttsend_message').click(function () {
 			  recognition.start();
              isRecognizing = true;
 

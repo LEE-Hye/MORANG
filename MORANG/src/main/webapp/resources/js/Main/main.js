@@ -159,18 +159,42 @@ let disgust=0;
                     let messageText = resText;
                     if (messageText.includes('안녕')) {
                         setTimeout(function () {
+                        	 text = "안녕하세요. 저는 모랑 임산부 케어 봇입니다."
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("안녕하세요. 저는 모랑 임산부 케어 봇입니다.", 'left');
                         }, 1000);
                     } else if (messageText.includes('반가워')) {
                         setTimeout(function () {
+                        text = "저도 반갑습니다."
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저도 반갑습니다.✧⁺⸜(･ ᗜ ･ )⸝⁺✧ ", 'left');
                         }, 1000);
                     } else if (messageText.includes('고마워')) {
                         setTimeout(function () {
+                        text = "천만에요. 더 물어보실 건 없나요"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("천만에요. 더 물어보실 건 없나요?", 'left');
                         }, 1000);
                     } else if (messageText.includes('없어')) {
                         setTimeout(function () {
+                        text = "그렇군요. 알겠습니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("그렇군요. 알겠습니다!", 'left');
                         }, 1000);
             
@@ -179,6 +203,12 @@ let disgust=0;
             
                     else if (messageText.includes('이름')) {
                         setTimeout(function () {
+                        text = "저의 이름은 모랑입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저의 이름은 모랑입니다~~＞︿＜", 'left');
                         }, 1000);
             
@@ -186,6 +216,12 @@ let disgust=0;
                     }
                      else if (messageText.includes('닉네임')) {
                         setTimeout(function () {
+                         text = username+"입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage(username+"입니다!! o(*￣▽￣*)o", 'left');
                         }, 1000);
             

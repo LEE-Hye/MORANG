@@ -15,8 +15,7 @@
       
       <update id="joinUpdate" parameterType="com.smhrd.domain.Join">
           update mr_user
-          set u_pw = #{u_pw}, u_name = #{u_name}, u_nick = #{u_nick},
-          u_phone = #{u_phone}, u_birthdate = #{u_birthdate}, u_joindate = #{u_joindate}
+          set u_pw = #{u_pw}, u_name = #{u_name}, u_nick = #{u_nick},u_phone = #{u_phone}
           where u_id = #{u_id}
       </update>
       

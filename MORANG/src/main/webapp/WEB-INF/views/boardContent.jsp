@@ -76,8 +76,21 @@ font-family: 'BMJUA';
 
        	<tr>
        		<td colspan="2" align="center">
-       			<button onClick ="goUpdate(${board.c_seq})" class="btn btn-sm btn-info">수정</button>
-       			<button onClick ="goDelete(${board.c_seq})" class="btn btn-sm btn-warning">삭제</button>
+       		<c:choose>
+			<c:when test='${protectorMember.p_id eq "soohyeonempty" }'>
+				<c:if test='${loginMember.u_id eq board.u_id}'>
+					<button onClick ="goUpdate(${board.c_seq})" class="btn btn-sm btn-info">수정</button>
+       				<button onClick ="goDelete(${board.c_seq})" class="btn btn-sm btn-warning">삭제</button>
+				</c:if>
+			</c:when>
+			<c:otherwise>
+				<c:if test='${protectorMember.u_id eq board.u_id}'>
+					<button onClick ="goUpdate(${board.c_seq})" class="btn btn-sm btn-info">수정</button>
+       				<button onClick ="goDelete(${board.c_seq})" class="btn btn-sm btn-warning">삭제</button>
+				</c:if>
+			</c:otherwise>
+			</c:choose>
+       			
        			<button onClick ="goList()" class="btn btn-sm btn-success">목록</button>
        		</td>
       	</tr>

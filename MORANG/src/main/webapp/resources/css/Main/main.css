@@ -9,8 +9,8 @@
 }
 .chat_window {
     position: absolute;
-    width: 60%;
-    max-width: 60%;
+    width: 50%;
+    max-width: 50%;
     height: 500px;
     border-radius: 10px;
     left: 60%;

@@ -63,6 +63,7 @@ ul.icon {
     margin-left: auto;
     margin-right: auto;
     width: -webkit-fill-available;
+    font-size: 130%
 }
 
 .score-length{
@@ -75,7 +76,7 @@ ul.icon {
     }
 
 th, td{
-    border: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
     text-align: center;
 }    
 

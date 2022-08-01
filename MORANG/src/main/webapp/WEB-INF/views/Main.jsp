@@ -374,13 +374,13 @@
         // 챠트를 그릴 데이타
         data: {
          labels: [ // Date Objects
-            todaydate7,
-            todaydate6,
-            todaydate5,
-            todaydate4,
-            todaydate3,
-            todaydate2,
-            todaydate1
+            '2022-07-25',
+            '2022-07-26',
+            '2022-07-27',
+            '2022-07-28',
+            '2022-07-29',
+            '2022-07-30',
+            '2022-07-31'
          ],
          datasets: [{
             label: 'pos',
@@ -641,7 +641,7 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
              else{}
           }
           </c:forEach>
-      },3000);
+      },4000);
 </script>
 
 

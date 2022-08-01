@@ -117,7 +117,7 @@ body {
 				</c:choose>
 			</c:otherwise>
 		</c:choose>
-		<div>${shareNote.note_color}</div>
+
 			<div class="share_note_detail" style="background-color:${shareNote.note_color}">
 				<form action="shareNoteUpdate.do" method="post">
 					<input type="hidden" name="note_seq" value="${shareNote.note_seq}">

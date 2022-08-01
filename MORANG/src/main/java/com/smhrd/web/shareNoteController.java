@@ -12,20 +12,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.domain.Criteria;
 import com.smhrd.domain.Join;
+import com.smhrd.domain.PageMakerDTO;
 import com.smhrd.domain.diary;
 import com.smhrd.domain.protectorJoin;
 import com.smhrd.domain.shareNote;
 import com.smhrd.mapper.shareNoteMapper;
+import com.sun.istack.internal.logging.Logger;
 
 @Controller
 public class shareNoteController {
+	
 	
 	@Autowired
 	shareNoteMapper mapper;
@@ -33,18 +39,41 @@ public class shareNoteController {
 	
 //	노트 리스트 보기
 	
-	@RequestMapping("/shareNote.do")
-	public String shareNoteList(Model model, HttpSession session) {
+//	@RequestMapping("/shareNote.do")
+//	public String shareNoteList(Model model, HttpSession session) {
+//		
+//		Join loginMember=(Join)session.getAttribute("loginMember");
+//		String id=loginMember.getU_id();
+//		
+//		List<shareNote> list = mapper.shareNoteList(id);
+//		
+//		model.addAttribute("list", list);
+//		
+//		return "shareNote";
+//	}
+	
+	
+	
+	@RequestMapping(value = "/shareNote.do", method=RequestMethod.GET)
+	public String shareNoteList(Model model, HttpSession session, Criteria cri) {
 		
 		Join loginMember=(Join)session.getAttribute("loginMember");
 		String id=loginMember.getU_id();
+		cri.setU_id(id);
+		model.addAttribute("list", mapper.shareNoteList(cri));
 		
-		List<shareNote> list = mapper.shareNoteList(id);
+//		model.addAttribute("list", mapper.shareNoteListPaging(cri));
 		
-		model.addAttribute("list", list);
+		int total = mapper.getTotal(id);
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+		model.addAttribute("pageMaker", pageMake);
 		
 		return "shareNote";
 	}
+	
+
+	
+	
 	
 //	노트 작성하기
 	// 이거 글 작성

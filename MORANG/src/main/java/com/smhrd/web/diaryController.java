@@ -2,12 +2,14 @@ package com.smhrd.web;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,9 @@ import com.smhrd.domain.Board;
 import com.smhrd.domain.Join;
 import com.smhrd.domain.diary;
 import com.smhrd.mapper.diaryMapper;
+
+import net.nurigo.java_sdk.api.Message;
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
 @Controller
 public class diaryController {
@@ -106,7 +111,29 @@ public class diaryController {
 		System.out.println(vo.getU_id());
 		mapper.diarywrite(vo);
 		
+		int weeklist=mapper.diaryweekselect(u_id);
 		
+		if(weeklist>6) {
+			String api_key = "NCS9QZXOYP2MUBL2";
+		    String api_secret = "DEHEPZ4WCFYJGVYYKBMMY4ZGEIUJEE44";
+		    Message coolsms = new Message(api_key, api_secret);
+
+		    // 4 params(to, from, type, text) are mandatory. must be filled
+		    HashMap<String, String> params = new HashMap<String, String>();
+		    params.put("to", "01030302387");	// 수신전화번호
+		    params.put("from", "01030302387");	// 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
+		    params.put("type", "SMS");
+		    params.put("text", "보호자분 임산부 상태가 위험합니다. 우울감 전문 병원에 찾아가 주세요");
+		    params.put("app_version", "test app 1.2"); // application name and version
+
+		    try {
+		      JSONObject obj = (JSONObject) coolsms.send(params);
+		      System.out.println(obj.toString());
+		    } catch (CoolsmsException e) {
+		      System.out.println(e.getMessage());
+		      System.out.println(e.getCode());
+		    }
+		}
 		
 		
 		

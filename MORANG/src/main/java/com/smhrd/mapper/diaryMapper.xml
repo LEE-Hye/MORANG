@@ -24,4 +24,19 @@
           filename1=#{filename1}
           where diary_seq = #{diary_seq}
       </update>
+      
+      <select id="diaryweekselect" parameterType="String" resultType="int">
+          	select count(*) from
+		    (select dategroup as diary_date, avg(avgpos)as diary_pos,avg(avgneg) as diary_neg
+			from
+			(SELECT DATE_FORMAT(diary_date,'%d') as dategroup, avg(diary_pos) as avgpos ,avg(diary_neg) as avgneg
+			FROM diary3
+			where u_id = #{u_id}
+			group by diary_date
+			having diary_date>(CURRENT_DATE()- INTERVAL 7 DAY)
+			order by diary_date) c
+			group by dategroup
+			having avg(avgneg)>avg(avgpos)) sh
+      
+      </select>
 </mapper>

@@ -136,7 +136,9 @@
                                                 </div>
                       
                                                  <div class="img-group">
+                                                 	<c:if test='${diary.filename1 eq "unknown"}'>
                                                     <img src='${diary.filename1}' style="width: 100%; height:100%;">
+                                                	</c:if>
                                                 </div> 
 
 

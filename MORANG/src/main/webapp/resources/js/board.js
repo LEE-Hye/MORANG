@@ -12,15 +12,15 @@
 		  for(let i=0; i<res.length; i++){
 			 tr = `
 				<tr>
-				 <td>${res[i].idx}</td>
-				 <td><a href='javascript:open(${res[i].idx})'>${res[i].title}</a></td>
-				 <td>${res[i].writer}</td>
-				 <td>${res[i].indate}</td>
-				 <td id="count${res[i].idx}">${res[i].count}</td>
+				 <td>${res[i].c_seq}</td>
+				 <td><a href='javascript:open(${res[i].c_seq})'>${res[i].c_title}</a></td>
+				 <td>${res[i].u_id}</td>
+				 <td>${res[i].c_date}</td>
+				 <td id="viewUpdate${res[i].c_seq}">${res[i].viewUpdate}</td>
 				 </tr>   
-				   <tr id="board${res[i].idx}" style = "display:none">
+				   <tr id="board${res[i].c_seq}" style = "display:none">
 						 <td colspan="5">
-						 <textarea rows="5" class = "form-control">${res[i].content}</textarea>
+						 <textarea rows="5" class = "form-control">${res[i].c_content}</textarea>
 						 </td>
 					 </tr>         
 			 `;

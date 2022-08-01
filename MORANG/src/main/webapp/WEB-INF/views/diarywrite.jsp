@@ -104,7 +104,7 @@
 
          $.ajax({
             type : 'POST',
-            url : 'http://220.80.88.59:8084/sentiment',
+            url : 'http://222.102.104.182:8084/sentiment',
             async : false,
             data : JSON.stringify(postdata),
             dataType : 'JSON',

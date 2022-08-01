@@ -84,25 +84,15 @@ page language="java" contentType="text/html; charset=UTF-8"
                             </tr>
                             <%for (Board board : list) {%>
                                 <tr>
-                                    <td>
-                                        <%=board.getC_seq()%>
-                                    </td>
-
+                                    <td><%=board.getC_seq()%></td>
                                     <td><a href="/web/boardContent.do?c_seq=<%=board.getC_seq()%>">
-                                            <%=board.getC_title()%> 
+                                            <%=board.getC_title()%>
                                         </a></td>
-                                    <td>
-                                        <%=board.getU_id()%>
-                                    </td>
-                                    <td>
-                                        <%=board.getC_date()%>
-                                    </td>
-                                    <td>
-                                        <%=board.getC_likes()%>
-                                    </td>
-                                </tr>
+                                    <td><%=board.getU_id()%></td>
+                                    <td><%=board.getC_date()%></td>
+                                    <td><%=board.getC_likes()%></td>
+                                 </tr>       
                                 <% } %>
-
                         </table>
                         <br>
                         <button onclick="location.href='boardInsert.do'" class="notice-board-btn">게시글 작성</button>
@@ -111,7 +101,7 @@ page language="java" contentType="text/html; charset=UTF-8"
         </div>
         
         <script type="text/javascript">
-        function open(c_seq){
+        function open(c_title){
         	
         	let c_likes = Number($('#c_likes'+c_seq).html());
         	$.ajax({

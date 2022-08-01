@@ -13,7 +13,7 @@ page language="java" contentType="text/html; charset=UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/noticeBoard.css">
     <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
-    <title>게시판</title>
+    <title>회원목록</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
@@ -30,12 +30,7 @@ page language="java" contentType="text/html; charset=UTF-8"
     margin-left: 50px;
   }
 </style>
-<script type="text/javascript">
-function goDelete(u_id) {
-		// controller가 가진 boardDelete.do 호출
-		location.href = '/web/joinDelete2.do?u_id=' + u_id;
-}
-</script>
+
 </head>
 
 <body>
@@ -120,13 +115,21 @@ function goDelete(u_id) {
                                 <td><%=Join.getU_phone()%></td>
                                 <td><%=Join.getU_birthdate()%></td>
                                 <td><%=Join.getU_joindate()%></td>
-								<td><button onClick ="goDelete(${join.u_id})">추방</button></td>
+								<td>
+								<button onClick ="goMemberDelete('<%=Join.getU_id()%>')">추방</button>
+								</td>
                             </tr>
                             <% } %>
                         </table>
                         <br>
             </div>
         </div>
+<script type="text/javascript">
+
+function goMemberDelete(u_id) {
+		location.href = '/web/joinDelete2.do?u_id=' + u_id;
+}
+</script>
 </body>
 
 </html>

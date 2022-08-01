@@ -6,12 +6,13 @@
 <mapper namespace="com.smhrd.mapper.shareNoteMapper">
 
 	<!-- 노트 가져오기 -->
-	<select id="shareNoteList"
+	<select id="shareNoteList" parameterType="com.smhrd.domain.Criteria"
 		resultType="com.smhrd.domain.shareNote">
 		 select * from mr_sharenote where u_id=#{u_id}
 		 union all
 		 select * from mr_pr_sharenote where p_id = any(select p_id from mr_protector where u_id=#{u_id})    
  		 order by note_date desc
+ 		 limit #{skip},#{amount}
 	</select>
 
 	<!-- 노트 글쓰기 -->
@@ -70,4 +71,25 @@
 		select p_id from mr_pr_sharenote
 		where note_seq=#{note_seq}
 	</select>
+	
+    <!-- 게시물 목록(페이징) -->
+    <select id="shareNoteListPaging" resultType="com.smhrd.domain.shareNote">
+    
+        select * from (
+                select note_seq, note_title, note_content, u_id, note_date, note_color
+                from mr_sharenote order by note_seq desc) as T1 
+        <!-- limit ((${pageNum}-1)*${amount}), ${amount} -->
+        limit #{skip},#{amount}
+    
+    </select>
+    
+    <!-- 게시물 총 개수 -->
+    <select id="getTotal" resultType="int" parameterType="String">
+         select count(*) from
+ 		 (select * from mr_sharenote where u_id=#{u_id}
+		 union all
+		 select * from mr_pr_sharenote where p_id = any(select p_id from mr_protector where u_id=#{u_id})    
+ 		 order by note_date desc) hy
+    </select>
+	
 </mapper>

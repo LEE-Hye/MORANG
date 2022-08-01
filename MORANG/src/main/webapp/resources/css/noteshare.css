@@ -2,13 +2,13 @@
 	url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap")
 	;
 
-
-#nowpage{
-	color:gray;
+#nowpage {
+	color: gray;
 }
-.pic_morang{
-	width:130px;
-	height:100px;
+
+.pic_morang {
+	width: 130px;
+	height: 100px;
 }
 
 #chatbot_close {
@@ -463,19 +463,18 @@ textarea {
 	text-align: center;
 	padding: 10px 0px 0px 10px;
 	font-family: 'Dongle', sans-serif;
-	height:100%;
-	width:100%;
-	overflow:hidden;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 	font-size: 23px;
-	
 }
 
 .note_content {
 	padding: 5px 5px 5px 5px;
 	font-family: 'Dongle', sans-serif;
-		height:100%;
-	width:100%;
-	font-size:20px;
+	height: 100%;
+	width: 100%;
+	font-size: 20px;
 }
 
 #thumbtack {
@@ -549,6 +548,7 @@ textarea {
 	bottom: 0;
 	display: none;
 	padding: 15px;
+	z-index: 1;
 }
 
 .popup {
@@ -679,4 +679,42 @@ textarea {
 
 .w-btn-outline:active {
 	transform: scale(1.5);
+}
+
+/*페이지 이동*/
+.pageInfo {
+	list-style: none;
+	display: inline-block;
+	margin: 50px 0 0 150px;
+	position: absolute;
+	top: 100%;
+	left: 35%;
+}
+
+.pageInfo li {
+	float: left;
+	font-size: 20px;
+	margin-left: 18px;
+	padding: 0px 7px 0px 7px;
+	font-weight: 500;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.active {
+	color: black;
+	border-bottom: 1px solid;
 }

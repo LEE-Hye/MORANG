@@ -1,3 +1,7 @@
+.dateTitle {
+    font-size: 130%;
+}
+
 .pic_morang {
     width: 130px;
     height: 100px;
@@ -216,7 +220,7 @@ a{
 
 .sidebar{
     flex: 1 1 0;
-    max-width: 260px;
+    max-width: 300px;
     padding: 2rem 1rem;
     background-color: #e4beb3;
     

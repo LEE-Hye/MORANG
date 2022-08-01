@@ -27,7 +27,7 @@
 			--%>
 			
 			
-				<form class="form-horizontal" action="diaryUpdate.do" method="post">
+				<form class="form-horizontal" action="diaryUpdate.do" method="post" id="ajaxafter">
 					<input type = "hidden" name = "diary_seq" value="${diary.diary_seq}">
 					
 					<div class="form-group">
@@ -82,14 +82,14 @@
 					
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default" id="test_Check">글작성</button>
+							<button type="button" class="btn btn-default" id="test_Check">글작성</button>
 						</div>
 					</div>
 				</form>
 				
 				
 			</div>
-			<div class="panel-footer">빅데이터 12차 이혜빈</div>
+			
 		</div>
 	</div>
 	
@@ -103,20 +103,22 @@
 
          $.ajax({
             type : 'POST',
-            url : 'http://127.0.0.7:9999/sentiment',
+            url : 'http://222.102.104.182:8084/sentiment',
             async : false,
             data : JSON.stringify(postdata),
             dataType : 'JSON',
             contentType : "application/json",
             success : function(data) {
-               let pos = data.result2['pos'];
-               let neg = data.result2['neg'];
-               //        $('#morang').append(pos);
-               //        $('#morang').append(neg);
-               document.getElementById("data1").innerHTML = pos;
-               document.getElementById("data2").innerHTML = neg;
+            	let pos = data.result2['pos'];
+                let neg = data.result2['neg'];
+				console.log(pos);
 				$('#pos').val(pos);
 				$('#neg').val(neg);
+                
+				
+                let pos2=$('#pos').val()
+                console.log(pos2);
+                document.getElementById('ajaxafter').submit();
             },
 
             error : function(request, status, error) {

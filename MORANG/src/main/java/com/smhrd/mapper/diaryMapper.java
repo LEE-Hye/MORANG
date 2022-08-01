@@ -22,4 +22,6 @@ public interface diaryMapper {
 	public int diaryUpdate(diary vo);
 
 	 public float diarywriteCon(@Param("pos") float pos, @Param("neg") float neg);
+	 
+	 public int diaryweekselect(String u_id);
 }

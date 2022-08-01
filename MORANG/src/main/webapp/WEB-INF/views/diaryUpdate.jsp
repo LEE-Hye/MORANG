@@ -1,99 +1,147 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.diary"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 템플릿만 저장하는 용도 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap Example</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="resources/css/diarywrite.css">
+<script src="https://kit.fontawesome.com/3e55fa4950.js"
+	crossorigin="anonymous"></script>
+<title>diary content</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- 자바 스크립트 -->
 </head>
 <body>
 
-	<div class="container">
-		<h2>SpringMVC01</h2>
-		<div class="panel panel-default">
-			<div class="panel-heading"></div>
-			<div class="panel-body">
-			<%--post방식에서도 action에  
-				boardUpdate.do?idx=${board.idx}
-				이렇게 쿼리 스트링을 넣어주는 건 문제가 되지 않았다.
-			--%>
-			
-			
-				<form class="form-horizontal" action="diaryUpdate.do" method="post" id="ajaxafter">
-					<input type = "hidden" name = "diary_seq" value="${diary.diary_seq}">
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="diary_title">제목:</label>
-						<div class="col-sm-10">
+
+	<div class="stars"></div>
+
+	<div class="write_Content">
+		<form class="form-horizontal" action="diaryUpdate.do" method="post">
+				<div class="form-group">
+					<div class="headline">제목 :</div>
+					<div class="col-sm-10">
+		
 							<input type="text" class="form-control" id="diary_title"
 								value="${diary.diary_title }" name="diary_title">
+						
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="headline">작성자 :</div>
+					<div class="col-sm-10">
+						<div>
+							<input name="u_id" class="form-control" id="writer" type="text"
+								value=" ${diary.u_id}" name="u_id" readonly="readonly">
 						</div>
 					</div>
-					
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="diary_content">내용:</label>
-						<div class="col-sm-10">
+				</div>
+
+				<div class="form-group">
+					<div class="headline">내용 :</div>
+					<div class="col-sm-10">
+						<div>
 							<textarea name="diary_content" id="diary_test" rows="10"
 								class="form-control">${diary.diary_content }</textarea>
 						</div>
 					</div>
-					
-					
-					
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="u_id">작성자:</label>
-						<div class="col-sm-10">
-							<input name="u_id" class="form-control" id="writer" 
-							type="text" value=" ${diary.u_id}" name="u_id" readonly="readonly">
-							
-						</div>
+				</div>
+
+				<div class="form-group">
+					<div class="headline">작성일 :</div>
+					<div class="col-sm-10">
+						<div>${fn:split(diary.diary_date, " ")[0] }</div>
 					</div>
-					<div class="form-group">
-					<div class="weather">
-					<label class="control-label col-sm-2" for="content">날씨:</label>
+				</div>
+
+				<div class="form-group">
+					<div class="headline">날씨 :</div>
+					<div class="col-sm-10">
 						<div>
 							<ul class="icon">
-								<li><i class="fa-solid fa-sun"></i></li><input type="radio" value="sun" name="weather">
-								<li><i class="fa-solid fa-cloud"></i></li><input type="radio" value="cloud" name="weather">
-								<li><i class="fa-solid fa-cloud-showers-heavy"></i></li><input type="radio" value="rain" name="weather">
-								<li><i class="fa-solid fa-snowflake"></i></li><input type="radio" value="snow" name="weather">
-								
+								<li><i class="fa-solid fa-sun"></i></li>
+								<input type="radio" value="sun" name="weather">
+								<li><i class="fa-solid fa-cloud"></i></li>
+								<input type="radio" value="cloud" name="weather">
+								<li><i class="fa-solid fa-cloud-showers-heavy"></i></li>
+								<input type="radio" value="rain" name="weather">
+								<li><i class="fa-solid fa-snowflake"></i></li>
+								<input type="radio" value="snow" name="weather">
+
 							</ul>
 						</div>
-						
-						
-						<input type="hidden" id="pos" name="pos">
-						<input type="hidden" id="neg" name="neg">
-						<input type="button" value="감정 확인" id="test">
-						 
 					</div>
-					<div id="data1">${diary.diary_pos }</div>
-     				 <div id="data2">${diary.diary_neg }</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="headline">감정결과 :</div>
+					<div class="col-sm-10">
+						<input type="hidden" id="pos" name="pos"> <input
+							type="hidden" id="neg" name="neg"> 
+						<input type="button"
+							value="감정 확인" id="test">
 					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="btn btn-default" id="test_Check">글작성</button>
-						</div>
-					</div>
-				</form>
+
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-10">
+						<button type="submit" class="modal-diary" id="test_Check">수정완료</button>
+				</div>
+				</div>
+		</form>
+
+			
 				
 				
 			</div>
 			
-		</div>
-	</div>
-	
-	
+		
+
+<script>
+                                            $(document).ready(function () {
+                                                var stars = 800;
+                                                var $stars = $(".stars");
+                                                var r = 800;
+                                                for (var i = 0; i < stars; i++) {
+                                                    var $star = $("<div/>").addClass("star");
+                                                    $stars.append($star);
+                                                }
+                                                $(".star").each(function () {
+                                                    var cur = $(this);
+                                                    var s = 0.2 + (Math.random() * 1);
+                                                    var curR = r + (Math.random() * 300);
+                                                    cur.css({
+                                                        transformOrigin: "0 0 " + curR + "px",
+                                                        transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
+
+                                                    })
+                                                })
+                                            })
+                                        </script>
+
+
+
+
+
+
+
+
+
 	<script type="text/javascript">
       $('#test').click(function() {
          var text = $('#diary_test').val()
@@ -128,11 +176,5 @@
          });
       })
    </script>
-
-	
-	
-	
-	
-	</body>
-	</html>
-	
+</body>
+</html>

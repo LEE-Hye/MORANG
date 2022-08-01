@@ -29,6 +29,23 @@ font-family: 'BMJUA';
     width: 500px;
 }
    </style>
+   <script>
+    function check_pw(){
+
+        var password = document.getElementById('password').value;
+
+        if(document.getElementById('password').value !='' && document.getElementById('passwordCheck').value!=''){
+            if(document.getElementById('password').value==document.getElementById('passwordCheck').value){
+                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                document.getElementById('check').style.color='blue';
+            }
+            else{
+                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                document.getElementById('check').style.color='red';
+            }
+        }
+    }
+</script>
 <body>
 
    <div class="container">
@@ -58,14 +75,15 @@ font-family: 'BMJUA';
 					</div>
 					<div class="password" style="margin-left: 110px;">
 						비밀번호 :<br> <input id="password" type="password" name="u_pw"
-							value="${loginMember.u_pw}" size="30" class="inputList">
+							value="${loginMember.u_pw}" size="30" class="inputList" onchange="check_pw()">
 						<div id="passwordError" class="error"></div>
 						<br>
 					</div>
 					<div class="passwordCheck" style="margin-left: 110px;">
 						비밀번호 확인 : <br>
 						<input id="passwordCheck" type="password"
-							value="${loginMember.u_pw}" size="30" class="inputList">
+							value="${loginMember.u_pw}" size="30" class="inputList" onchange="check_pw()">
+						 <br><span id="check"></span>
 						<div id="passwordCheckError" class="error"></div>
 						<br>
 					</div>

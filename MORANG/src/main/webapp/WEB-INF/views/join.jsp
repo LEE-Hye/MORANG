@@ -57,6 +57,23 @@
 	    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 		}
     </style>
+    <script>
+    function check_pw(){
+
+        var password = document.getElementById('password').value;
+
+        if(document.getElementById('password').value !='' && document.getElementById('passwordCheck').value!=''){
+            if(document.getElementById('password').value==document.getElementById('passwordCheck').value){
+                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                document.getElementById('check').style.color='blue';
+            }
+            else{
+                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                document.getElementById('check').style.color='red';
+            }
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -86,7 +103,7 @@
                         <div class="wrapper" align="center">
                             <div class="name">
                             
-                                이름 : <input id="u_name" type="text" placeholder="이름을 입력해 주세요." class="inputList" name="u_name" >
+                                이름 : <input id="u_name" type="text" placeholder="이름을 입력해 주세요." class="inputList" name="u_name">
                        </div>
                        <br>
                       <div class="phone">
@@ -157,13 +174,14 @@
                                     </div>
                                     <div class="password" style="margin-left: 110px;">
                                         비밀번호 :<br> <input id="password" type="password" name="u_pw" placeholder="비밀번호를 입력해 주세요."
-                                            size="30" class="inputList">
+                                            size="30" class="inputList" onchange="check_pw()">
                                         <div id="passwordError" class="error"></div>
                                         <br>
                                     </div>
                                     <div class="passwordCheck" style="margin-left: 110px;">
                                         비밀번호 확인 : <br><input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요."
-                                            size="30" class="inputList">
+                                            size="30" class="inputList" onchange="check_pw()">
+                                            <br><span id="check"></span>
                                         <div id="passwordCheckError" class="error"></div>
                                         <br>
                                     </div>
@@ -206,13 +224,14 @@
                                 </div>
                                 <div class="password" style="margin-left: 110px;">
                                     비밀번호 :<br> <input id="password" type="password" name="p_pw" placeholder="비밀번호를 입력해 주세요."
-                                        size="30" class="inputList">
+                                        size="30" class="inputList" onchange="check_pw()">
                                     <div id="passwordError" class="error"></div>
                                     <br>
                                 </div>
                                 <div class="passwordCheck" style="margin-left: 110px;">
                                     비밀번호 확인 : <br><input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요."
-                                        size="30" class="inputList">
+                                        size="30" class="inputList" onchange="check_pw()">
+                                        <br><span id="check"></span>
                                     <div id="passwordCheckError" class="error"></div>
                                     <br>
                                 </div>
@@ -940,12 +959,12 @@
  					'u_name':u_name,
  					'u_phone':u_phone,
  				},
- 				success:function(res){
+ 				success:function(idfind){
  					// 기존에 있던 조회수를 바꿔줘야함
- 					if(res==0){
- 						$('#findError').html("사용자의 아이디는 ["+res+"] 입니다").css( "color", "black");
+ 					if(idfind !=null){
+ 						$('#findError').html("사용자의 아이디는 ["+idfind+"] 입니다").css( "color", "black");
  					}
- 					else if(res==1){
+ 					else{
  						$('#findError').html("찾을 수 없는 아이디입니다.").css( "color", "red");
  					}
  					

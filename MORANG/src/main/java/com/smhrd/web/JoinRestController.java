@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.smhrd.domain.Join;
 import com.smhrd.mapper.JoinMapper;
 
+import lombok.NonNull;
+
 @RestController
 public class JoinRestController {
 
@@ -44,10 +46,11 @@ public class JoinRestController {
    
  // 이거 아이디 찾기 
    @RequestMapping("/findid.do")
-	public void findid(Model model, Join vo) {
+	public Join findid(Model model, Join vo) {
 		Join idfind = mapper.findid(vo);
-		model.addAttribute("idfind", idfind);
+		model.addAttribute("idfind", vo.getU_id());
 		System.out.println(vo.getU_name());
 		System.out.println(vo.getU_phone());
+		return idfind;
    }
 }

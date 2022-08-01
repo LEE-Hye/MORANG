@@ -45,6 +45,26 @@ public class commentController {
 		
 		return "redirect:/boardContent.do?c_seq="+vo.getC_seq();
 	}
+	@RequestMapping("/commentUpdate.do")
+	public String commentUpdate(comment vo) {
+
+		mapper.commentUpdate(vo);
+
+		return "redirect:/boardContent.do?c_seq="+vo.getC_seq();
+
+	}
+	@RequestMapping("/commentDelete.do")
+	public String commentDelete(int cmt_seq,HttpServletRequest request) {
+
+		mapper.commentDelete(cmt_seq);
+
+		if (request.getHeader("Referer") != null) {
+		    return "redirect:" + request.getHeader("Referer");
+		 } 
+		else {
+		    return "redirect:/boardList.do";
+		 }
+	}
 	
 
 }

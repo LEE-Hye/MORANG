@@ -20,6 +20,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
 	<style type="text/css">
+	.pageNumarea {
+    text-align: center;
+}
 	
 	.prev{
 		border: 2px solid #e4beb3;
@@ -27,9 +30,6 @@
     color: #e4beb3;
     padding: 10px;
     border-radius: 10px;
-    margin-left:8%;
-    margin-right: 5%;
-    font-size: 20px;
 	}
 	.next{
 	border: 2px solid #e4beb3;
@@ -37,9 +37,6 @@
     color: #e4beb3;
     padding: 10px;
     border-radius: 10px;
-    margin-left: 5%;
-    font-size: 20px;
-   
 	}
 	
 	.nowpagenum{
@@ -164,14 +161,14 @@
             
             <br><br>  
             <div class="pageNumarea">
-            <button class="prev" style="width: 100px; height: 50px;">&lt;</button>            
-            <button class="nowpagenum" style="width: 100px; height: 50px;">1</button>     
-            <button class="modal-diary" style="width: 100px; height: 50px;">2</button>     
-            <button class="modal-diary" style="width: 100px; height: 50px;">3</button>
-            <button class="modal-diary" style="width: 100px; height: 50px;">4</button>
-            <button class="modal-diary" style="width: 100px; height: 50px;">5</button>
-            <button class="modal-diary" style="width: 100px; height: 50px;">6</button>
-            <button class="next" style="width: 100px; height: 50px;">&gt;</button>   
+            <button class="prev">&lt;</button>            
+            <button class="nowpagenum" >1</button>     
+            <button class="modal-diary">2</button>     
+            <button class="modal-diary">3</button>
+            <button class="modal-diary">4</button>
+            <button class="modal-diary">5</button>
+            <button class="modal-diary">6</button>
+            <button class="next" >&gt;</button>   
             </div>   
       </div>
 	</div>

@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
   <link rel="stylesheet" href="resources/css/Main/style.css">
   <script src="https://kit.fontawesome.com/3e55fa4950.js" crossorigin="anonymous"></script>
   <title>morang</title>
@@ -20,7 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!-- 차트 js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 자바 스크립트 -->
   <script src="resources/js/Main/calendar.js"></script>
-  <link href="resources/css/Main/main.css" rel="stylesheet" id="main-css">
+ 
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="resources/js/Main/bootstrap.js" type="text/javascript"></script>
   <script src="resources/js/Main/bootstrap.min.js" type="text/javascript"></script>

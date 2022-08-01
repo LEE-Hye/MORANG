@@ -57,7 +57,7 @@
 .top_menu .title {
     text-align: center;
     color: #bcbdc0;
-    font-size: 20px;
+    font-size: 180%;
 }
 
 .messages {
@@ -86,7 +86,6 @@
     background-color: #ffe6cb;
     margin-left: 20px;
     width: 70%;
-    position:absolute;
 }
 
 .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
@@ -162,7 +161,7 @@
 }
 
 .messages .message .text_wrapper .text {
-    font-size: 18px;
+    font-size: 130%;
     font-weight: 300;
 }
 
@@ -196,6 +195,7 @@
     position: relative;
     outline-width: 0;
     color: gray;
+    font-size: 130%;
 }
 
 .bottom_wrapper .send_message {

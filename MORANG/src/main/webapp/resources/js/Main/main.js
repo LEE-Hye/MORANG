@@ -8,7 +8,29 @@ let happiness=0;
 let disgust=0;
 
 
+        function speak(text, opt_prop) {
+            if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                return
+            }
+            
+            window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
 
+            const prop = opt_prop || {}
+
+            const speechMsg = new SpeechSynthesisUtterance()
+            speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+            speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+            speechMsg.lang = prop.lang || "ko-KR"
+            speechMsg.text = text
+            
+            // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+            window.speechSynthesis.speak(speechMsg)
+        }
+        
+        // 이벤트 영역
+        const selectLang = "ko-kr";
+       let text="";
         
          
         
@@ -108,7 +130,7 @@ let disgust=0;
             
             return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
         };
-        $('.send_message').click(function () {
+        $('#Sttsend_message').click(function () {
 			  recognition.start();
              isRecognizing = true;
 
@@ -137,18 +159,42 @@ let disgust=0;
                     let messageText = resText;
                     if (messageText.includes('안녕')) {
                         setTimeout(function () {
+                        	 text = "안녕하세요. 저는 모랑 임산부 케어 봇입니다."
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("안녕하세요. 저는 모랑 임산부 케어 봇입니다.", 'left');
                         }, 1000);
                     } else if (messageText.includes('반가워')) {
                         setTimeout(function () {
+                        text = "저도 반갑습니다."
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저도 반갑습니다.✧⁺⸜(･ ᗜ ･ )⸝⁺✧ ", 'left');
                         }, 1000);
                     } else if (messageText.includes('고마워')) {
                         setTimeout(function () {
+                        text = "천만에요. 더 물어보실 건 없나요"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("천만에요. 더 물어보실 건 없나요?", 'left');
                         }, 1000);
                     } else if (messageText.includes('없어')) {
                         setTimeout(function () {
+                        text = "그렇군요. 알겠습니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("그렇군요. 알겠습니다!", 'left');
                         }, 1000);
             
@@ -157,6 +203,12 @@ let disgust=0;
             
                     else if (messageText.includes('이름')) {
                         setTimeout(function () {
+                        text = "저의 이름은 모랑입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저의 이름은 모랑입니다~~＞︿＜", 'left');
                         }, 1000);
             
@@ -164,6 +216,12 @@ let disgust=0;
                     }
                      else if (messageText.includes('닉네임')) {
                         setTimeout(function () {
+                         text = username+"입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage(username+"입니다!! o(*￣▽￣*)o", 'left');
                         }, 1000);
             
@@ -248,19 +306,47 @@ let disgust=0;
                     let messageText = getMessageText();
                     if (messageText.includes('안녕')) {
                         setTimeout(function () {
+                        text = "안녕하세요. 저는 모랑 임산부 케어 봇입니다."
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("안녕하세요. 저는 모랑 임산부 케어 봇입니다.", 'left');
+                            
                         }, 1000);
                     } else if (messageText.includes('반가워')) {
                         setTimeout(function () {
+                        text = "저도 반갑습니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저도 반갑습니다.✧⁺⸜(･ ᗜ ･ )⸝⁺✧ ", 'left');
+                            
                         }, 1000);
                     } else if (messageText.includes('고마워')) {
                         setTimeout(function () {
+                        text = "천만에요. 더 물어보실 건 없나요"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("천만에요. 더 물어보실 건 없나요?", 'left');
+                            
                         }, 1000);
                     } else if (messageText.includes('없어')) {
                         setTimeout(function () {
+                        text = "그렇군요. 알겠습니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("그렇군요. 알겠습니다!", 'left');
+                            
                         }, 1000);
             
             
@@ -268,14 +354,28 @@ let disgust=0;
             
                     else if (messageText.includes('이름')) {
                         setTimeout(function () {
+                         text = "저의 이름은 모랑입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage("저의 이름은 모랑입니다~~＞︿＜", 'left');
+                            
                         }, 1000);
             
             
                     }
                      else if (messageText.includes('닉네임')) {
                         setTimeout(function () {
+                         text = username + "입니다"
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                             return sendMessage(username+"입니다!! o(*￣▽￣*)o", 'left');
+                            
                         }, 1000);
             
             
@@ -321,7 +421,14 @@ let disgust=0;
 								    alert( "어떤 값인지 파악이 되지 않습니다." );
 								}
                             	console.log(happiness);
+                            	    text = data.result2['msg']
+			                 speak(text,{
+			                 	reqt:1,
+			                 	pitch:1.2,
+			                 	lang: "ko-KR"
+			                 })
                                 return sendMessage(data.result2['msg'],'left');
+                            
                             },
                             
                             error: function(request, status, error){
@@ -343,10 +450,18 @@ let disgust=0;
             $('#chatbot_close').attr("id","chatbot_open");
             let k = $('.messages').text();
             console.log(k);
+            
             if(k==""){
                 sendMessage('우산팀 데모에 오신걸 환영합니다.','left');
+                 text = "반갑습니다"+username+"님 오늘 기분은 어떠신가요"
+                 speak(text,{
+                 	reqt:1,
+                 	pitch:1.2,
+                 	lang: "ko-KR"
+                 })
                 setTimeout(function () {
                     return sendMessage("반갑습니다." + username + "님.✧⁺⸜(･ ᗜ ･ )⸝⁺✧  ", 'left');
+                    text
                 }, 1000);
                 setTimeout(function () {
                     return sendMessage("저는 임산부 감정케어봇 모랑입니다.", 'left');

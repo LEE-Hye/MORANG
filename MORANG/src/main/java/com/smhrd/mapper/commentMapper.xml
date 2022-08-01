@@ -24,7 +24,7 @@
       <!-- 댓글 수정  -->
       <update id="commentUpdate" parameterType="com.smhrd.domain.comment">
           update mr_comment
-          set cmt_content = #{cmt_content}, u_id=#{u_id}
+          set cmt_content = #{cmt_content}
           where cmt_seq = #{cmt_seq}
       </update>
 </mapper>

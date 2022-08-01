@@ -32,6 +32,10 @@
   			
   			location.href = '/web/boardGoUpdate.do?c_seq=' + c_seq;
 		}
+  		function goCommentDelete(cmt_seq) {
+  			// controller가 가진 boardDelete.do 호출
+  			location.href = '/web/commentDelete.do?cmt_seq=' + cmt_seq;
+		}
   	</script>
   	  	<style>
    @font-face {
@@ -119,8 +123,7 @@ font-family: 'BMJUA';
 						
 
 						<c:if test="${cmt_comment.u_id eq loginMember.u_id}">
-						<td><a href="">삭제</a></td>
-						<c:set var="name" value="홍길동" />
+						<td><button onClick ="goCommentDelete(${cmt_comment.cmt_seq})">삭제</button></td>
 						
 						</c:if>
 						

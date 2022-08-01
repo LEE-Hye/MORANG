@@ -26,5 +26,6 @@ public interface MainMapper {
 	public List<diary> selectemotion7(String u_id);
 	
 	public List<diary> selectMonthemotion(String u_id);
+	public List<diary> selectMonthemotion2(String u_id);
 	
 }

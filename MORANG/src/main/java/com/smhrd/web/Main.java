@@ -145,7 +145,8 @@ public class Main {
 		
 		
 		session.setAttribute("Monthemotionlist", Monthemotionlist);
-		
+		List<diary> Monthemotionlist2 = mapper.selectMonthemotion2(u_id);
+		session.setAttribute("Monthemotionlist2", Monthemotionlist2);
 		
 		session.setAttribute("diaryyesterdayemotion", dia);
 		session.setAttribute("diary2emotion", dia2);

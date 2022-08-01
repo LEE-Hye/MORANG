@@ -123,7 +123,7 @@ font-family: 'BMJUA';
 						
 
 						<c:if test="${cmt_comment.u_id eq loginMember.u_id}">
-						<td><button onClick ="goCommentDelete(${cmt_comment.cmt_seq})">삭제</button></td>
+						<td><a onClick ="goCommentDelete(${cmt_comment.cmt_seq})">삭제</a></td>
 						
 						</c:if>
 						

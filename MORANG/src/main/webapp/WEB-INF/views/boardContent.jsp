@@ -14,7 +14,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+	<style>
+	element.style {
+    background-color: gray;
+    padding-left: 10px;
+}
+</style>
   	<script type="text/javascript">
   		function goList() {
 			// boardList 페이지로 이동
@@ -111,19 +116,19 @@ font-family: 'BMJUA';
 	
       
        </form>
-       <div> 전체댓글
-       
+       <div> <span style="font-size:30px;">전체 댓글</span>
+       <hr>
   		<c:forEach var="cmt_comment" items="${commentlist}">
   		<table>
 					<tr>
-						<td width="100px"> ${cmt_comment.u_id}</td></tr>
-						<tr><td width="100px"><span style="margin-left:10px">${cmt_comment.cmt_content}</span></td></tr>
+						<td width="500px" style="font-size:20px;"> 아이디 : ${cmt_comment.u_id}</td></tr>
+						<tr><td width="100px" style="background-color:rgb(207, 207, 207);"><span style="margin-left:10px">댓글 : ${cmt_comment.cmt_content}</span></td></tr>
 						<tr>
-						<td width="200px" style="color: gray">${cmt_comment.cmt_date}</td>
+						<td width="200px" style="color: gray;">${cmt_comment.cmt_date}</td>
 						
 
 						<c:if test="${cmt_comment.u_id eq loginMember.u_id}">
-						<td><a onClick ="goCommentDelete(${cmt_comment.cmt_seq})">삭제</a></td>
+						<td><a  onClick ="goCommentDelete(${cmt_comment.cmt_seq})">삭제</a></td>
 						
 						</c:if>
 						

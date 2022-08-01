@@ -624,7 +624,24 @@ if (happiness2 >0||fear2>0||surprise2>0||angry2>0||sadness2>0||neutral2>0||disgu
          }
          </c:forEach>
      },100);
-   
+    setTimeout(function() {
+        <c:forEach items='${Monthemotionlist2}' var='item'>
+          for (let i2 = 1; i2 <= 31; i2++) {
+             dayday=$('#day20').text();
+             if(i2==Number('${item.diary_date}')){
+                monthpos=Number('${item.diary_pos}')
+                monthneg=Number('${item.diary_neg}')
+                if(monthpos>=monthneg){
+                   $('#day'+i2).append('<br><img alt="" src="resources/img/sun2.png" width="150%" height="150%" class="seal">');
+                }
+                else{
+                   $('#day'+i2).append('<br><img alt="" src="resources/img/usan2.png" width="150%" height="150%" class="seal">');
+                }
+             }
+             else{}
+          }
+          </c:forEach>
+      },3000);
 </script>
 
 

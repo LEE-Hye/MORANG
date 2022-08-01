@@ -30,12 +30,16 @@ th, td{
     position: fixed;
     right: 40px;
     bottom: 40px;
-    border-radius: 70%
+    border-radius: 70%;
+    width: 90px;
+    height: 100px;
 }
 #chatbot_open{
     position: fixed;
     right: 40px;
     bottom: 40px;
+    width: 90px;
+    height: 100px;
 }
 #chatbot_sh{
     position: fixed;

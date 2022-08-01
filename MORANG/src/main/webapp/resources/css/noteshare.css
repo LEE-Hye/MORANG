@@ -548,6 +548,7 @@ textarea {
 	bottom: 0;
 	display: none;
 	padding: 15px;
+	z-index: 1;
 }
 
 .popup {

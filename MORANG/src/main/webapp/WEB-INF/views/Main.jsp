@@ -254,7 +254,7 @@
       		
       </c:when>
       <c:otherwise>
-      	<img src="resources/img/chatbottest.gif" alt="실패" id="chatbot_close" width="10%" height="10%" style="display:none">
+      	<img src="resources/img/chatbottest.gif" alt="실패" id="chatbot_close" width="5%" height="5%" style="display:none">
       </c:otherwise>
       </c:choose>
       

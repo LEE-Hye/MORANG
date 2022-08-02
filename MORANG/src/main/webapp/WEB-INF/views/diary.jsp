@@ -127,8 +127,8 @@
                   <td>
                     <%=diary.getDiary_seq()%>
                   </td>
-                  <td><a href="/web/diaryContent.do?diary_seq=<%=diary.getDiary_seq()%>"></a>
-                      <%=diary.getDiary_title()%>
+                  <td><a href="/web/diaryContent.do?diary_seq=<%=diary.getDiary_seq()%>"><%=diary.getDiary_title()%></a>
+                      
                   </td>
 
                   <td>

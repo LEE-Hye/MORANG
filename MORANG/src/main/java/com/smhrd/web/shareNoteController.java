@@ -161,14 +161,15 @@ public class shareNoteController {
 		
 		@RequestMapping("/shareNoteDelete.do")
 		public String shareNoteDelete(int note_seq,String writerId ,HttpSession session) {
-			Join loginMember = (Join)session.getAttribute("loginMember");
-			String checkId=loginMember.getU_id();
+			protectorJoin pro = (protectorJoin)session.getAttribute("protectorMember");
+			String writer_id = pro.getP_id();
 			
-			if(writerId.equals(checkId)) {
-				mapper.shareNoteDelete(note_seq);
+			if(writer_id.equals(writerId)) {
+				mapper.shareNoteDeletepro(note_seq);
 			}
 			else {
-				mapper.shareNoteDeletepro(note_seq);
+				
+				mapper.shareNoteDelete(note_seq);
 			}
 			
 			

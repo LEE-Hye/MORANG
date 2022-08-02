@@ -32,7 +32,7 @@
 	
 	function goDelete(note_seq){
 		
-		location.href = "/web/shareNoteDelete.do?note_seq=" + note_seq;
+		location.href = "/web/shareNoteDelete.do?note_seq=" + note_seq+"&writerId='${shareNote.u_id}'";
 		
 	}
 	

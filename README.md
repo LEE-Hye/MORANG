@@ -35,6 +35,11 @@
 
 ## 5. SW 동작 화면
 
+### 회원가입, 로그인
+![3](https://user-images.githubusercontent.com/91482127/221343760-9f6e058c-f4f0-452e-b12e-f87574b380a7.png)
+![55](https://user-images.githubusercontent.com/91482127/221343766-34e89935-c336-411d-b550-5529ba1afa93.png)
+
+
 ### 메인(일기를 통해 긍정 부정 퍼센트를 알려줌)
 ![image](https://user-images.githubusercontent.com/91482127/221342662-8e830b85-c60f-478e-9a2d-3d0a86147e60.png)
 

@@ -27,9 +27,9 @@
 |구분|내용|
 |------|---|
 |사용언어|Java / HTML / CSS / JavaScript / python / etc...|
-|사용한 라이브러리||
-|개발도구|Eclipse / VisualStudioCode, Colab|
-|서버환경|tomcat|
+|사용한 라이브러리|SpringFramework / etc...|
+|개발도구|Eclipse / VisualStudioCode / Colab / etc...|
+|서버환경|tomcat 8.5 / Flask / etc...|
 |데이터베이스|MySQL|
 
 
@@ -38,7 +38,7 @@
 #### SW 유스케이스
 ![image](https://user-images.githubusercontent.com/104408832/170409069-e78a520f-bbc6-4937-bd2c-55b4589bf4bc.png)
 #### 서비스 흐름도(웹 화면설계서)
-![image](https://user-images.githubusercontent.com/104408832/170409136-dc898696-069d-4191-be46-021d7cb6135b.png)
+![image](https://user-images.githubusercontent.com/91482127/221342310-d49fd9ad-b361-440d-9da4-109fbd1fe294.png)
 #### ER 다이어그램
 ![캡처](https://user-images.githubusercontent.com/91482127/221341585-ff1730f9-bf65-45e1-bf33-0444aed10676.PNG)
 
@@ -64,7 +64,7 @@
 ![image](https://user-images.githubusercontent.com/104408832/170409380-577d3309-a57c-4ae6-97de-c5e360e75fda.png)
 
 ## 6. 제작 일정
-![캡처](https://user-images.githubusercontent.com/91482127/221341702-bcec77c1-ca4a-4a48-b0f4-be5287047a30.PNG)
+![image](https://user-images.githubusercontent.com/91482127/221342336-2c700a90-2922-43f0-afe2-dc632f999780.png)
 
 
 ## 7. 팀원 단위 업무 분장 및 결과표

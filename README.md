@@ -14,7 +14,7 @@
 
 * 임산부 게시판
 
-* 태아 수첩 작성
+* 공유 수첩 작성
 
 ## 3. 개발환경
 |구분|내용|
@@ -40,6 +40,10 @@
 
 ### AI챗봇 대화
 ![image](https://user-images.githubusercontent.com/91482127/221342719-b3a636a1-b86b-451a-8e2e-2fbbcd5474e2.png)
+
+### 관리자와 공유 수첩
+![제목 없음](https://user-images.githubusercontent.com/91482127/221343548-db65c8f3-a443-4bfa-b0f3-2767fd4095fb.png)
+![2](https://user-images.githubusercontent.com/91482127/221343555-a403ddbe-0c0c-45e4-a399-153229a4cfeb.png)
 
 ### 임산부 게시판
 ![제목 없음](https://user-images.githubusercontent.com/91482127/221343009-f136ee11-a817-49b2-9ba4-8b2247a15b69.png)

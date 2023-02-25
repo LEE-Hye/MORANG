@@ -36,7 +36,7 @@
 ## 4. 기능 흐름도
 ### 서비스 흐름도(유스케이스)
 #### SW 유스케이스
-![image](https://user-images.githubusercontent.com/104408832/170409069-e78a520f-bbc6-4937-bd2c-55b4589bf4bc.png)
+![image](https://user-images.githubusercontent.com/91482127/221342458-17a19233-717c-425e-8990-8c5420ac22b5.png)
 #### 서비스 흐름도(웹 화면설계서)
 ![image](https://user-images.githubusercontent.com/91482127/221342310-d49fd9ad-b361-440d-9da4-109fbd1fe294.png)
 #### ER 다이어그램

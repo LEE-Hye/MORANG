@@ -41,7 +41,7 @@
 ### AI챗봇 대화
 ![image](https://user-images.githubusercontent.com/91482127/221342719-b3a636a1-b86b-451a-8e2e-2fbbcd5474e2.png)
 
-### 
+### 임산부 
 ![제목 없음](https://user-images.githubusercontent.com/91482127/221343009-f136ee11-a817-49b2-9ba4-8b2247a15b69.png)
 
 

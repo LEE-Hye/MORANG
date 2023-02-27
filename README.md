@@ -32,6 +32,8 @@
 ![image](https://user-images.githubusercontent.com/91482127/221342458-17a19233-717c-425e-8990-8c5420ac22b5.png)
 #### 서비스 흐름도(웹 화면설계서)
 ![image](https://user-images.githubusercontent.com/91482127/221342310-d49fd9ad-b361-440d-9da4-109fbd1fe294.png)
+#### R다이어그램
+![er](https://user-images.githubusercontent.com/91482127/221478231-f0a10d44-c3b5-4c93-bc7e-6c0afff1954a.PNG)
 
 ## 5. SW 동작 화면
 

@@ -32,7 +32,7 @@
 ![image](https://user-images.githubusercontent.com/91482127/221342458-17a19233-717c-425e-8990-8c5420ac22b5.png)
 #### 서비스 흐름도(웹 화면설계서)
 ![image](https://user-images.githubusercontent.com/91482127/221342310-d49fd9ad-b361-440d-9da4-109fbd1fe294.png)
-#### R다이어그램
+#### E-R다이어그램
 ![er](https://user-images.githubusercontent.com/91482127/221478231-f0a10d44-c3b5-4c93-bc7e-6c0afff1954a.PNG)
 
 ## 5. SW 동작 화면
@@ -55,11 +55,8 @@
 ### 임산부 게시판
 ![제목 없음](https://user-images.githubusercontent.com/91482127/221343009-f136ee11-a817-49b2-9ba4-8b2247a15b69.png)
 
-
-
 ## 6. 제작 일정
 ![image](https://user-images.githubusercontent.com/91482127/221342336-2c700a90-2922-43f0-afe2-dc632f999780.png)
-
 
 ## 7. 팀원 단위 업무 분장 및 결과표
 ![image](https://user-images.githubusercontent.com/91482127/221342779-9b459b44-20af-4f26-9ecf-4aa5bd60f75a.png)
